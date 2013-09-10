@@ -1,5 +1,5 @@
 //
-//  DPMasterViewController.h
+//  DPAnimatorStatusView.h
 //  DynamicsPlayground
 //
 //  Created by Renzo Pretto on 9/10/13.
@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@class DPDetailViewController;
+@interface DPAnimatorStatusView : UView
 
-@interface DPMasterViewController : UITableViewController
-
+@property (nonatomic, strong) UIDynamicAnimator *animator;
 
 @end
