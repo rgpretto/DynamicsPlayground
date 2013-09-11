@@ -9,7 +9,10 @@
 #import "DPGravityControllerViewController.h"
 
 
-@interface DPGravityControllerViewController ()
+static NSString * const kvoCOntext = @"6842C86E-6C60-4095-8E67-CB6B08B71CD1"; // genrated with uuidgen
+static NSString * const kKeyPath = @"running";
+
+@interface DPGravityControllerViewController () <UIDynamicAnimatorDelegate>
 
 @property (nonatomic) UIDynamicAnimator* animator;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
@@ -27,6 +30,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [self.animator removeObserver:self forKeyPath:kKeyPath];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -35,6 +43,7 @@
     self.title = NSLocalizedString(@"Gravity", @"iPhone Master controller title");
 
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:[self view]];
+    self.animator.delegate = self;
     
     UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:@[[self greenView]]];
     
@@ -42,12 +51,54 @@
     
     // keep in mind the "Autolayout" Constraints
     
+    
+    [self.animator addObserver:self
+                    forKeyPath:kKeyPath
+                       options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
+                       context:(void *)kvoCOntext];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidUnload {
+    [super viewDidUnload];
+    
+    [self.animator removeObserver:self forKeyPath:kKeyPath];
+}
+
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    if (kvoCOntext == (__bridge NSString *)context) {
+        NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+    } else {
+        [super observeValueForKeyPath:keyPath
+                             ofObject:object
+                               change:change
+                              context:context];
+    }
+}
+
+
+#pragma mark - UIDynamicAnimatorDelegate
+
+- (void)dynamicAnimatorWillResume:(UIDynamicAnimator*)animator {
+    NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+
+}
+
+- (void)dynamicAnimatorDidPause:(UIDynamicAnimator*)animator {
+    NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+
 }
 
 @end
