@@ -10,7 +10,7 @@
 
 
 static NSString * const kvoCOntext = @"6842C86E-6C60-4095-8E67-CB6B08B71CD1"; // genrated with uuidgen
-static NSString * const kKeyPath = @"running";
+static NSString * const kKeyPath = @"isRunning";
 
 @interface DPGravityControllerViewController () <UIDynamicAnimatorDelegate>
 
@@ -30,11 +30,6 @@ static NSString * const kKeyPath = @"running";
     return self;
 }
 
-- (void)dealloc
-{
-    [self.animator removeObserver:self forKeyPath:kKeyPath];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -51,24 +46,12 @@ static NSString * const kKeyPath = @"running";
     
     // keep in mind the "Autolayout" Constraints
     
-    
-    [self.animator addObserver:self
-                    forKeyPath:kKeyPath
-                       options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
-                       context:(void *)kvoCOntext];
-    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    
-    [self.animator removeObserver:self forKeyPath:kKeyPath];
 }
 
 #pragma mark - KVO
