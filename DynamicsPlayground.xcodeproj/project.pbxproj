@@ -21,7 +21,7 @@
 		22248CBE17DF29D300C7E97E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22248C9A17DF29D300C7E97E /* UIKit.framework */; };
 		22248CC617DF29D300C7E97E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22248CC417DF29D300C7E97E /* InfoPlist.strings */; };
 		22248CC817DF29D300C7E97E /* DynamicsPlaygroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22248CC717DF29D300C7E97E /* DynamicsPlaygroundTests.m */; };
-		2262DD3E17DF2BA60022D5CA /* DPGravityControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2262DD3D17DF2BA60022D5CA /* DPGravityControllerViewController.m */; };
+		2262DD3E17DF2BA60022D5CA /* DPGravityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2262DD3D17DF2BA60022D5CA /* DPGravityViewController.m */; };
 		226B1EC317DF71BD00CF717D /* DPAnimatorStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226B1EC217DF71BD00CF717D /* DPAnimatorStatusView.m */; };
 /* End PBXBuildFile section */
 
@@ -55,8 +55,8 @@
 		22248CC317DF29D300C7E97E /* DynamicsPlaygroundTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DynamicsPlaygroundTests-Info.plist"; sourceTree = "<group>"; };
 		22248CC517DF29D300C7E97E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		22248CC717DF29D300C7E97E /* DynamicsPlaygroundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicsPlaygroundTests.m; sourceTree = "<group>"; };
-		2262DD3C17DF2BA60022D5CA /* DPGravityControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPGravityControllerViewController.h; sourceTree = "<group>"; };
-		2262DD3D17DF2BA60022D5CA /* DPGravityControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPGravityControllerViewController.m; sourceTree = "<group>"; };
+		2262DD3C17DF2BA60022D5CA /* DPGravityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPGravityViewController.h; sourceTree = "<group>"; };
+		2262DD3D17DF2BA60022D5CA /* DPGravityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPGravityViewController.m; sourceTree = "<group>"; };
 		226B1EC117DF71BD00CF717D /* DPAnimatorStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPAnimatorStatusView.h; sourceTree = "<group>"; };
 		226B1EC217DF71BD00CF717D /* DPAnimatorStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPAnimatorStatusView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,8 +162,8 @@
 		2262DD3B17DF2B8B0022D5CA /* Beahviors controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2262DD3C17DF2BA60022D5CA /* DPGravityControllerViewController.h */,
-				2262DD3D17DF2BA60022D5CA /* DPGravityControllerViewController.m */,
+				2262DD3C17DF2BA60022D5CA /* DPGravityViewController.h */,
+				2262DD3D17DF2BA60022D5CA /* DPGravityViewController.m */,
 			);
 			name = "Beahviors controllers";
 			sourceTree = "<group>";
@@ -284,7 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2262DD3E17DF2BA60022D5CA /* DPGravityControllerViewController.m in Sources */,
+				2262DD3E17DF2BA60022D5CA /* DPGravityViewController.m in Sources */,
 				226B1EC317DF71BD00CF717D /* DPAnimatorStatusView.m in Sources */,
 				22248CB017DF29D300C7E97E /* DPMasterViewController.m in Sources */,
 				22248CA717DF29D300C7E97E /* DPAppDelegate.m in Sources */,
