@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DPAnimatorStatusView : UView
+@interface DPAnimatorStatusView : UIView
 
 @property (nonatomic, strong) UIDynamicAnimator *animator;
 
