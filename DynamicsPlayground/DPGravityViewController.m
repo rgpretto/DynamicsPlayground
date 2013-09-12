@@ -12,7 +12,7 @@
 
 @interface DPGravityViewController () <UIDynamicAnimatorDelegate>
 
-@property (nonatomic) UIDynamicAnimator* animator;
+@property (strong, nonatomic) UIDynamicAnimator* animator;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 
 @end
@@ -44,9 +44,6 @@
     
     UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:@[[self greenView]]];
     [self.animator addBehavior:gravityBehavior];
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning

@@ -9,9 +9,16 @@
 #import "DPGravityCollisionViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
+// #define CUSTOM_BEHAVIOR
+
+#ifdef CUSTOM_BEHAVIOR
+#import "DPGravityCollisionBehavior.h"
+#endif
+
+
 @interface DPGravityCollisionViewController () <UIDynamicAnimatorDelegate, UICollisionBehaviorDelegate>
 
-@property (nonatomic) UIDynamicAnimator* animator;
+@property (strong, nonatomic) UIDynamicAnimator* animator;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 
 @end
@@ -43,16 +50,29 @@
     self.animator.delegate = self;
     
     NSArray *items = @[[self greenView]];
-        
+
+    //
+    // Multiple gravity behavior per animator is undefined and may assert in the future
+    //
+#ifdef CUSTOM_BEHAVIOR
+    
+    DPGravityCollisionBehavior *gravityAndCollision = [[DPGravityCollisionBehavior alloc] initWithItems:items];
+    [self.animator addBehavior:gravityAndCollision];
+    
+#else
+    
     UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:items];
     UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:items];
     collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
     collisionBehavior.collisionDelegate = self;
-    
     [self.animator addBehavior:gravityBehavior];
     [self.animator addBehavior:collisionBehavior];
-    // keep in mind the "Autolayout" Constraints
     
+#endif
+
+    
+
+
 }
 
 - (void)didReceiveMemoryWarning

@@ -155,7 +155,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qeg-i6-y5i">
-                                <rect key="frame" x="117" y="84" width="100" height="100"/>
+                                <rect key="frame" x="105" y="86" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -166,7 +166,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qeg-i6-y5i" firstAttribute="leading" secondItem="LPw-OD-mQA" secondAttribute="leading" constant="110" id="7KC-Hk-QhI"/>
+                            <constraint firstItem="qeg-i6-y5i" firstAttribute="leading" secondItem="LPw-OD-mQA" secondAttribute="leading" constant="40" id="7KC-Hk-QhI"/>
                             <constraint firstItem="ZIG-kR-WDg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qeg-i6-y5i" secondAttribute="bottom" priority="250" constant="384" id="QSH-y2-G9s"/>
                             <constraint firstItem="qeg-i6-y5i" firstAttribute="top" relation="greaterThanOrEqual" secondItem="BNx-Wc-xWo" secondAttribute="bottom" constant="20" id="XK8-LR-bNP"/>
                         </constraints>
