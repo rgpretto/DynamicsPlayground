@@ -1,5 +1,5 @@
 //
-//  DPMasterViewController.h
+//  DPGravityControllerViewController.h
 //  DynamicsPlayground
 //
 //  Created by Renzo Pretto on 9/10/13.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class DPDetailViewController;
-
-@interface DPMasterViewController : UITableViewController
-
+@interface DPGravityCollisionViewController : UIViewController
 
 @end
