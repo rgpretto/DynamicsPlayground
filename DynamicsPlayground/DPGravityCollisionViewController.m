@@ -7,7 +7,7 @@
 //
 
 #import "DPGravityCollisionViewController.h"
-
+#import <QuartzCore/QuartzCore.h>
 
 @interface DPGravityCollisionViewController () <UIDynamicAnimatorDelegate, UICollisionBehaviorDelegate>
 
@@ -30,10 +30,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.view.layer.borderColor = [UIColor redColor].CGColor;
+    self.view.layer.borderWidth = 2.0f;
 	
-    // Do any additional setup after loading the view.
-    self.title = NSLocalizedString(@"Gravity + Collision", @"iPhone Master controller title");
 
+    
+    self.title = NSLocalizedString(@"Gravity + Collision", @"");
+
+    // keep in mind the "Autolayout" Constraints for greenView
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:[self view]];
     self.animator.delegate = self;
     
