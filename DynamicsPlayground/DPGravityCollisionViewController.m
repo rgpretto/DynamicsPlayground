@@ -9,7 +9,7 @@
 #import "DPGravityCollisionViewController.h"
 
 
-@interface DPGravityCollisionViewController () <UIDynamicAnimatorDelegate>
+@interface DPGravityCollisionViewController () <UIDynamicAnimatorDelegate, UICollisionBehaviorDelegate>
 
 @property (nonatomic) UIDynamicAnimator* animator;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
@@ -36,9 +36,13 @@
 
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:[self view]];
     self.animator.delegate = self;
+    
+    NSArray *items = @[[self greenView]];
         
-    UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:@[[self greenView]]];
-    UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[[self greenView], [self view]]];
+    UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:items];
+    UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:items];
+    collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+    collisionBehavior.collisionDelegate = self;
     
     [self.animator addBehavior:gravityBehavior];
     [self.animator addBehavior:collisionBehavior];
@@ -64,5 +68,39 @@
     NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
 
 }
+
+
+#pragma mark - UICollisionBehaviorDelegate
+
+- (void)collisionBehavior:(UICollisionBehavior*)behavior
+      beganContactForItem:(id <UIDynamicItem>)item1
+                 withItem:(id <UIDynamicItem>)item2
+                  atPoint:(CGPoint)p {
+    
+}
+
+- (void)collisionBehavior:(UICollisionBehavior*)behavior
+      endedContactForItem:(id <UIDynamicItem>)item1
+                 withItem:(id <UIDynamicItem>)item2 {
+    
+}
+
+/*
+    The identifier of a boundary created with translatesReferenceBoundsIntoBoundary
+    or setTranslatesReferenceBoundsIntoBoundaryWithInsets is nil
+*/
+ - (void)collisionBehavior:(UICollisionBehavior*)behavior
+      beganContactForItem:(id <UIDynamicItem>)item
+   withBoundaryIdentifier:(id <NSCopying>)identifier
+                   atPoint:(CGPoint)p {
+     
+ }
+
+- (void)collisionBehavior:(UICollisionBehavior*)behavior
+      endedContactForItem:(id <UIDynamicItem>)item
+   withBoundaryIdentifier:(id <NSCopying>)identifier {
+    
+}
+
 
 @end
