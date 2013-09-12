@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DPGravityViewController : UIViewController
+@interface DPGravityCollisionViewController : UIViewController
 
 @end

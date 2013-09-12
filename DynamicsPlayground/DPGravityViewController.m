@@ -9,9 +9,6 @@
 #import "DPGravityViewController.h"
 
 
-static NSString * const kvoCOntext = @"6842C86E-6C60-4095-8E67-CB6B08B71CD1"; // genrated with uuidgen
-static NSString * const kKeyPath = @"isRunning";
-
 @interface DPGravityViewController () <UIDynamicAnimatorDelegate>
 
 @property (nonatomic) UIDynamicAnimator* animator;
@@ -52,23 +49,6 @@ static NSString * const kKeyPath = @"isRunning";
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - KVO
-
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary *)change
-                       context:(void *)context
-{
-    if (kvoCOntext == (__bridge NSString *)context) {
-        NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
-    } else {
-        [super observeValueForKeyPath:keyPath
-                             ofObject:object
-                               change:change
-                              context:context];
-    }
 }
 
 
