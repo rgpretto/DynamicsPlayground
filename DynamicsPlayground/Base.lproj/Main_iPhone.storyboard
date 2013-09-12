@@ -125,22 +125,29 @@
                                 <color key="backgroundColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SdM-5b-Rdx">
-                                <rect key="frame" x="143" y="130" width="44" height="44"/>
+                                <rect key="frame" x="143" y="129" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aNL-nL-bjA" appends="YES" id="z1i-Ux-v6D"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="czr-Fl-eM3"/>
                     <connections>
-                        <outlet property="greenView" destination="brT-4p-LqZ" id="ZpJ-IG-Spb"/>
-                        <outlet property="panGestureRecognizer" destination="aNL-nL-bjA" id="zb4-g6-vJg"/>
-                        <outlet property="redView" destination="SdM-5b-Rdx" id="Nof-FB-3tN"/>
+                        <outlet property="greenView" destination="brT-4p-LqZ" id="WHU-FP-Rbi"/>
+                        <outlet property="panGestureRecognizer" destination="aNL-nL-bjA" id="mDZ-pR-ic5"/>
+                        <outlet property="redView" destination="SdM-5b-Rdx" id="t0S-qW-rVE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lWt-Sl-iT4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="aNL-nL-bjA"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="aNL-nL-bjA">
+                    <connections>
+                        <action selector="handlePanGesture:" destination="B2j-P8-ABJ" id="X1l-Df-HX6"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1023" y="16"/>
         </scene>
