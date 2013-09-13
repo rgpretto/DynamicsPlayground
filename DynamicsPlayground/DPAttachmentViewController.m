@@ -40,7 +40,7 @@
      use gravity behavior to start animation and collision detection to stop animation
      */
     
-    UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[[self redView]]];
+    UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.redView]];
     collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
     
     self.attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:[self greenView]
@@ -66,8 +66,7 @@
     CGPoint anchorPoint = [gestureRecognizer locationInView:[self view]];
     self.redView.center = anchorPoint;
     
-    [self.animator removeBehavior:[self attachmentBehavior]];
-    [self.animator addBehavior:[self attachmentBehavior]];
+    [self.animator updateItemUsingCurrentState:[self redView]];
 }
 
 #pragma mark - UIDynamicAnimatorDelegate
