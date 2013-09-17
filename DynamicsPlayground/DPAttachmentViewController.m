@@ -8,13 +8,12 @@
 
 #import "DPAttachmentViewController.h"
 
-@interface DPAttachmentViewController () <UIDynamicAnimatorDelegate, UIGestureRecognizerDelegate>
+@interface DPAttachmentViewController () <UIDynamicAnimatorDelegate>
 @property (weak, nonatomic) IBOutlet UIView *redView;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGestureRecognizer;
 
 @property (strong, nonatomic) UIDynamicAnimator *animator;
-@property (strong, nonatomic) UIAttachmentBehavior *attachmentBehavior;
 
 - (IBAction)handlePanGesture:(UIPanGestureRecognizer *)sender;
 
@@ -40,19 +39,19 @@
      use gravity behavior to start animation and collision detection to stop animation
      */
     
-    UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.redView]];
+    UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.redView, self.greenView]];
     collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
     
-    self.attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:[self greenView]
-                                                          attachedToItem:[self redView]];
-    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[[self greenView]]];
+    UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:[self greenView]
+                                                                           attachedToItem:[self redView]];
+//    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[[self greenView]]];
     
 
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:[self view]];
     self.animator.delegate = self;
     [self.animator addBehavior:collisionBehavior];
-    [self.animator addBehavior:gravity];
-    [self.animator addBehavior:[self attachmentBehavior]];
+//    [self.animator addBehavior:gravity];
+    [self.animator addBehavior:attachmentBehavior];
 }
 
 - (void)didReceiveMemoryWarning
