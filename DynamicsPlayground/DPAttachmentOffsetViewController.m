@@ -70,12 +70,11 @@
     
     CGPoint anchorPoint = [gestureRecognizer locationInView:[self view]];
     
-//    self.attachmentBehavior.anchorPoint = anchorPoint;
     self.redView.center = anchorPoint;
 
     [self.animator updateItemUsingCurrentState:[self redView]];
     
-    NSLog(@"Attachment length = %0.1f", [self.attachmentBehavior length]);
+    NSLog(@"Attachment length = %.1f", [self.attachmentBehavior length]);
     
 }
 
