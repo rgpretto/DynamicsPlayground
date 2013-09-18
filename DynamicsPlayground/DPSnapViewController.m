@@ -8,15 +8,21 @@
 
 #import "DPSnapViewController.h"
 
+
+
 @interface DPSnapViewController () <UIDynamicAnimatorDelegate>
+
+@property (strong, nonatomic) UIDynamicAnimator *animator;
+@property (strong, nonatomic) UISnapBehavior *snapBehavior;
+
+@property (weak, nonatomic) IBOutlet UIView *greenView;
 
 - (IBAction)handleTapGesture:(UITapGestureRecognizer *)sender;
 
-@property (strong, nonatomic) UIDynamicAnimator *animator;
-@property (weak, nonatomic) IBOutlet UIView *greenView;
-@property (strong, nonatomic) UISnapBehavior *snapBehavior;
 
 @end
+
+
 
 @implementation DPSnapViewController
 
@@ -55,9 +61,11 @@
         [self.animator removeBehavior:self.snapBehavior];
     }
 
+    // default value for damping is 0.5
     self.snapBehavior = [[UISnapBehavior alloc] initWithItem:self.greenView
                                                  snapToPoint:snapPoint];
-    NSLog(@"Default damping = %.1f", [self.snapBehavior damping]);
+//    self.snapBehavior.damping = 0.9f;
+//    NSLog(@"Default damping = %.1f", [self.snapBehavior damping]);
     
     [self.animator addBehavior:self.snapBehavior];
     
