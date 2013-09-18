@@ -279,7 +279,6 @@
                     <navigationItem key="navigationItem" title="Attachment offset" id="o5C-Bt-rBl"/>
                     <connections>
                         <outlet property="greenView" destination="Od1-Qw-DEP" id="ixx-Lk-n2k"/>
-                        <outlet property="panGestureRecognizer" destination="mfI-qJ-EcE" id="Jwe-yo-PMQ"/>
                         <outlet property="redView" destination="uEW-jY-heI" id="wxd-xi-0PM"/>
                         <outlet property="view" destination="xdU-lh-NCR" id="Qzw-hr-AoJ"/>
                     </connections>
