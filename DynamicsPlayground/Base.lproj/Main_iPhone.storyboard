@@ -121,7 +121,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="void" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="43u-SW-Gbe">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Snap" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="43u-SW-Gbe">
                                                     <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -131,6 +131,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="49r-pm-mgP" kind="push" id="tUc-No-Sql"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="kAa-Ho-ZQh" style="IBUITableViewCellStyleDefault" id="WKz-wV-cxy">
                                         <rect key="frame" x="0.0" y="284" width="320" height="44"/>
@@ -163,6 +166,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="459" y="64"/>
+        </scene>
+        <!--Snap View Controller - Snap-->
+        <scene sceneID="59v-jd-snR">
+            <objects>
+                <viewController id="49r-pm-mgP" customClass="DPSnapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="43t-1S-ZCY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bro-x5-4sD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Smn-Vb-wsj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qsf-4R-E9w">
+                                <rect key="frame" x="110" y="234" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="7fL-OJ-Gid" appends="YES" id="9ND-RQ-dBV"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Snap" id="aUA-8m-i4S"/>
+                    <connections>
+                        <outlet property="greenView" destination="Qsf-4R-E9w" id="fb4-pX-wKI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="45S-il-d9G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="7fL-OJ-Gid">
+                    <connections>
+                        <action selector="handleTapGesture:" destination="49r-pm-mgP" id="Etp-4i-CUb"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1026" y="6"/>
         </scene>
         <!--Attachment View Controller - Attachment-->
         <scene sceneID="KJE-cH-t2w">
