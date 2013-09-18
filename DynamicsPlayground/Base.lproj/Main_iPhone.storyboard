@@ -236,7 +236,6 @@
                     <navigationItem key="navigationItem" title="Attachment" id="czr-Fl-eM3"/>
                     <connections>
                         <outlet property="greenView" destination="brT-4p-LqZ" id="WHU-FP-Rbi"/>
-                        <outlet property="panGestureRecognizer" destination="aNL-nL-bjA" id="mDZ-pR-ic5"/>
                         <outlet property="redView" destination="SdM-5b-Rdx" id="t0S-qW-rVE"/>
                     </connections>
                 </viewController>
