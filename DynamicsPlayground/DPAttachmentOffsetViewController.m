@@ -13,8 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIView *redView;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 @property (strong, nonatomic) UIDynamicAnimator *animator;
-@property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGestureRecognizer;
-@property (strong, nonatomic) IBOutlet UIAttachmentBehavior *attachmentBehavior;
+@property (strong, nonatomic) UIAttachmentBehavior *attachmentBehavior;
 
 - (IBAction)handlePanGesture:(UIPanGestureRecognizer *)sender;
 
@@ -71,12 +70,11 @@
     
     CGPoint anchorPoint = [gestureRecognizer locationInView:[self view]];
     
-//    self.attachmentBehavior.anchorPoint = anchorPoint;
     self.redView.center = anchorPoint;
 
     [self.animator updateItemUsingCurrentState:[self redView]];
     
-    NSLog(@"Attachment length = %0.1f", [self.attachmentBehavior length]);
+    NSLog(@"Attachment length = %.1f", [self.attachmentBehavior length]);
     
 }
 

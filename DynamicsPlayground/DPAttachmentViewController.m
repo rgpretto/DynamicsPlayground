@@ -9,9 +9,10 @@
 #import "DPAttachmentViewController.h"
 
 @interface DPAttachmentViewController () <UIDynamicAnimatorDelegate>
+
+
 @property (weak, nonatomic) IBOutlet UIView *redView;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
-@property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGestureRecognizer;
 
 @property (strong, nonatomic) UIDynamicAnimator *animator;
 
@@ -36,7 +37,7 @@
     [super viewDidLoad];
 
     /*
-     use gravity behavior to start animation and collision detection to stop animation
+     use gravity behavior to start animation and collision behavior to stop animation
      */
     
     UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.redView, self.greenView]];

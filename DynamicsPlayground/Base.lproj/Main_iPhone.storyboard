@@ -236,7 +236,6 @@
                     <navigationItem key="navigationItem" title="Attachment" id="czr-Fl-eM3"/>
                     <connections>
                         <outlet property="greenView" destination="brT-4p-LqZ" id="WHU-FP-Rbi"/>
-                        <outlet property="panGestureRecognizer" destination="aNL-nL-bjA" id="mDZ-pR-ic5"/>
                         <outlet property="redView" destination="SdM-5b-Rdx" id="t0S-qW-rVE"/>
                     </connections>
                 </viewController>
@@ -280,7 +279,6 @@
                     <navigationItem key="navigationItem" title="Attachment offset" id="o5C-Bt-rBl"/>
                     <connections>
                         <outlet property="greenView" destination="Od1-Qw-DEP" id="ixx-Lk-n2k"/>
-                        <outlet property="panGestureRecognizer" destination="mfI-qJ-EcE" id="Jwe-yo-PMQ"/>
                         <outlet property="redView" destination="uEW-jY-heI" id="wxd-xi-0PM"/>
                         <outlet property="view" destination="xdU-lh-NCR" id="Qzw-hr-AoJ"/>
                     </connections>
