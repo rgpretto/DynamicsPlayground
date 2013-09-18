@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIView *redView;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 @property (strong, nonatomic) UIDynamicAnimator *animator;
-@property (strong, nonatomic) IBOutlet UIAttachmentBehavior *attachmentBehavior;
+@property (strong, nonatomic) UIAttachmentBehavior *attachmentBehavior;
 
 - (IBAction)handlePanGesture:(UIPanGestureRecognizer *)sender;
 
