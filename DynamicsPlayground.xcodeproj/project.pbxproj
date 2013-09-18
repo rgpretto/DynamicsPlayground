@@ -27,6 +27,7 @@
 		22B77EC217E22D20001262D6 /* DPAttachmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B77EC017E21FF6001262D6 /* DPAttachmentViewController.m */; };
 		22E6007E17E0DCE8009D493F /* DPGravityCollisionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E6007D17E0DCE8009D493F /* DPGravityCollisionViewController.m */; };
 		FD04D99617E6D72D00563710 /* DPAttachmentOffsetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD04D99517E6D72D00563710 /* DPAttachmentOffsetViewController.m */; };
+		FDB2306A17E96473007A77D6 /* DPSnapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB2306917E96473007A77D6 /* DPSnapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		22E6007D17E0DCE8009D493F /* DPGravityCollisionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPGravityCollisionViewController.m; sourceTree = "<group>"; };
 		FD04D99417E6D72D00563710 /* DPAttachmentOffsetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPAttachmentOffsetViewController.h; sourceTree = "<group>"; };
 		FD04D99517E6D72D00563710 /* DPAttachmentOffsetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPAttachmentOffsetViewController.m; sourceTree = "<group>"; };
+		FDB2306817E96473007A77D6 /* DPSnapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPSnapViewController.h; sourceTree = "<group>"; };
+		FDB2306917E96473007A77D6 /* DPSnapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPSnapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,16 +177,10 @@
 		2262DD3B17DF2B8B0022D5CA /* Beahviors controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FD04D99417E6D72D00563710 /* DPAttachmentOffsetViewController.h */,
-				FD04D99517E6D72D00563710 /* DPAttachmentOffsetViewController.m */,
-				22B77EBF17E21FF6001262D6 /* DPAttachmentViewController.h */,
-				22B77EC017E21FF6001262D6 /* DPAttachmentViewController.m */,
-				225C58C417E1EB93008B9756 /* DPGravityCollisionBehavior.h */,
-				225C58C517E1EB93008B9756 /* DPGravityCollisionBehavior.m */,
-				22E6007C17E0DCE8009D493F /* DPGravityCollisionViewController.h */,
-				22E6007D17E0DCE8009D493F /* DPGravityCollisionViewController.m */,
-				2262DD3C17DF2BA60022D5CA /* DPGravityViewController.h */,
-				2262DD3D17DF2BA60022D5CA /* DPGravityViewController.m */,
+				FDB2306617E9643A007A77D6 /* Gravity */,
+				FDB2306517E96420007A77D6 /* Collision */,
+				FDB2306417E96400007A77D6 /* Attachment */,
+				FDB2306717E9644B007A77D6 /* Snap */,
 			);
 			name = "Beahviors controllers";
 			sourceTree = "<group>";
@@ -205,6 +202,46 @@
 				226B1EC217DF71BD00CF717D /* DPAnimatorStatusView.m */,
 			);
 			name = "Utility view";
+			sourceTree = "<group>";
+		};
+		FDB2306417E96400007A77D6 /* Attachment */ = {
+			isa = PBXGroup;
+			children = (
+				FD04D99417E6D72D00563710 /* DPAttachmentOffsetViewController.h */,
+				FD04D99517E6D72D00563710 /* DPAttachmentOffsetViewController.m */,
+				22B77EBF17E21FF6001262D6 /* DPAttachmentViewController.h */,
+				22B77EC017E21FF6001262D6 /* DPAttachmentViewController.m */,
+			);
+			name = Attachment;
+			sourceTree = "<group>";
+		};
+		FDB2306517E96420007A77D6 /* Collision */ = {
+			isa = PBXGroup;
+			children = (
+				225C58C417E1EB93008B9756 /* DPGravityCollisionBehavior.h */,
+				225C58C517E1EB93008B9756 /* DPGravityCollisionBehavior.m */,
+				22E6007C17E0DCE8009D493F /* DPGravityCollisionViewController.h */,
+				22E6007D17E0DCE8009D493F /* DPGravityCollisionViewController.m */,
+			);
+			name = Collision;
+			sourceTree = "<group>";
+		};
+		FDB2306617E9643A007A77D6 /* Gravity */ = {
+			isa = PBXGroup;
+			children = (
+				2262DD3C17DF2BA60022D5CA /* DPGravityViewController.h */,
+				2262DD3D17DF2BA60022D5CA /* DPGravityViewController.m */,
+			);
+			name = Gravity;
+			sourceTree = "<group>";
+		};
+		FDB2306717E9644B007A77D6 /* Snap */ = {
+			isa = PBXGroup;
+			children = (
+				FDB2306817E96473007A77D6 /* DPSnapViewController.h */,
+				FDB2306917E96473007A77D6 /* DPSnapViewController.m */,
+			);
+			name = Snap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +344,7 @@
 			files = (
 				225C58C617E1EB93008B9756 /* DPGravityCollisionBehavior.m in Sources */,
 				2262DD3E17DF2BA60022D5CA /* DPGravityViewController.m in Sources */,
+				FDB2306A17E96473007A77D6 /* DPSnapViewController.m in Sources */,
 				226B1EC317DF71BD00CF717D /* DPAnimatorStatusView.m in Sources */,
 				22B77EC217E22D20001262D6 /* DPAttachmentViewController.m in Sources */,
 				22248CB017DF29D300C7E97E /* DPMasterViewController.m in Sources */,
