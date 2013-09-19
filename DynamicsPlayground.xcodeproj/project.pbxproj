@@ -30,6 +30,7 @@
 		FD42794E17E97770000127D0 /* DPPushComparisonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD42794D17E97770000127D0 /* DPPushComparisonViewController.m */; };
 		FDB2306A17E96473007A77D6 /* DPSnapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB2306917E96473007A77D6 /* DPSnapViewController.m */; };
 		FDC0116F17EB94DE002B8B41 /* DPPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC0116E17EB94DE002B8B41 /* DPPushViewController.m */; };
+		FDC0117217EB981F002B8B41 /* DPGravityComparisonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC0117117EB981F002B8B41 /* DPGravityComparisonViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		FDB2306917E96473007A77D6 /* DPSnapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPSnapViewController.m; sourceTree = "<group>"; };
 		FDC0116D17EB94DE002B8B41 /* DPPushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPPushViewController.h; sourceTree = "<group>"; };
 		FDC0116E17EB94DE002B8B41 /* DPPushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPPushViewController.m; sourceTree = "<group>"; };
+		FDC0117017EB981F002B8B41 /* DPGravityComparisonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPGravityComparisonViewController.h; sourceTree = "<group>"; };
+		FDC0117117EB981F002B8B41 /* DPGravityComparisonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPGravityComparisonViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +250,8 @@
 		FDB2306617E9643A007A77D6 /* Gravity */ = {
 			isa = PBXGroup;
 			children = (
+				FDC0117017EB981F002B8B41 /* DPGravityComparisonViewController.h */,
+				FDC0117117EB981F002B8B41 /* DPGravityComparisonViewController.m */,
 				2262DD3C17DF2BA60022D5CA /* DPGravityViewController.h */,
 				2262DD3D17DF2BA60022D5CA /* DPGravityViewController.m */,
 			);
@@ -364,6 +369,7 @@
 				2262DD3E17DF2BA60022D5CA /* DPGravityViewController.m in Sources */,
 				FDB2306A17E96473007A77D6 /* DPSnapViewController.m in Sources */,
 				226B1EC317DF71BD00CF717D /* DPAnimatorStatusView.m in Sources */,
+				FDC0117217EB981F002B8B41 /* DPGravityComparisonViewController.m in Sources */,
 				22B77EC217E22D20001262D6 /* DPAttachmentViewController.m in Sources */,
 				FD42794E17E97770000127D0 /* DPPushComparisonViewController.m in Sources */,
 				22248CB017DF29D300C7E97E /* DPMasterViewController.m in Sources */,
