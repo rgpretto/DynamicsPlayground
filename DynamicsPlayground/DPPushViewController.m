@@ -6,19 +6,18 @@
 //  Copyright (c) 2013 Renzo Pretto. All rights reserved.
 //
 
-#import "DPPushComparisonViewController.h"
+#import "DPPushViewController.h"
 
-@interface DPPushComparisonViewController () <UIDynamicAnimatorDelegate>
+@interface DPPushViewController () <UIDynamicAnimatorDelegate>
 
 @property (strong, nonatomic) UIDynamicAnimator *animator;
 
-@property (weak, nonatomic) IBOutlet UIView *blackView;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 @property (weak, nonatomic) IBOutlet UIView *redView;
 
 @end
 
-@implementation DPPushComparisonViewController
+@implementation DPPushViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,25 +36,16 @@
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     self.animator.delegate = self;
     
-    UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView, self.redView, self.blackView]];
+    UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView, self.redView]];
     collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
     
-    
-    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[self.blackView]];
-    
-    CGVector pushVector = CGVectorMake(0.0, 9.81);
-    UIPushBehavior *continousPush = [[UIPushBehavior alloc] initWithItems:@[self.greenView]
+    CGVector pushVector = CGVectorMake(0.0, 1.0);
+    UIPushBehavior *continousPush = [[UIPushBehavior alloc] initWithItems:@[self.greenView, self.redView]
                                                                      mode:UIPushBehaviorModeContinuous];
     continousPush.pushDirection = pushVector;
     
-    UIPushBehavior *istantaneousPush = [[UIPushBehavior alloc] initWithItems:@[self.redView]
-                                                                        mode:UIPushBehaviorModeInstantaneous];
-    istantaneousPush.pushDirection = pushVector;
-    
-    [self.animator addBehavior:gravity];
     [self.animator addBehavior:collisionBehavior];
     [self.animator addBehavior:continousPush];
-    [self.animator addBehavior:istantaneousPush];
 }
 
 
