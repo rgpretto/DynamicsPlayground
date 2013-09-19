@@ -301,7 +301,7 @@
             </objects>
             <point key="canvasLocation" x="1026" y="6"/>
         </scene>
-        <!--Push View Controller-->
+        <!--Push View Controller - Push-->
         <scene sceneID="COz-aV-9Xs">
             <objects>
                 <viewController id="tAi-0V-5kY" customClass="DPPushViewController" sceneMemberID="viewController">
@@ -344,7 +344,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="blx-9E-hKq"/>
+                    <navigationItem key="navigationItem" title="Push" id="blx-9E-hKq"/>
                     <connections>
                         <outlet property="greenView" destination="lej-Ac-CgN" id="CIM-mf-WGM"/>
                         <outlet property="redView" destination="8JW-oM-Wfh" id="YfV-mY-Mtp"/>
