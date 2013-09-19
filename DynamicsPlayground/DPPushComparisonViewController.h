@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DPPushViewController : UIViewController
+@interface DPPushComparisonViewController : UIViewController
 
 @end

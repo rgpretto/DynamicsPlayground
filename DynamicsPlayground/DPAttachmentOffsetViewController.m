@@ -45,9 +45,11 @@
     collision.translatesReferenceBoundsIntoBoundary = YES;
     
     UIOffset greenViewAttachmentPoint = UIOffsetZero;
+    
     greenViewAttachmentPoint = UIOffsetMake(    CGRectGetWidth([self.greenView frame]) / 2.0 ,
                                                 CGRectGetHeight([self.greenView frame]) /2.0 );
-    
+
+//    greenViewAttachmentPoint = UIOffsetMake( CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds) );
     self.attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.greenView
                                                         offsetFromCenter:greenViewAttachmentPoint
                                                           attachedToItem:self.redView
