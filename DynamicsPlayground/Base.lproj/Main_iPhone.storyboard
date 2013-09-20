@@ -349,10 +349,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Push" id="blx-9E-hKq"/>
+                    <navigationItem key="navigationItem" title="Push" id="blx-9E-hKq">
+                        <barButtonItem key="rightBarButtonItem" title="Start" id="izN-ae-HNj">
+                            <connections>
+                                <action selector="handleStartButton:" destination="tAi-0V-5kY" id="TmL-i3-koL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="greenView" destination="lej-Ac-CgN" id="CIM-mf-WGM"/>
                         <outlet property="redView" destination="8JW-oM-Wfh" id="YfV-mY-Mtp"/>
+                        <outlet property="startButton" destination="izN-ae-HNj" id="4m3-cu-KVY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rd0-N8-KPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -416,11 +423,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Push VS Gravity" id="9i2-KR-OlB"/>
+                    <navigationItem key="navigationItem" title="Push VS Gravity" id="9i2-KR-OlB">
+                        <barButtonItem key="rightBarButtonItem" title="Start" id="uCx-XJ-OfI">
+                            <connections>
+                                <action selector="handlePushButton:" destination="OrQ-oN-kk6" id="d52-3Q-R9c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="blackView" destination="sJ9-gK-PKE" id="WXL-Aq-51L"/>
                         <outlet property="greenView" destination="8Cz-Uz-ksQ" id="jkP-m1-8F2"/>
                         <outlet property="redView" destination="3Eg-gG-shH" id="mME-F9-wQW"/>
+                        <outlet property="startButton" destination="uCx-XJ-OfI" id="gPu-us-82x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVw-Lq-auW" userLabel="First Responder" sceneMemberID="firstResponder"/>
