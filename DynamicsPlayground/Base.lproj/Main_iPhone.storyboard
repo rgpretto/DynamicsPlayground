@@ -349,10 +349,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Push" id="blx-9E-hKq"/>
+                    <navigationItem key="navigationItem" title="Push" id="blx-9E-hKq">
+                        <barButtonItem key="rightBarButtonItem" title="Start" id="izN-ae-HNj">
+                            <connections>
+                                <action selector="handleStartButton:" destination="tAi-0V-5kY" id="TmL-i3-koL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="greenView" destination="lej-Ac-CgN" id="CIM-mf-WGM"/>
                         <outlet property="redView" destination="8JW-oM-Wfh" id="YfV-mY-Mtp"/>
+                        <outlet property="startButton" destination="izN-ae-HNj" id="mOr-Ch-5hS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rd0-N8-KPc" userLabel="First Responder" sceneMemberID="firstResponder"/>

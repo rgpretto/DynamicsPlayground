@@ -14,6 +14,9 @@
 
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 @property (weak, nonatomic) IBOutlet UIView *redView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *startButton;
+
+- (IBAction)handleStartButton:(id)sender;
 
 @end
 
@@ -35,18 +38,26 @@
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     self.animator.delegate = self;
     
-    UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView, self.redView]];
-    collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
-    
-    CGVector pushVector = CGVectorMake(0.0, 1.0);
-    UIPushBehavior *continousPush = [[UIPushBehavior alloc] initWithItems:@[self.greenView, self.redView]
-                                                                     mode:UIPushBehaviorModeContinuous];
-    continousPush.pushDirection = pushVector;
-    
-    [self.animator addBehavior:collisionBehavior];
-    [self.animator addBehavior:continousPush];
+
 }
 
+#pragma mark - Actions
+
+
+- (IBAction)handleStartButton:(id)sender {
+    if (NO == [self.animator isRunning]) {
+        UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView, self.redView]];
+        collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+        
+        CGVector pushVector = CGVectorMake(0.0, 1.0);
+        UIPushBehavior *continousPush = [[UIPushBehavior alloc] initWithItems:@[self.greenView, self.redView]
+                                                                         mode:UIPushBehaviorModeContinuous];
+        continousPush.pushDirection = pushVector;
+        
+        [self.animator addBehavior:collisionBehavior];
+        [self.animator addBehavior:continousPush];
+    }
+}
 
 #pragma mark - UIDynamicAnimatorDelegate
 
