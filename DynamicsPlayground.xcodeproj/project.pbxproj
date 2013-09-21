@@ -28,6 +28,10 @@
 		22E6007E17E0DCE8009D493F /* DPGravityCollisionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E6007D17E0DCE8009D493F /* DPGravityCollisionViewController.m */; };
 		FD04D99617E6D72D00563710 /* DPAttachmentOffsetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD04D99517E6D72D00563710 /* DPAttachmentOffsetViewController.m */; };
 		FD42794E17E97770000127D0 /* DPPushComparisonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD42794D17E97770000127D0 /* DPPushComparisonViewController.m */; };
+		FDA8085117ED7D9900C906BD /* DPDynamicCollectionViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA8085017ED7D9900C906BD /* DPDynamicCollectionViewViewController.m */; };
+		FDA8085417ED7EF200C906BD /* DPCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA8085317ED7EF200C906BD /* DPCollectionViewCell.m */; };
+		FDA8085717ED817D00C906BD /* DPFixedSpringFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA8085617ED817D00C906BD /* DPFixedSpringFlowLayout.m */; };
+		FDA8085A17EDA2C700C906BD /* DPProportionalSpringFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA8085917EDA2C700C906BD /* DPProportionalSpringFlowLayout.m */; };
 		FDB2306A17E96473007A77D6 /* DPSnapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB2306917E96473007A77D6 /* DPSnapViewController.m */; };
 		FDC0116F17EB94DE002B8B41 /* DPPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC0116E17EB94DE002B8B41 /* DPPushViewController.m */; };
 		FDC0117217EB981F002B8B41 /* DPGravityComparisonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC0117117EB981F002B8B41 /* DPGravityComparisonViewController.m */; };
@@ -77,6 +81,14 @@
 		FD04D99517E6D72D00563710 /* DPAttachmentOffsetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPAttachmentOffsetViewController.m; sourceTree = "<group>"; };
 		FD42794C17E97770000127D0 /* DPPushComparisonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPPushComparisonViewController.h; sourceTree = "<group>"; };
 		FD42794D17E97770000127D0 /* DPPushComparisonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPPushComparisonViewController.m; sourceTree = "<group>"; };
+		FDA8084F17ED7D9900C906BD /* DPDynamicCollectionViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDynamicCollectionViewViewController.h; sourceTree = "<group>"; };
+		FDA8085017ED7D9900C906BD /* DPDynamicCollectionViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDynamicCollectionViewViewController.m; sourceTree = "<group>"; };
+		FDA8085217ED7EF200C906BD /* DPCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPCollectionViewCell.h; sourceTree = "<group>"; };
+		FDA8085317ED7EF200C906BD /* DPCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPCollectionViewCell.m; sourceTree = "<group>"; };
+		FDA8085517ED817D00C906BD /* DPFixedSpringFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPFixedSpringFlowLayout.h; sourceTree = "<group>"; };
+		FDA8085617ED817D00C906BD /* DPFixedSpringFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPFixedSpringFlowLayout.m; sourceTree = "<group>"; };
+		FDA8085817EDA2C700C906BD /* DPProportionalSpringFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPProportionalSpringFlowLayout.h; sourceTree = "<group>"; };
+		FDA8085917EDA2C700C906BD /* DPProportionalSpringFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPProportionalSpringFlowLayout.m; sourceTree = "<group>"; };
 		FDB2306817E96473007A77D6 /* DPSnapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPSnapViewController.h; sourceTree = "<group>"; };
 		FDB2306917E96473007A77D6 /* DPSnapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPSnapViewController.m; sourceTree = "<group>"; };
 		FDC0116D17EB94DE002B8B41 /* DPPushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPPushViewController.h; sourceTree = "<group>"; };
@@ -191,6 +203,7 @@
 				FDB2306417E96400007A77D6 /* Attachment */,
 				FDB2306717E9644B007A77D6 /* Snap */,
 				FD42794B17E9774F000127D0 /* Push Behavior */,
+				FDA8084E17ED7CD800C906BD /* Collection view */,
 			);
 			name = "Beahviors controllers";
 			sourceTree = "<group>";
@@ -223,6 +236,29 @@
 				FD42794D17E97770000127D0 /* DPPushComparisonViewController.m */,
 			);
 			name = "Push Behavior";
+			sourceTree = "<group>";
+		};
+		FDA8084E17ED7CD800C906BD /* Collection view */ = {
+			isa = PBXGroup;
+			children = (
+				FDA8085B17EDA2D100C906BD /* Custom Layout */,
+				FDA8084F17ED7D9900C906BD /* DPDynamicCollectionViewViewController.h */,
+				FDA8085017ED7D9900C906BD /* DPDynamicCollectionViewViewController.m */,
+				FDA8085217ED7EF200C906BD /* DPCollectionViewCell.h */,
+				FDA8085317ED7EF200C906BD /* DPCollectionViewCell.m */,
+			);
+			name = "Collection view";
+			sourceTree = "<group>";
+		};
+		FDA8085B17EDA2D100C906BD /* Custom Layout */ = {
+			isa = PBXGroup;
+			children = (
+				FDA8085817EDA2C700C906BD /* DPProportionalSpringFlowLayout.h */,
+				FDA8085917EDA2C700C906BD /* DPProportionalSpringFlowLayout.m */,
+				FDA8085517ED817D00C906BD /* DPFixedSpringFlowLayout.h */,
+				FDA8085617ED817D00C906BD /* DPFixedSpringFlowLayout.m */,
+			);
+			name = "Custom Layout";
 			sourceTree = "<group>";
 		};
 		FDB2306417E96400007A77D6 /* Attachment */ = {
@@ -367,11 +403,15 @@
 			files = (
 				225C58C617E1EB93008B9756 /* DPGravityCollisionBehavior.m in Sources */,
 				2262DD3E17DF2BA60022D5CA /* DPGravityViewController.m in Sources */,
+				FDA8085117ED7D9900C906BD /* DPDynamicCollectionViewViewController.m in Sources */,
 				FDB2306A17E96473007A77D6 /* DPSnapViewController.m in Sources */,
+				FDA8085A17EDA2C700C906BD /* DPProportionalSpringFlowLayout.m in Sources */,
+				FDA8085717ED817D00C906BD /* DPFixedSpringFlowLayout.m in Sources */,
 				226B1EC317DF71BD00CF717D /* DPAnimatorStatusView.m in Sources */,
 				FDC0117217EB981F002B8B41 /* DPGravityComparisonViewController.m in Sources */,
 				22B77EC217E22D20001262D6 /* DPAttachmentViewController.m in Sources */,
 				FD42794E17E97770000127D0 /* DPPushComparisonViewController.m in Sources */,
+				FDA8085417ED7EF200C906BD /* DPCollectionViewCell.m in Sources */,
 				22248CB017DF29D300C7E97E /* DPMasterViewController.m in Sources */,
 				22248CA717DF29D300C7E97E /* DPAppDelegate.m in Sources */,
 				22E6007E17E0DCE8009D493F /* DPGravityCollisionViewController.m in Sources */,
