@@ -8,6 +8,8 @@
 
 #import "DPSpringCollectionViewFlowLayout.h"
 
+#define PROPORTIONAL_SPRING
+
 @interface DPSpringCollectionViewFlowLayout ()
 
 @property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
@@ -40,6 +42,8 @@
             springBehavior.length = 0.0f;
             springBehavior.damping = 0.5;
             springBehavior.frequency = 0.8;
+            
+            //FIXME: add the spring only to item visible on the screens using "addBehavior" and "removebehavior" methods of dynamic animator
             [self.dynamicAnimator addBehavior:springBehavior];
         }
     }
@@ -65,14 +69,39 @@
     
     // shit layout attribute position by delta
     CGFloat scrollDelta = newBounds.origin.y - scrollView.bounds.origin.y;
+#ifdef PROPORTIONAL_SPRING
+    CGPoint touchLocation = [scrollView.panGestureRecognizer locationInView:scrollView];
+    
+#endif
+    
     
     for (UIAttachmentBehavior *springBehavior in [self.dynamicAnimator behaviors]) {
         UICollectionViewLayoutAttributes *attribute = nil;
+
+#ifdef PROPORTIONAL_SPRING
+        CGPoint anchorPoint = [springBehavior anchorPoint];
+        CGFloat distanceFromheTouch = fabsf(touchLocation.y - anchorPoint.y);
+        
+        // scale the amount we restist the scroll
+        CGFloat scrollResistance = distanceFromheTouch / 500.0f;
+#endif
         
         attribute = [springBehavior.items firstObject];
         CGPoint center = [attribute center];
-        center.y += scrollDelta;
+        
+#ifdef PROPORTIONAL_SPRING
+        CGFloat scroll = scrollDelta * scrollResistance;
+        if (scroll > 0) {
+            center.y += MIN(scrollDelta, scrollDelta * scrollResistance);
+        } else {
+            center.y += MAX(scrollDelta, scrollDelta * scrollResistance);
+        }
+#else
+        center.y += scrollDelta * scrollResistance;
+#endif
         attribute.center = center;
+        
+        
 
         // notify UIDynamicAnimator
         [self.dynamicAnimator updateItemUsingCurrentState:attribute];
