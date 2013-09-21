@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DPSpringCollectionViewFlowLayout : UICollectionViewFlowLayout
+#import "DPFixedSpringFlowLayout.h"
+
+/*
+ This layout makes same spring proportiona to the distrance from
+ dragged element
+ */
+
+@interface DPProportionalSpringFlowLayout : DPFixedSpringFlowLayout
 
 @end

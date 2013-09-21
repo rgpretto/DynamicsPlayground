@@ -9,8 +9,12 @@
 #import "DPDynamicCollectionViewViewController.h"
 
 #import "DPCollectionViewCell.h"
+#import "DPFixedSpringFlowLayout.h"
+#import "DPProportionalSpringFlowLayout.h"
 
-@interface DPDynamicCollectionViewViewController ()
+@interface DPDynamicCollectionViewViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) UICollectionViewFlowLayout *flowLayout;
 
 @end
 
@@ -30,10 +34,13 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    
-    assert([self collectionView]);
     [self.collectionView registerClass:[DPCollectionViewCell class]
             forCellWithReuseIdentifier:[DPCollectionViewCell cellIdentifier]];
+    
+//    self.flowLayout = [[DPFixedSpringFlowLayout alloc] init];
+    self.flowLayout = [[DPProportionalSpringFlowLayout alloc] init];
+  
+    [self.collectionView setCollectionViewLayout:[self flowLayout]];
     
 }
 

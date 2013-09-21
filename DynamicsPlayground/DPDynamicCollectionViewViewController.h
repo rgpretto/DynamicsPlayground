@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DPDynamicCollectionViewViewController : UICollectionViewController
+@interface DPDynamicCollectionViewViewController : UIViewController
 
 @end

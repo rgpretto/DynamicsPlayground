@@ -6,19 +6,29 @@
 //  Copyright (c) 2013 Renzo Pretto. All rights reserved.
 //
 
-#import "DPSpringCollectionViewFlowLayout.h"
+#import "DPFixedSpringFlowLayout.h"
 
-#define PROPORTIONAL_SPRING
-
-@interface DPSpringCollectionViewFlowLayout ()
-
-@property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
-
-
+@interface DPFixedSpringFlowLayout ()
+@property (strong, readwrite, nonatomic) UIDynamicAnimator *dynamicAnimator;
 @end
 
-@implementation DPSpringCollectionViewFlowLayout
 
+@implementation DPFixedSpringFlowLayout
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
+- (CGSize)itemSize {
+    CGSize result = CGSizeZero;
+    result = CGSizeMake(CGRectGetWidth(self.collectionView.frame), 50.0f);
+    return result;
+}
 
 - (void)prepareLayout {
     // create UICollectionViewLayoutAttribute
@@ -69,40 +79,19 @@
     
     // shit layout attribute position by delta
     CGFloat scrollDelta = newBounds.origin.y - scrollView.bounds.origin.y;
-#ifdef PROPORTIONAL_SPRING
-    CGPoint touchLocation = [scrollView.panGestureRecognizer locationInView:scrollView];
-    
-#endif
+
     
     
     for (UIAttachmentBehavior *springBehavior in [self.dynamicAnimator behaviors]) {
         UICollectionViewLayoutAttributes *attribute = nil;
-
-#ifdef PROPORTIONAL_SPRING
-        CGPoint anchorPoint = [springBehavior anchorPoint];
-        CGFloat distanceFromheTouch = fabsf(touchLocation.y - anchorPoint.y);
-        
-        // scale the amount we restist the scroll
-        CGFloat scrollResistance = distanceFromheTouch / 500.0f;
-#endif
         
         attribute = [springBehavior.items firstObject];
         CGPoint center = [attribute center];
         
-#ifdef PROPORTIONAL_SPRING
-        CGFloat scroll = scrollDelta * scrollResistance;
-        if (scroll > 0) {
-            center.y += MIN(scrollDelta, scrollDelta * scrollResistance);
-        } else {
-            center.y += MAX(scrollDelta, scrollDelta * scrollResistance);
-        }
-#else
-        center.y += scrollDelta * scrollResistance;
-#endif
+        center.y += scrollDelta;
+
         attribute.center = center;
         
-        
-
         // notify UIDynamicAnimator
         [self.dynamicAnimator updateItemUsingCurrentState:attribute];
     }
