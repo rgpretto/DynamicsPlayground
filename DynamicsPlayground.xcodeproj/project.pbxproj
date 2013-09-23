@@ -210,12 +210,12 @@
 		2262DD3B17DF2B8B0022D5CA /* Beahviors controllers */ = {
 			isa = PBXGroup;
 			children = (
-				229F7D2B17F0420700CC07BD /* UIDynamicItem protocol */,
 				FDB2306617E9643A007A77D6 /* Gravity */,
 				FDB2306517E96420007A77D6 /* Collision */,
 				FDB2306417E96400007A77D6 /* Attachment */,
 				FDB2306717E9644B007A77D6 /* Snap */,
 				FD42794B17E9774F000127D0 /* Push Behavior */,
+				229F7D2B17F0420700CC07BD /* UIDynamicItem protocol */,
 				FDA8084E17ED7CD800C906BD /* Collection view */,
 			);
 			name = "Beahviors controllers";
