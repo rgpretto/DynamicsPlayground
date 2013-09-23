@@ -281,6 +281,31 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Collection View" id="8tT-ib-bBr" userLabel="Table View Section - Collection View">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="W6U-Ck-7Xc" style="IBUITableViewCellStyleDefault" id="PB4-zL-BIe">
+                                        <rect key="frame" x="0.0" y="939" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PB4-zL-BIe" id="lH6-00-R2j">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="UIDynamicItem" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W6U-Ck-7Xc" userLabel="Label">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="giq-Zz-FGW" kind="push" id="oJ5-Vg-1Uc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="pGg-6v-bdr" id="P41-gY-KXY"/>
@@ -514,6 +539,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVw-Lq-auW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1363" y="713"/>
+        </scene>
+        <!--Dynamic Item View Controller - UIDynamicItem-->
+        <scene sceneID="bVr-GE-wz3">
+            <objects>
+                <viewController id="giq-Zz-FGW" customClass="DPDynamicItemViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BrZ-jH-TRy"/>
+                        <viewControllerLayoutGuide type="bottom" id="p8y-7F-08D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xXc-6T-RA7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="UIDynamicItem" id="NoW-Y8-c8C"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="72q-OD-cx6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1026" y="2082"/>
         </scene>
         <!--Attachment View Controller - Attachment-->
         <scene sceneID="KJE-cH-t2w">
