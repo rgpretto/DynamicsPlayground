@@ -465,7 +465,7 @@
             </objects>
             <point key="canvasLocation" x="1025" y="1372"/>
         </scene>
-        <!--Dynamic Item Protocol View Controller-->
+        <!--Dynamic Item Protocol View Controller - Dynamic Item protocol-->
         <scene sceneID="Sq1-vj-YbF">
             <objects>
                 <viewController id="6vj-4F-roZ" customClass="DPDynamicItemProtocolViewController" sceneMemberID="viewController">
@@ -476,9 +476,28 @@
                     <view key="view" contentMode="scaleToFill" id="eS1-Yd-yAX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Press &quot;start&quot; and look at the log written by &quot;dynamicObject&quot;" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="272" translatesAutoresizingMaskIntoConstraints="NO" id="MQl-qF-mjA">
+                                <rect key="frame" x="24" y="258" width="272" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="MQl-qF-mjA" secondAttribute="centerX" id="2hd-5p-bgE"/>
+                            <constraint firstAttribute="centerY" secondItem="MQl-qF-mjA" secondAttribute="centerY" id="99s-Xt-mot"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="BGT-1l-rJI"/>
+                    <navigationItem key="navigationItem" title="Dynamic Item protocol" id="BGT-1l-rJI">
+                        <barButtonItem key="rightBarButtonItem" title="Start" id="3em-rc-8fr">
+                            <connections>
+                                <action selector="handleStartButton:" destination="6vj-4F-roZ" id="IXs-7t-mMy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSy-PS-7MO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
