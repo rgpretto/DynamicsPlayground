@@ -8,6 +8,10 @@
 
 #import "DPSpringAttachmentViewController.h"
 
+
+#define ATTACHMENT_POINT
+
+
 @interface DPSpringAttachmentViewController () <UIDynamicAnimatorDelegate>
 
 
@@ -15,6 +19,10 @@
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 
 @property (strong, nonatomic) UIDynamicAnimator *animator;
+
+#ifdef ATTACHMENT_POINT
+@property (strong, nonatomic) UIAttachmentBehavior *attachmentBehavior;
+#endif
 
 - (IBAction)handlePanGesture:(UIPanGestureRecognizer *)sender;
 
@@ -38,15 +46,26 @@
 
     UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[[self greenView]]];
     
-
-
-    UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.redView, self.greenView]];
+    UIAttachmentBehavior *attachmentBehavior = nil;
+    UICollisionBehavior *collisionBehavior = nil;
+    
+#ifdef ATTACHMENT_POINT
+    collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView]];
     collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
     
-    UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:[self greenView]
-                                                                           attachedToItem:[self redView]];
+    CGPoint anchorPoint = self.redView.center;
+    attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.greenView attachedToAnchor:anchorPoint];
+    // These parameters set the attachment in spring mode, instead of a rigid connection.
+    [attachmentBehavior setFrequency:1.0];
+    [attachmentBehavior setDamping:0.1];
+#else
+    collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.redView, self.greenView]];
+    collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+    attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:[self greenView]
+                                                     attachedToItem:[self redView]];
     attachmentBehavior.damping = 0.1;
     attachmentBehavior.frequency = 3.0;
+#endif
 
 
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:[self view]];
@@ -54,6 +73,10 @@
     [self.animator addBehavior:collisionBehavior];
     [self.animator addBehavior:gravity];
     [self.animator addBehavior:attachmentBehavior];
+    
+#ifdef ATTACHMENT_POINT
+    self.attachmentBehavior = attachmentBehavior;
+#endif
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,8 +89,12 @@
 - (IBAction)handlePanGesture:(UIPanGestureRecognizer *)gestureRecognizer {
     CGPoint anchorPoint = [gestureRecognizer locationInView:[self view]];
     self.redView.center = anchorPoint;
-    
+
+#ifdef ATTACHMENT_POINT
+    [self.attachmentBehavior setAnchorPoint:anchorPoint];
+#else
     [self.animator updateItemUsingCurrentState:[self redView]];
+#endif
 }
 
 #pragma mark - UIDynamicAnimatorDelegate
