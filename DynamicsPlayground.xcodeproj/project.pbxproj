@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		116AAB7FAF2041CA82B9C9F9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F0641069C04E289FAFB73A /* libPods.a */; };
+		220E9F4B17F0A16900A9C396 /* DPSpringAttachmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220E9F4A17F0A16900A9C396 /* DPSpringAttachmentViewController.m */; };
 		22248C9717DF29D300C7E97E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22248C9617DF29D300C7E97E /* Foundation.framework */; };
 		22248C9917DF29D300C7E97E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22248C9817DF29D300C7E97E /* CoreGraphics.framework */; };
 		22248C9B17DF29D300C7E97E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22248C9A17DF29D300C7E97E /* UIKit.framework */; };
@@ -52,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		18F0641069C04E289FAFB73A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		220E9F4917F0A16900A9C396 /* DPSpringAttachmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPSpringAttachmentViewController.h; sourceTree = "<group>"; };
+		220E9F4A17F0A16900A9C396 /* DPSpringAttachmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPSpringAttachmentViewController.m; sourceTree = "<group>"; };
 		22248C9317DF29D300C7E97E /* DynamicsPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicsPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22248C9617DF29D300C7E97E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22248C9817DF29D300C7E97E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -290,6 +293,8 @@
 			children = (
 				FD04D99417E6D72D00563710 /* DPAttachmentOffsetViewController.h */,
 				FD04D99517E6D72D00563710 /* DPAttachmentOffsetViewController.m */,
+				220E9F4917F0A16900A9C396 /* DPSpringAttachmentViewController.h */,
+				220E9F4A17F0A16900A9C396 /* DPSpringAttachmentViewController.m */,
 				22B77EBF17E21FF6001262D6 /* DPAttachmentViewController.h */,
 				22B77EC017E21FF6001262D6 /* DPAttachmentViewController.m */,
 			);
@@ -461,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				229F7D3117F043ED00CC07BD /* DPDynamicObject.m in Sources */,
+				220E9F4B17F0A16900A9C396 /* DPSpringAttachmentViewController.m in Sources */,
 				225C58C617E1EB93008B9756 /* DPGravityCollisionBehavior.m in Sources */,
 				2262DD3E17DF2BA60022D5CA /* DPGravityViewController.m in Sources */,
 				FDA8085117ED7D9900C906BD /* DPDynamicCollectionViewViewController.m in Sources */,
