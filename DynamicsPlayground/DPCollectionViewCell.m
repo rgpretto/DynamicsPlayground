@@ -8,6 +8,8 @@
 
 #import "DPCollectionViewCell.h"
 
+#import "UIColor+iOS7Colors.h"
+
 @implementation DPCollectionViewCell
 
 + (NSString *)cellIdentifier {
@@ -21,7 +23,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor iOS7orangeColor];
     }
     return self;
 }
