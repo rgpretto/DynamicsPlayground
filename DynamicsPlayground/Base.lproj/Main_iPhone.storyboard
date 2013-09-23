@@ -391,7 +391,7 @@
             </objects>
             <point key="canvasLocation" x="1024" y="713"/>
         </scene>
-        <!--Dynamic Collection View View Controller-->
+        <!--Dynamic Collection View View Controller - Collection View-->
         <scene sceneID="VdJ-gE-ZxR">
             <objects>
                 <viewController id="B8s-RR-rrs" customClass="DPDynamicCollectionViewViewController" sceneMemberID="viewController">
@@ -431,7 +431,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2h0-HQ-MWW"/>
+                    <navigationItem key="navigationItem" title="Collection View" id="2h0-HQ-MWW"/>
                     <connections>
                         <outlet property="collectionView" destination="NUS-ZV-WFn" id="6lw-XG-m7q"/>
                     </connections>
