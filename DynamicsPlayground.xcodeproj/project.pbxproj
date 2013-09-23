@@ -26,6 +26,7 @@
 		2262DD3E17DF2BA60022D5CA /* DPGravityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2262DD3D17DF2BA60022D5CA /* DPGravityViewController.m */; };
 		226B1EC317DF71BD00CF717D /* DPAnimatorStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226B1EC217DF71BD00CF717D /* DPAnimatorStatusView.m */; };
 		229F7D2E17F0421B00CC07BD /* DPDynamicItemProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229F7D2D17F0421B00CC07BD /* DPDynamicItemProtocolViewController.m */; };
+		229F7D3117F043ED00CC07BD /* DPDynamicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 229F7D3017F043ED00CC07BD /* DPDynamicObject.m */; };
 		22B77EC217E22D20001262D6 /* DPAttachmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B77EC017E21FF6001262D6 /* DPAttachmentViewController.m */; };
 		22E6007E17E0DCE8009D493F /* DPGravityCollisionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E6007D17E0DCE8009D493F /* DPGravityCollisionViewController.m */; };
 		FD04D99617E6D72D00563710 /* DPAttachmentOffsetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD04D99517E6D72D00563710 /* DPAttachmentOffsetViewController.m */; };
@@ -78,6 +79,8 @@
 		226B1EC217DF71BD00CF717D /* DPAnimatorStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPAnimatorStatusView.m; sourceTree = "<group>"; };
 		229F7D2C17F0421B00CC07BD /* DPDynamicItemProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDynamicItemProtocolViewController.h; sourceTree = "<group>"; };
 		229F7D2D17F0421B00CC07BD /* DPDynamicItemProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDynamicItemProtocolViewController.m; sourceTree = "<group>"; };
+		229F7D2F17F043ED00CC07BD /* DPDynamicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDynamicObject.h; sourceTree = "<group>"; };
+		229F7D3017F043ED00CC07BD /* DPDynamicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDynamicObject.m; sourceTree = "<group>"; };
 		22B77EBF17E21FF6001262D6 /* DPAttachmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPAttachmentViewController.h; sourceTree = "<group>"; };
 		22B77EC017E21FF6001262D6 /* DPAttachmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPAttachmentViewController.m; sourceTree = "<group>"; };
 		22E6007C17E0DCE8009D493F /* DPGravityCollisionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPGravityCollisionViewController.h; sourceTree = "<group>"; };
@@ -242,6 +245,8 @@
 			children = (
 				229F7D2C17F0421B00CC07BD /* DPDynamicItemProtocolViewController.h */,
 				229F7D2D17F0421B00CC07BD /* DPDynamicItemProtocolViewController.m */,
+				229F7D2F17F043ED00CC07BD /* DPDynamicObject.h */,
+				229F7D3017F043ED00CC07BD /* DPDynamicObject.m */,
 			);
 			name = "UIDynamicItem protocol";
 			sourceTree = "<group>";
@@ -455,6 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				229F7D3117F043ED00CC07BD /* DPDynamicObject.m in Sources */,
 				225C58C617E1EB93008B9756 /* DPGravityCollisionBehavior.m in Sources */,
 				2262DD3E17DF2BA60022D5CA /* DPGravityViewController.m in Sources */,
 				FDA8085117ED7D9900C906BD /* DPDynamicCollectionViewViewController.m in Sources */,
