@@ -10,9 +10,13 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+static NSString * const kRedViewBoudaryIdentifier = @"kRedViewBoudaryIdentifier";
+
 @interface DPDynamicItemViewController () <UIDynamicAnimatorDelegate>
 
 @property (strong, nonatomic) UIDynamicAnimator *animator;
+
+@property (strong, nonatomic) UICollisionBehavior *collisionBehavior;
 
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 @property (weak, nonatomic) IBOutlet UIView *redView;
@@ -43,8 +47,12 @@
      We will only change the restitution parameter for one of these views.
      */
     UIGravityBehavior* gravityBeahvior = [[UIGravityBehavior alloc] initWithItems:@[self.greenView, self.redView]];
-    UICollisionBehavior* collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView, self.redView]];
-    collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+    self.collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView, self.redView]];
+    self.collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+    
+//    UIBezierPath *path = [self bezierPathForViewPerimeter:self.redView];
+//    [self.collisionBehavior addBoundaryWithIdentifier:kRedViewBoudaryIdentifier
+//                                              forPath:path];
     
     /*
      A dynamic item behavior gives access to low-level properties of an item in
@@ -55,12 +63,14 @@
     propertiesBehavior.elasticity = 0.5;
     [propertiesBehavior addAngularVelocity:22.0 forItem:self.redView];
     
+    
+    
 //    self.redView.layer.cornerRadius = CGRectGetWidth(self.redView.frame) / 2.0f;
 //    self.redView.layer.masksToBounds = YES;
     
     [self.animator addBehavior:propertiesBehavior];
     [self.animator addBehavior:gravityBeahvior];
-    [self.animator addBehavior:collisionBehavior];
+    [self.animator addBehavior:self.collisionBehavior];
     
 }
 
@@ -68,6 +78,18 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Utility method
+
+- (UIBezierPath *)bezierPathForViewPerimeter:(UIView *)inView {
+    UIBezierPath *result = nil;
+    // + (UIBezierPath *)bezierPathWithOvalInRect:(CGRect)rect
+    CGFloat cornerRadius = inView.layer.cornerRadius;
+    result = [UIBezierPath bezierPathWithRoundedRect:[inView frame]
+                                        cornerRadius:cornerRadius];
+    
+    return result;
 }
 
 #pragma mark - UIDynamicAnimatorDelegate
