@@ -803,7 +803,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gQc-zS-Hky" userLabel="Red View">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gQc-zS-Hky" userLabel="Red View">
                                 <rect key="frame" x="149" y="212" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -828,9 +828,6 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="tse-ry-oAX" firstAttribute="centerX" secondItem="gQc-zS-Hky" secondAttribute="centerX" id="mcd-NC-2PW"/>
-                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="9Un-Ps-Wck" appends="YES" id="GOr-OO-XTb"/>
                         </connections>
@@ -851,7 +848,7 @@
             </objects>
             <point key="canvasLocation" x="1867" y="-667"/>
         </scene>
-        <!--Dynamic Item View Controller - Snap-->
+        <!--Dynamic Item View Controller - Dynamic item-->
         <scene sceneID="BAa-f4-HAL">
             <objects>
                 <viewController id="w9F-23-XEn" customClass="DPDynamicItemViewController" sceneMemberID="viewController">
@@ -877,9 +874,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                     </view>
-                    <navigationItem key="navigationItem" title="Snap" id="Wn4-tb-ADi"/>
+                    <navigationItem key="navigationItem" title="Dynamic item" id="Wn4-tb-ADi"/>
                     <connections>
-                        <outlet property="greenView" destination="SkT-Em-bMB" id="Kv0-dR-fGv"/>
+                        <outlet property="greenView" destination="SkT-Em-bMB" id="fd3-k6-VaC"/>
+                        <outlet property="redView" destination="J9g-za-avo" id="Bcw-u0-6uW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PLM-3T-GUB" userLabel="First Responder" sceneMemberID="firstResponder"/>

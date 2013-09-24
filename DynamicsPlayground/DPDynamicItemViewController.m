@@ -8,7 +8,12 @@
 
 #import "DPDynamicItemViewController.h"
 
-@interface DPDynamicItemViewController ()
+@interface DPDynamicItemViewController () <UIDynamicAnimatorDelegate>
+
+@property (strong, nonatomic) UIDynamicAnimator *animator;
+
+@property (weak, nonatomic) IBOutlet UIView *greenView;
+@property (weak, nonatomic) IBOutlet UIView *redView;
 
 @end
 
@@ -27,6 +32,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    self.animator.delegate = self;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,5 +43,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - UIDynamicAnimatorDelegate
+
+- (void)dynamicAnimatorWillResume:(UIDynamicAnimator*)animator {
+    NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+    
+}
+
+- (void)dynamicAnimatorDidPause:(UIDynamicAnimator*)animator {
+    NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+    
+}
+
 
 @end
