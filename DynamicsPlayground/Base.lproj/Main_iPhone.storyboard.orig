@@ -302,6 +302,18 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+<<<<<<< HEAD
+                            <tableViewSection headerTitle="Collection View" id="8tT-ib-bBr" userLabel="Table View Section - Collection View">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="W6U-Ck-7Xc" style="IBUITableViewCellStyleDefault" id="PB4-zL-BIe">
+                                        <rect key="frame" x="0.0" y="939" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PB4-zL-BIe" id="lH6-00-R2j">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="UIDynamicItem" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W6U-Ck-7Xc" userLabel="Label">
+=======
                             <tableViewSection headerTitle="Dynamic Item protocol" id="nat-A5-Srk" userLabel="Table View Section - Collection View">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="WiK-aN-ija" style="IBUITableViewCellStyleDefault" id="KAw-Qa-kW9">
@@ -312,6 +324,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Dynamic Item protocol" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WiK-aN-ija" userLabel="Label">
+>>>>>>> e10cf9d69d278f8b72662788b26b7053fdc69aa2
                                                     <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -322,7 +335,11 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
+<<<<<<< HEAD
+                                            <segue destination="giq-Zz-FGW" kind="push" id="oJ5-Vg-1Uc"/>
+=======
                                             <segue destination="6vj-4F-roZ" kind="push" id="Hg9-Sz-2bH"/>
+>>>>>>> e10cf9d69d278f8b72662788b26b7053fdc69aa2
                                         </connections>
                                     </tableViewCell>
                                 </cells>
