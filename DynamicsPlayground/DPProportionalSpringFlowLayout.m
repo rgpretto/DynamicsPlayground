@@ -28,13 +28,13 @@
 	// shit layout attribute position by delta
 	CGFloat scrollDelta = newBounds.origin.y - scrollView.bounds.origin.y;
     
-	// 1 get current touch location
+	//  -1- get current touch location
 	CGPoint touchLocation = [scrollView.panGestureRecognizer locationInView:scrollView];
     
 	for (UIAttachmentBehavior *springBehavior in[self.dynamicAnimator behaviors]) {
 		UICollectionViewLayoutAttributes *attribute = nil;
         
-		// scale the amount we restist the scroll
+		// -2- scale the amount we restist the scroll
 		CGPoint anchorPoint = [springBehavior anchorPoint];
 		CGFloat distanceFromheTouch = fabsf(touchLocation.y - anchorPoint.y);
 		CGFloat scrollResistance = distanceFromheTouch / 500.0f;
@@ -42,7 +42,7 @@
 		attribute = [springBehavior.items firstObject];
 		CGPoint center = [attribute center];
         
-		// set the spring stretch
+		// -3- set the spring stretch
 		CGFloat scroll = scrollDelta * scrollResistance;
 		if (scroll > 0) {
 			center.y += MIN(scrollDelta, scrollDelta * scrollResistance);
