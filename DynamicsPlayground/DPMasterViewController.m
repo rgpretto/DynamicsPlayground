@@ -15,36 +15,27 @@
 
 @implementation DPMasterViewController
 
-- (void)awakeFromNib
-{   
-
-    [super awakeFromNib];
+- (void)awakeFromNib {
+	[super awakeFromNib];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+- (void)viewDidLoad {
+	[super viewDidLoad];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
+- (void)didReceiveMemoryWarning {
+	[super didReceiveMemoryWarning];
 }
-
 
 #pragma mark - Table View
 
 
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 }
 
 @end

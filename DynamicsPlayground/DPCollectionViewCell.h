@@ -10,6 +10,8 @@
 
 @interface DPCollectionViewCell : UICollectionViewCell
 
+@property (strong, nonatomic) UILabel *textLabel;
+
 + (NSString *)cellIdentifier;
 
 @end

@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+/*!
+ *
+ * This object conforom to UIDynamicItem protocol and log
+ * property changes when UIDynamicAnimator acnt on it.
+ *
+ */
 @interface DPDynamicObject : NSObject <UIDynamicItem>
 
 @property (nonatomic, readwrite) CGPoint center;

@@ -11,31 +11,24 @@
 @implementation DPDynamicObject
 
 
--(CGRect)bounds {
-    
-    return CGRectMake(0.0, 0.0, 100.0, 100.0);
+- (CGRect)bounds {
+	return CGRectMake(0.0, 0.0, 100.0, 100.0);
 }
 
--(CGPoint)center {
-    
-    return CGPointMake(50.0, 50.0);
+- (CGPoint)center {
+	return CGPointMake(50.0, 50.0);
 }
 
--(CGAffineTransform)transform {
-    
-    return CGAffineTransformIdentity;
+- (CGAffineTransform)transform {
+	return CGAffineTransformIdentity;
 }
 
 - (void)setCenter:(CGPoint)inCenter {
-    
-    NSLog(@"Center = %@", NSStringFromCGPoint(inCenter));
-
+	NSLog(@"Center = %@", NSStringFromCGPoint(inCenter));
 }
 
--(void)transform:(CGAffineTransform)inAffineTranform {
-    
-    NSLog(@"Transform = %@", NSStringFromCGAffineTransform(inAffineTranform));
-
+- (void)transform:(CGAffineTransform)inAffineTranform {
+	NSLog(@"Transform = %@", NSStringFromCGAffineTransform(inAffineTranform));
 }
 
 @end

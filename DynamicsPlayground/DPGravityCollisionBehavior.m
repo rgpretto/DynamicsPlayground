@@ -12,18 +12,17 @@
 @implementation DPGravityCollisionBehavior
 
 - (instancetype)initWithItems:(NSArray *)items {
-    self = [super init];
+	self = [super init];
     
-    if (self) {
+	if (self) {
+		UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:items];
+		UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:items];
+		collision.translatesReferenceBoundsIntoBoundary = YES;
         
-        UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:items];
-        UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:items];
-        collision.translatesReferenceBoundsIntoBoundary = YES;
-        
-        [self addChildBehavior:gravity];
-        [self addChildBehavior:collision];
-    }
-    return self;
+		[self addChildBehavior:gravity];
+		[self addChildBehavior:collision];
+	}
+	return self;
 }
 
 @end
