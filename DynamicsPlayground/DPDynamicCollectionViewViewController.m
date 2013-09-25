@@ -12,9 +12,13 @@
 #import "DPFixedSpringFlowLayout.h"
 #import "DPProportionalSpringFlowLayout.h"
 
+const NSInteger kCellCount = 20;
+
 @interface DPDynamicCollectionViewViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) UICollectionViewFlowLayout *flowLayout;
+
+@property (strong, nonatomic) NSMutableArray *colors;
 
 @end
 
@@ -23,14 +27,25 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	if (self) {
-		// Custom initialization
+
 	}
 	return self;
 }
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    srand48(time(0));
+    
+    self.colors = [NSMutableArray array];
+    for (NSInteger i = 0; i < kCellCount; ++i) {
+        UIColor *color = [UIColor colorWithRed:drand48()
+                                           green:drand48()
+                                            blue:drand48()
+                                           alpha:1.0f];
+        [self.colors addObject:color];
+    
+    }
     
 	[self.collectionView registerClass:[DPCollectionViewCell class]
 	        forCellWithReuseIdentifier:[DPCollectionViewCell cellIdentifier]];
@@ -51,23 +66,29 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section {
 	NSInteger result = NO;
-	result = 20;
+	result = kCellCount;
 	return result;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-	UICollectionViewCell *cell = nil;
-	cell = [collectionView dequeueReusableCellWithReuseIdentifier:[DPCollectionViewCell cellIdentifier]
-	                                                 forIndexPath:indexPath];
-    
+	DPCollectionViewCell *cell = nil;
+	cell = (DPCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:[DPCollectionViewCell cellIdentifier]
+                                                                             forIndexPath:indexPath];
 	[self configureCell:cell forItemAtIndexPath:indexPath];
     
 	return cell;
 }
 
-- (void) configureCell:(UICollectionViewCell *)cell
+- (void) configureCell:(DPCollectionViewCell *)cell
     forItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([self.colors count] > 0) {
+        UIColor *currColor = self.colors[indexPath.row];
+        cell.backgroundColor = currColor;
+        
+        cell.textLabel.text = [[NSNumber numberWithInteger:indexPath.row] stringValue];
+    }
 }
 
 @end

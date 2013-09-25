@@ -22,8 +22,14 @@
 	if (self) {
 		// Initialization code
 		self.backgroundColor = [UIColor iOS7orangeColor];
+        
+        self.textLabel = [[UILabel alloc] initWithFrame:self.bounds];
+        self.textLabel.textAlignment = NSTextAlignmentCenter;
+        [self addSubview:self.textLabel];
 	}
 	return self;
 }
+
+
 
 @end
