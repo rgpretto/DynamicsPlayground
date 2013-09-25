@@ -12,11 +12,12 @@
 
 static NSString * const kRedViewBoudaryIdentifier = @"kRedViewBoudaryIdentifier";
 
-@interface DPDynamicItemViewController () <UIDynamicAnimatorDelegate>
+@interface DPDynamicItemViewController () <UIDynamicAnimatorDelegate, UICollisionBehaviorDelegate>
 
 @property (strong, nonatomic) UIDynamicAnimator *animator;
 
 @property (strong, nonatomic) UICollisionBehavior *collisionBehavior;
+
 
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 @property (weak, nonatomic) IBOutlet UIView *redView;
@@ -49,10 +50,12 @@ static NSString * const kRedViewBoudaryIdentifier = @"kRedViewBoudaryIdentifier"
     UIGravityBehavior* gravityBeahvior = [[UIGravityBehavior alloc] initWithItems:@[self.greenView, self.redView]];
     self.collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView, self.redView]];
     self.collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
-    
-//    UIBezierPath *path = [self bezierPathForViewPerimeter:self.redView];
-//    [self.collisionBehavior addBoundaryWithIdentifier:kRedViewBoudaryIdentifier
-//                                              forPath:path];
+    self.collisionBehavior.collisionDelegate = self;
+
+//     make circle view
+//    self.redView.layer.cornerRadius = CGRectGetHeight([self.redView frame]) / 2.0f;
+//    self.redView.layer.masksToBounds = YES;
+//    self.redView.clipsToBounds = YES;
     
     /*
      A dynamic item behavior gives access to low-level properties of an item in
@@ -62,11 +65,9 @@ static NSString * const kRedViewBoudaryIdentifier = @"kRedViewBoudaryIdentifier"
     UIDynamicItemBehavior* propertiesBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.redView]];
     propertiesBehavior.elasticity = 0.5;
     [propertiesBehavior addAngularVelocity:22.0 forItem:self.redView];
-    
-    
-    
-//    self.redView.layer.cornerRadius = CGRectGetWidth(self.redView.frame) / 2.0f;
-//    self.redView.layer.masksToBounds = YES;
+    propertiesBehavior.action = ^{
+        // do something
+    };
     
     [self.animator addBehavior:propertiesBehavior];
     [self.animator addBehavior:gravityBeahvior];
@@ -86,6 +87,7 @@ static NSString * const kRedViewBoudaryIdentifier = @"kRedViewBoudaryIdentifier"
     UIBezierPath *result = nil;
     // + (UIBezierPath *)bezierPathWithOvalInRect:(CGRect)rect
     CGFloat cornerRadius = inView.layer.cornerRadius;
+//    CGRect frame = CGRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     result = [UIBezierPath bezierPathWithRoundedRect:[inView frame]
                                         cornerRadius:cornerRadius];
     
@@ -104,5 +106,35 @@ static NSString * const kRedViewBoudaryIdentifier = @"kRedViewBoudaryIdentifier"
     
 }
 
+#pragma mark - UICollisionBehaviorDelegate
+
+- (void)collisionBehavior:(UICollisionBehavior*)behavior
+      beganContactForItem:(id <UIDynamicItem>)item1
+                 withItem:(id <UIDynamicItem>)item2
+                  atPoint:(CGPoint)p {
+    
+}
+
+- (void)collisionBehavior:(UICollisionBehavior*)behavior
+      endedContactForItem:(id <UIDynamicItem>)item1
+                 withItem:(id <UIDynamicItem>)item2 {
+    
+}
+
+// The identifier of a boundary created with translatesReferenceBoundsIntoBoundary
+// or setTranslatesReferenceBoundsIntoBoundaryWithInsets is nil
+- (void)collisionBehavior:(UICollisionBehavior*)behavior
+      beganContactForItem:(id <UIDynamicItem>)item
+   withBoundaryIdentifier:(id <NSCopying>)identifier
+                  atPoint:(CGPoint)p {
+    NSLog(@"Start contact with boundary %@", identifier);
+}
+
+- (void)collisionBehavior:(UICollisionBehavior*)behavior
+      endedContactForItem:(id <UIDynamicItem>)item
+   withBoundaryIdentifier:(id <NSCopying>)identifier {
+    
+    NSLog(@"End contact with boundary %@", identifier);
+}
 
 @end
