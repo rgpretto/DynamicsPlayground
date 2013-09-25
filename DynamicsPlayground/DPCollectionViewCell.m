@@ -13,19 +13,17 @@
 @implementation DPCollectionViewCell
 
 + (NSString *)cellIdentifier {
-    static NSString *cellIdentifier = @"kCellIdentifier";
-    return cellIdentifier;
+	static NSString *cellIdentifier = @"kCellIdentifier";
+	return cellIdentifier;
 }
-    
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-        self.backgroundColor = [UIColor iOS7orangeColor];
-    }
-    return self;
+- (id)initWithFrame:(CGRect)frame {
+	self = [super initWithFrame:frame];
+	if (self) {
+		// Initialization code
+		self.backgroundColor = [UIColor iOS7orangeColor];
+	}
+	return self;
 }
 
 @end

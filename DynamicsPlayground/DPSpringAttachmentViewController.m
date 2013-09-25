@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIView *redView;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 
-@property (strong, nonatomic) UIDynamicAnimator *animator;
+@property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
 
 #ifdef ATTACHMENT_POINT
 @property (strong, nonatomic) UIAttachmentBehavior *attachmentBehavior;
@@ -31,87 +31,77 @@
 
 @implementation DPSpringAttachmentViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	if (self) {
+		// Custom initialization
+	}
+	return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[[self greenView]]];
+- (void)viewDidLoad {
+	[super viewDidLoad];
     
-    UIAttachmentBehavior *attachmentBehavior = nil;
-    UICollisionBehavior *collisionBehavior = nil;
+	UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[self.greenView]];
+    
+	UIAttachmentBehavior *attachmentBehavior = nil;
+	UICollisionBehavior *collisionBehavior = nil;
     
 #ifdef ATTACHMENT_POINT
-    collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView]];
-    collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+	collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView]];
+	collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
     
-    CGPoint anchorPoint = self.redView.center;
-    attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.greenView attachedToAnchor:anchorPoint];
-    // These parameters set the attachment in spring mode, instead of a rigid connection.
-    [attachmentBehavior setFrequency:1.0];
-    [attachmentBehavior setDamping:0.1];
+	CGPoint anchorPoint = self.redView.center;
+	attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.greenView
+                                                   attachedToAnchor:anchorPoint];
+	// These parameters set the attachment in spring mode, instead of a rigid connection.
+	[attachmentBehavior setFrequency:1.0];
+	[attachmentBehavior setDamping:0.1];
 #else
-    collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.redView, self.greenView]];
-    collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
-    attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:[self greenView]
-                                                     attachedToItem:[self redView]];
-    attachmentBehavior.damping = 0.1;
-    attachmentBehavior.frequency = 3.0;
+	collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.redView, self.greenView]];
+	collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+	attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.greenView
+	                                                 attachedToItem:self.redView];
+	attachmentBehavior.damping = 0.1;
+	attachmentBehavior.frequency = 3.0;
 #endif
-
-
-    self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:[self view]];
-    self.animator.delegate = self;
-    [self.animator addBehavior:collisionBehavior];
-    [self.animator addBehavior:gravity];
-    [self.animator addBehavior:attachmentBehavior];
+    
+    
+	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+	self.dynamicAnimator.delegate = self;
+	[self.dynamicAnimator addBehavior:collisionBehavior];
+	[self.dynamicAnimator addBehavior:gravity];
+	[self.dynamicAnimator addBehavior:attachmentBehavior];
     
 #ifdef ATTACHMENT_POINT
-    self.attachmentBehavior = attachmentBehavior;
+	self.attachmentBehavior = attachmentBehavior;
 #endif
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)didReceiveMemoryWarning {
+	[super didReceiveMemoryWarning];
+	// Dispose of any resources that can be recreated.
 }
-
 
 - (IBAction)handlePanGesture:(UIPanGestureRecognizer *)gestureRecognizer {
-    CGPoint anchorPoint = [gestureRecognizer locationInView:[self view]];
-    self.redView.center = anchorPoint;
-
+	CGPoint anchorPoint = [gestureRecognizer locationInView:self.view];
+	self.redView.center = anchorPoint;
+    
 #ifdef ATTACHMENT_POINT
-    [self.attachmentBehavior setAnchorPoint:anchorPoint];
+	[self.attachmentBehavior setAnchorPoint:anchorPoint];
 #else
-    [self.animator updateItemUsingCurrentState:[self redView]];
+	[self.animator updateItemUsingCurrentState:self.redView];
 #endif
 }
 
 #pragma mark - UIDynamicAnimatorDelegate
 
-- (void)dynamicAnimatorWillResume:(UIDynamicAnimator*)animator {
-    NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
-    
+- (void)dynamicAnimatorWillResume:(UIDynamicAnimator *)animator {
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
 
-- (void)dynamicAnimatorDidPause:(UIDynamicAnimator*)animator {
-    NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
-    
+- (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
-
-
-
-
-
 
 @end
