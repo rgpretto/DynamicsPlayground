@@ -10,7 +10,7 @@
 
 @interface DPPushViewController () <UIDynamicAnimatorDelegate>
 
-@property (strong, nonatomic) UIDynamicAnimator *animator;
+@property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
 
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 @property (weak, nonatomic) IBOutlet UIView *redView;
@@ -33,15 +33,15 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
     
-	self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-	self.animator.delegate = self;
+	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+	self.dynamicAnimator.delegate = self;
 }
 
 #pragma mark - Actions
 
 
 - (IBAction)handleStartButton:(id)sender {
-	if (NO == [self.animator isRunning]) {
+	if (NO == [self.dynamicAnimator isRunning]) {
 		UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView, self.redView]];
 		collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
         
@@ -50,19 +50,19 @@
 		                                                                 mode:UIPushBehaviorModeContinuous];
 		continousPush.pushDirection = pushVector;
         
-		[self.animator addBehavior:collisionBehavior];
-		[self.animator addBehavior:continousPush];
+		[self.dynamicAnimator addBehavior:collisionBehavior];
+		[self.dynamicAnimator addBehavior:continousPush];
 	}
 }
 
 #pragma mark - UIDynamicAnimatorDelegate
 
 - (void)dynamicAnimatorWillResume:(UIDynamicAnimator *)animator {
-	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
 
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
-	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
 
 @end

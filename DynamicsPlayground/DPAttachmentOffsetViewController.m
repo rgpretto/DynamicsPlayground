@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *redView;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
-@property (strong, nonatomic) UIDynamicAnimator *animator;
+@property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
 @property (strong, nonatomic) UIAttachmentBehavior *attachmentBehavior;
 
 - (IBAction)handlePanGesture:(UIPanGestureRecognizer *)sender;
@@ -35,8 +35,8 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-	self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-	self.animator.delegate = self;
+	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+	self.dynamicAnimator.delegate = self;
     
 	UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[self.greenView]];
 	collision.translatesReferenceBoundsIntoBoundary = YES;
@@ -53,7 +53,7 @@
 	                                                    offsetFromCenter:UIOffsetZero];
     
     //    [self.animator addBehavior:collision];
-	[self.animator addBehavior:self.attachmentBehavior];
+	[self.dynamicAnimator addBehavior:self.attachmentBehavior];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,7 +66,7 @@
     
 	self.redView.center = anchorPoint;
     
-	[self.animator updateItemUsingCurrentState:[self redView]];
+	[self.dynamicAnimator updateItemUsingCurrentState:[self redView]];
     
 	NSLog(@"Attachment length = %.1f", [self.attachmentBehavior length]);
 }
@@ -74,11 +74,11 @@
 #pragma mark - UIDynamicAnimatorDelegate
 
 - (void)dynamicAnimatorWillResume:(UIDynamicAnimator *)animator {
-	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
 
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
-	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
 
 @end

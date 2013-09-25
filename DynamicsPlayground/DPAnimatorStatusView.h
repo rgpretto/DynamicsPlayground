@@ -10,6 +10,6 @@
 
 @interface DPAnimatorStatusView : UIView
 
-@property (nonatomic, strong) UIDynamicAnimator *animator;
+@property (nonatomic, strong) UIDynamicAnimator *dynamicAnimator;
 
 @end

@@ -14,7 +14,7 @@ static NSString *const kRedViewBoudaryIdentifier = @"kRedViewBoudaryIdentifier";
 
 @interface DPDynamicItemViewController () <UIDynamicAnimatorDelegate, UICollisionBehaviorDelegate>
 
-@property (strong, nonatomic) UIDynamicAnimator *animator;
+@property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
 
 @property (strong, nonatomic) UICollisionBehavior *collisionBehavior;
 
@@ -37,8 +37,8 @@ static NSString *const kRedViewBoudaryIdentifier = @"kRedViewBoudaryIdentifier";
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view.
-	self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-	self.animator.delegate = self;
+	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+	self.dynamicAnimator.delegate = self;
     
 	/*
      We want to show collisions between views and boundaries with different elasticities,
@@ -67,9 +67,9 @@ static NSString *const kRedViewBoudaryIdentifier = @"kRedViewBoudaryIdentifier";
 		// do something
 	};
     
-	[self.animator addBehavior:propertiesBehavior];
-	[self.animator addBehavior:gravityBeahvior];
-	[self.animator addBehavior:self.collisionBehavior];
+	[self.dynamicAnimator addBehavior:propertiesBehavior];
+	[self.dynamicAnimator addBehavior:gravityBeahvior];
+	[self.dynamicAnimator addBehavior:self.collisionBehavior];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -93,11 +93,11 @@ static NSString *const kRedViewBoudaryIdentifier = @"kRedViewBoudaryIdentifier";
 #pragma mark - UIDynamicAnimatorDelegate
 
 - (void)dynamicAnimatorWillResume:(UIDynamicAnimator *)animator {
-	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
 
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
-	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
 
 #pragma mark - UICollisionBehaviorDelegate

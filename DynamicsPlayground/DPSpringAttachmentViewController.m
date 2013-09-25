@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIView *redView;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 
-@property (strong, nonatomic) UIDynamicAnimator *animator;
+@property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
 
 #ifdef ATTACHMENT_POINT
 @property (strong, nonatomic) UIAttachmentBehavior *attachmentBehavior;
@@ -66,11 +66,11 @@
 #endif
     
     
-	self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:[self view]];
-	self.animator.delegate = self;
-	[self.animator addBehavior:collisionBehavior];
-	[self.animator addBehavior:gravity];
-	[self.animator addBehavior:attachmentBehavior];
+	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:[self view]];
+	self.dynamicAnimator.delegate = self;
+	[self.dynamicAnimator addBehavior:collisionBehavior];
+	[self.dynamicAnimator addBehavior:gravity];
+	[self.dynamicAnimator addBehavior:attachmentBehavior];
     
 #ifdef ATTACHMENT_POINT
 	self.attachmentBehavior = attachmentBehavior;
@@ -96,11 +96,11 @@
 #pragma mark - UIDynamicAnimatorDelegate
 
 - (void)dynamicAnimatorWillResume:(UIDynamicAnimator *)animator {
-	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
 
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
-	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
 
 @end

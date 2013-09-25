@@ -12,7 +12,7 @@
 
 @interface DPGravityViewController () <UIDynamicAnimatorDelegate>
 
-@property (strong, nonatomic) UIDynamicAnimator *animator;
+@property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 
 @end
@@ -34,11 +34,11 @@
 	self.view.layer.borderWidth = 2.0f;
     
 	// keep in mind the "Autolayout" Constraints for greenView
-	self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:[self view]];
-	self.animator.delegate = self;
+	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:[self view]];
+	self.dynamicAnimator.delegate = self;
     
 	UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:@[[self greenView]]];
-	[self.animator addBehavior:gravityBehavior];
+	[self.dynamicAnimator addBehavior:gravityBehavior];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,11 +49,11 @@
 #pragma mark - UIDynamicAnimatorDelegate
 
 - (void)dynamicAnimatorWillResume:(UIDynamicAnimator *)animator {
-	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
 
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
-	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
 
 @end

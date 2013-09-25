@@ -10,7 +10,7 @@
 
 @interface DPPushComparisonViewController () <UIDynamicAnimatorDelegate>
 
-@property (strong, nonatomic) UIDynamicAnimator *animator;
+@property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
 
 @property (weak, nonatomic) IBOutlet UIView *blackView;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
@@ -36,15 +36,15 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-	self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-	self.animator.delegate = self;
+	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+	self.dynamicAnimator.delegate = self;
 }
 
 #pragma mark - Actions
 
 
 - (IBAction)handlePushButton:(id)sender {
-	if (NO == [self.animator isRunning]) {
+	if (NO == [self.dynamicAnimator isRunning]) {
 		UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView, self.redView, self.blackView]];
 		collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
         
@@ -60,21 +60,21 @@
 		                                                                    mode:UIPushBehaviorModeInstantaneous];
 		istantaneousPush.pushDirection = pushVector;
         
-		[self.animator addBehavior:gravity];
-		[self.animator addBehavior:collisionBehavior];
-		[self.animator addBehavior:continousPush];
-		[self.animator addBehavior:istantaneousPush];
+		[self.dynamicAnimator addBehavior:gravity];
+		[self.dynamicAnimator addBehavior:collisionBehavior];
+		[self.dynamicAnimator addBehavior:continousPush];
+		[self.dynamicAnimator addBehavior:istantaneousPush];
 	}
 }
 
 #pragma mark - UIDynamicAnimatorDelegate
 
 - (void)dynamicAnimatorWillResume:(UIDynamicAnimator *)animator {
-	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
 
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
-	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
 
 @end

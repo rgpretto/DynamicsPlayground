@@ -13,7 +13,7 @@
 
 @interface DPGravityComparisonViewController () <UIDynamicAnimatorDelegate, UICollisionBehaviorDelegate>
 
-@property (strong, nonatomic) UIDynamicAnimator *animator;
+@property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 @property (weak, nonatomic) IBOutlet UIView *redView;
 
@@ -36,8 +36,8 @@
 	self.view.layer.borderWidth = 2.0f;
     
 	// keep in mind the "Autolayout" Constraints for greenView
-	self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:[self view]];
-	self.animator.delegate = self;
+	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:[self view]];
+	self.dynamicAnimator.delegate = self;
     
 	NSArray *items = @[self.greenView, self.redView];
     
@@ -48,8 +48,8 @@
 	UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:items];
 	collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
 	collisionBehavior.collisionDelegate = self;
-	[self.animator addBehavior:gravityBehavior];
-	[self.animator addBehavior:collisionBehavior];
+	[self.dynamicAnimator addBehavior:gravityBehavior];
+	[self.dynamicAnimator addBehavior:collisionBehavior];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,11 +60,11 @@
 #pragma mark - UIDynamicAnimatorDelegate
 
 - (void)dynamicAnimatorWillResume:(UIDynamicAnimator *)animator {
-	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
 
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
-	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
 
 #pragma mark - UICollisionBehaviorDelegate

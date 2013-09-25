@@ -12,7 +12,7 @@
 
 @interface DPSnapViewController () <UIDynamicAnimatorDelegate>
 
-@property (strong, nonatomic) UIDynamicAnimator *animator;
+@property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
 @property (strong, nonatomic) UISnapBehavior *snapBehavior;
 
 @property (weak, nonatomic) IBOutlet UIView *greenView;
@@ -38,8 +38,8 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-	self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-	self.animator.delegate = self;
+	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+	self.dynamicAnimator.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,7 +53,7 @@
     
 	// remove previous snap behaviour if any exists
 	if (nil  != self.snapBehavior) {
-		[self.animator removeBehavior:self.snapBehavior];
+		[self.dynamicAnimator removeBehavior:self.snapBehavior];
 	}
     
 	// default value for damping is 0.5
@@ -62,17 +62,17 @@
     //    self.snapBehavior.damping = 0.9f;
     //    NSLog(@"Default damping = %.1f", [self.snapBehavior damping]);
     
-	[self.animator addBehavior:self.snapBehavior];
+	[self.dynamicAnimator addBehavior:self.snapBehavior];
 }
 
 #pragma mark - UIDynamicAnimatorDelegate
 
 - (void)dynamicAnimatorWillResume:(UIDynamicAnimator *)animator {
-	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
 
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
-	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
 
 @end

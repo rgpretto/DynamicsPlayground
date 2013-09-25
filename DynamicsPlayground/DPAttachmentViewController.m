@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIView *redView;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 
-@property (strong, nonatomic) UIDynamicAnimator *animator;
+@property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
 
 - (IBAction)handlePanGesture:(UIPanGestureRecognizer *)sender;
 
@@ -46,11 +46,11 @@
     //    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[[self greenView]]];
     
     
-	self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:[self view]];
-	self.animator.delegate = self;
-	[self.animator addBehavior:collisionBehavior];
+	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:[self view]];
+	self.dynamicAnimator.delegate = self;
+	[self.dynamicAnimator addBehavior:collisionBehavior];
     //    [self.animator addBehavior:gravity];
-	[self.animator addBehavior:attachmentBehavior];
+	[self.dynamicAnimator addBehavior:attachmentBehavior];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,17 +62,17 @@
 	CGPoint anchorPoint = [gestureRecognizer locationInView:[self view]];
 	self.redView.center = anchorPoint;
     
-	[self.animator updateItemUsingCurrentState:[self redView]];
+	[self.dynamicAnimator updateItemUsingCurrentState:[self redView]];
 }
 
 #pragma mark - UIDynamicAnimatorDelegate
 
 - (void)dynamicAnimatorWillResume:(UIDynamicAnimator *)animator {
-	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
 
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
-	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
 }
 
 @end
