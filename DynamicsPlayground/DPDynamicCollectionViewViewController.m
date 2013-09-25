@@ -72,21 +72,22 @@ const NSInteger kCellCount = 20;
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-	UICollectionViewCell *cell = nil;
-	cell = [collectionView dequeueReusableCellWithReuseIdentifier:[DPCollectionViewCell cellIdentifier]
-	                                                 forIndexPath:indexPath];
-    
+	DPCollectionViewCell *cell = nil;
+	cell = (DPCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:[DPCollectionViewCell cellIdentifier]
+                                                                             forIndexPath:indexPath];
 	[self configureCell:cell forItemAtIndexPath:indexPath];
     
 	return cell;
 }
 
-- (void) configureCell:(UICollectionViewCell *)cell
+- (void) configureCell:(DPCollectionViewCell *)cell
     forItemAtIndexPath:(NSIndexPath *)indexPath {
     
     if ([self.colors count] > 0) {
         UIColor *currColor = self.colors[indexPath.row];
         cell.backgroundColor = currColor;
+        
+        cell.textLabel.text = [[NSNumber numberWithInteger:indexPath.row] stringValue];
     }
 }
 
