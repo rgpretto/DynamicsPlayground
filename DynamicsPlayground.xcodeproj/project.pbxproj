@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		116AAB7FAF2041CA82B9C9F9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F0641069C04E289FAFB73A /* libPods.a */; };
 		220E9F4B17F0A16900A9C396 /* DPSpringAttachmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220E9F4A17F0A16900A9C396 /* DPSpringAttachmentViewController.m */; };
+		220E9F4F17F0AEB900A9C396 /* DPDynamicItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220E9F4E17F0AEB900A9C396 /* DPDynamicItemViewController.m */; };
 		22248C9717DF29D300C7E97E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22248C9617DF29D300C7E97E /* Foundation.framework */; };
 		22248C9917DF29D300C7E97E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22248C9817DF29D300C7E97E /* CoreGraphics.framework */; };
 		22248C9B17DF29D300C7E97E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22248C9A17DF29D300C7E97E /* UIKit.framework */; };
@@ -55,6 +56,8 @@
 		18F0641069C04E289FAFB73A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		220E9F4917F0A16900A9C396 /* DPSpringAttachmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPSpringAttachmentViewController.h; sourceTree = "<group>"; };
 		220E9F4A17F0A16900A9C396 /* DPSpringAttachmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPSpringAttachmentViewController.m; sourceTree = "<group>"; };
+		220E9F4D17F0AEB900A9C396 /* DPDynamicItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDynamicItemViewController.h; sourceTree = "<group>"; };
+		220E9F4E17F0AEB900A9C396 /* DPDynamicItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDynamicItemViewController.m; sourceTree = "<group>"; };
 		22248C9317DF29D300C7E97E /* DynamicsPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicsPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22248C9617DF29D300C7E97E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22248C9817DF29D300C7E97E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -134,6 +137,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		220E9F4C17F0AE9300A9C396 /* Dynamic Item */ = {
+			isa = PBXGroup;
+			children = (
+				220E9F4D17F0AEB900A9C396 /* DPDynamicItemViewController.h */,
+				220E9F4E17F0AEB900A9C396 /* DPDynamicItemViewController.m */,
+			);
+			name = "Dynamic Item";
+			sourceTree = "<group>";
+		};
 		22248C8A17DF29D300C7E97E = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +230,7 @@
 				FDB2306417E96400007A77D6 /* Attachment */,
 				FDB2306717E9644B007A77D6 /* Snap */,
 				FD42794B17E9774F000127D0 /* Push Behavior */,
+				220E9F4C17F0AE9300A9C396 /* Dynamic Item */,
 				229F7D2B17F0420700CC07BD /* UIDynamicItem protocol */,
 				FDA8084E17ED7CD800C906BD /* Collection view */,
 			);
@@ -478,6 +491,7 @@
 				22B77EC217E22D20001262D6 /* DPAttachmentViewController.m in Sources */,
 				FD42794E17E97770000127D0 /* DPPushComparisonViewController.m in Sources */,
 				FDA8085417ED7EF200C906BD /* DPCollectionViewCell.m in Sources */,
+				220E9F4F17F0AEB900A9C396 /* DPDynamicItemViewController.m in Sources */,
 				22248CB017DF29D300C7E97E /* DPMasterViewController.m in Sources */,
 				22248CA717DF29D300C7E97E /* DPAppDelegate.m in Sources */,
 				229F7D2E17F0421B00CC07BD /* DPDynamicItemProtocolViewController.m in Sources */,
