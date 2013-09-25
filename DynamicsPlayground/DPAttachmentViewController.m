@@ -41,12 +41,12 @@
 	UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.redView, self.greenView]];
 	collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
     
-	UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:[self greenView]
-	                                                                       attachedToItem:[self redView]];
+	UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.greenView
+	                                                                       attachedToItem:self.redView];
     //    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[[self greenView]]];
     
     
-	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:[self view]];
+	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 	self.dynamicAnimator.delegate = self;
 	[self.dynamicAnimator addBehavior:collisionBehavior];
     //    [self.animator addBehavior:gravity];
@@ -59,10 +59,10 @@
 }
 
 - (IBAction)handlePanGesture:(UIPanGestureRecognizer *)gestureRecognizer {
-	CGPoint anchorPoint = [gestureRecognizer locationInView:[self view]];
+	CGPoint anchorPoint = [gestureRecognizer locationInView:self.view];
 	self.redView.center = anchorPoint;
     
-	[self.dynamicAnimator updateItemUsingCurrentState:[self redView]];
+	[self.dynamicAnimator updateItemUsingCurrentState:self.redView];
 }
 
 #pragma mark - UIDynamicAnimatorDelegate

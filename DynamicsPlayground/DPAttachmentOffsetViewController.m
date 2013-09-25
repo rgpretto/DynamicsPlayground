@@ -62,11 +62,11 @@
 }
 
 - (IBAction)handlePanGesture:(UIPanGestureRecognizer *)gestureRecognizer {
-	CGPoint anchorPoint = [gestureRecognizer locationInView:[self view]];
+	CGPoint anchorPoint = [gestureRecognizer locationInView:self.view];
     
 	self.redView.center = anchorPoint;
     
-	[self.dynamicAnimator updateItemUsingCurrentState:[self redView]];
+	[self.dynamicAnimator updateItemUsingCurrentState:self.redView];
     
 	NSLog(@"Attachment length = %.1f", [self.attachmentBehavior length]);
 }

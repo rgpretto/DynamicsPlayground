@@ -42,7 +42,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
     
-	UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[[self greenView]]];
+	UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[self.greenView]];
     
 	UIAttachmentBehavior *attachmentBehavior = nil;
 	UICollisionBehavior *collisionBehavior = nil;
@@ -52,21 +52,22 @@
 	collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
     
 	CGPoint anchorPoint = self.redView.center;
-	attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.greenView attachedToAnchor:anchorPoint];
+	attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.greenView
+                                                   attachedToAnchor:anchorPoint];
 	// These parameters set the attachment in spring mode, instead of a rigid connection.
 	[attachmentBehavior setFrequency:1.0];
 	[attachmentBehavior setDamping:0.1];
 #else
 	collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.redView, self.greenView]];
 	collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
-	attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:[self greenView]
-	                                                 attachedToItem:[self redView]];
+	attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.greenView
+	                                                 attachedToItem:self.redView];
 	attachmentBehavior.damping = 0.1;
 	attachmentBehavior.frequency = 3.0;
 #endif
     
     
-	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:[self view]];
+	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 	self.dynamicAnimator.delegate = self;
 	[self.dynamicAnimator addBehavior:collisionBehavior];
 	[self.dynamicAnimator addBehavior:gravity];
@@ -83,13 +84,13 @@
 }
 
 - (IBAction)handlePanGesture:(UIPanGestureRecognizer *)gestureRecognizer {
-	CGPoint anchorPoint = [gestureRecognizer locationInView:[self view]];
+	CGPoint anchorPoint = [gestureRecognizer locationInView:self.view];
 	self.redView.center = anchorPoint;
     
 #ifdef ATTACHMENT_POINT
 	[self.attachmentBehavior setAnchorPoint:anchorPoint];
 #else
-	[self.animator updateItemUsingCurrentState:[self redView]];
+	[self.animator updateItemUsingCurrentState:self.redView];
 #endif
 }
 

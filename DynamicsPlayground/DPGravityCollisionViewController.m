@@ -40,10 +40,10 @@
 	self.view.layer.borderWidth = 2.0f;
     
 	// keep in mind the "Autolayout" Constraints for greenView
-	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:[self view]];
+	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 	self.dynamicAnimator.delegate = self;
     
-	NSArray *items = @[[self greenView]];
+	NSArray *items = @[self.greenView];
     
 	//
 	// Multiple gravity behavior per animator is undefined and may assert in the future

@@ -36,7 +36,7 @@
 	self.view.layer.borderWidth = 2.0f;
     
 	// keep in mind the "Autolayout" Constraints for greenView
-	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:[self view]];
+	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 	self.dynamicAnimator.delegate = self;
     
 	NSArray *items = @[self.greenView, self.redView];
