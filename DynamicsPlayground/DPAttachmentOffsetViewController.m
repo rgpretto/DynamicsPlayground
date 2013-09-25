@@ -23,73 +23,62 @@
 
 @implementation DPAttachmentOffsetViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	if (self) {
+		// Custom initialization
+	}
+	return self;
 }
 
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+- (void)viewDidLoad {
+	[super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-    self.animator.delegate = self;
+	self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+	self.animator.delegate = self;
     
-    UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[self.greenView]];
-    collision.translatesReferenceBoundsIntoBoundary = YES;
+	UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[self.greenView]];
+	collision.translatesReferenceBoundsIntoBoundary = YES;
     
-    UIOffset greenViewAttachmentPoint = UIOffsetZero;
+	UIOffset greenViewAttachmentPoint = UIOffsetZero;
     
-    greenViewAttachmentPoint = UIOffsetMake(    CGRectGetWidth([self.greenView bounds]) / 2.0 ,
-                                                CGRectGetHeight([self.greenView bounds]) /2.0 );
-
-//    greenViewAttachmentPoint = UIOffsetMake( CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds) );
-    self.attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.greenView
-                                                        offsetFromCenter:greenViewAttachmentPoint
-                                                          attachedToItem:self.redView
-                                                        offsetFromCenter:UIOffsetZero];
+	greenViewAttachmentPoint = UIOffsetMake(CGRectGetWidth([self.greenView bounds]) / 2.0,
+	                                        CGRectGetHeight([self.greenView bounds]) / 2.0);
     
-//    [self.animator addBehavior:collision];
-    [self.animator addBehavior:self.attachmentBehavior];
+    //    greenViewAttachmentPoint = UIOffsetMake( CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds) );
+	self.attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.greenView
+	                                                    offsetFromCenter:greenViewAttachmentPoint
+	                                                      attachedToItem:self.redView
+	                                                    offsetFromCenter:UIOffsetZero];
     
+    //    [self.animator addBehavior:collision];
+	[self.animator addBehavior:self.attachmentBehavior];
 }
 
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)didReceiveMemoryWarning {
+	[super didReceiveMemoryWarning];
+	// Dispose of any resources that can be recreated.
 }
-
 
 - (IBAction)handlePanGesture:(UIPanGestureRecognizer *)gestureRecognizer {
+	CGPoint anchorPoint = [gestureRecognizer locationInView:[self view]];
     
-    CGPoint anchorPoint = [gestureRecognizer locationInView:[self view]];
+	self.redView.center = anchorPoint;
     
-    self.redView.center = anchorPoint;
-
-    [self.animator updateItemUsingCurrentState:[self redView]];
+	[self.animator updateItemUsingCurrentState:[self redView]];
     
-    NSLog(@"Attachment length = %.1f", [self.attachmentBehavior length]);
-    
+	NSLog(@"Attachment length = %.1f", [self.attachmentBehavior length]);
 }
 
 #pragma mark - UIDynamicAnimatorDelegate
 
-- (void)dynamicAnimatorWillResume:(UIDynamicAnimator*)animator {
-    NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
-    
+- (void)dynamicAnimatorWillResume:(UIDynamicAnimator *)animator {
+	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
 }
 
-- (void)dynamicAnimatorDidPause:(UIDynamicAnimator*)animator {
-    NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
-    
+- (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
+	NSLog(@"Animator is %@", [self.animator isRunning] ? @"running" : @"stopped");
 }
 
 @end
