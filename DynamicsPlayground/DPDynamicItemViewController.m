@@ -10,14 +10,11 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-static NSString *const kRedViewBoudaryIdentifier = @"kRedViewBoudaryIdentifier";
 
 @interface DPDynamicItemViewController () <UIDynamicAnimatorDelegate, UICollisionBehaviorDelegate>
 
 @property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
-
 @property (strong, nonatomic) UICollisionBehavior *collisionBehavior;
-
 
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 @property (weak, nonatomic) IBOutlet UIView *redView;
@@ -73,21 +70,9 @@ static NSString *const kRedViewBoudaryIdentifier = @"kRedViewBoudaryIdentifier";
 }
 
 - (void)didReceiveMemoryWarning {
+
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Utility method
-
-- (UIBezierPath *)bezierPathForViewPerimeter:(UIView *)inView {
-	UIBezierPath *result = nil;
-	// + (UIBezierPath *)bezierPathWithOvalInRect:(CGRect)rect
-	CGFloat cornerRadius = inView.layer.cornerRadius;
-    //    CGRect frame = CGRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
-	result = [UIBezierPath bezierPathWithRoundedRect:[inView frame]
-	                                    cornerRadius:cornerRadius];
-    
-	return result;
 }
 
 #pragma mark - UIDynamicAnimatorDelegate
@@ -113,19 +98,19 @@ static NSString *const kRedViewBoudaryIdentifier = @"kRedViewBoudaryIdentifier";
                  withItem:(id <UIDynamicItem> )item2 {
 }
 
-// The identifier of a boundary created with translatesReferenceBoundsIntoBoundary
-// or setTranslatesReferenceBoundsIntoBoundaryWithInsets is nil
+/*
+ The identifier of a boundary created with translatesReferenceBoundsIntoBoundary
+ or setTranslatesReferenceBoundsIntoBoundaryWithInsets is nil
+ */
 - (void) collisionBehavior:(UICollisionBehavior *)behavior
        beganContactForItem:(id <UIDynamicItem> )item
     withBoundaryIdentifier:(id <NSCopying> )identifier
                    atPoint:(CGPoint)p {
-	NSLog(@"Start contact with boundary %@", identifier);
 }
 
 - (void) collisionBehavior:(UICollisionBehavior *)behavior
        endedContactForItem:(id <UIDynamicItem> )item
     withBoundaryIdentifier:(id <NSCopying> )identifier {
-	NSLog(@"End contact with boundary %@", identifier);
 }
 
 @end
