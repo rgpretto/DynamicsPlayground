@@ -59,6 +59,22 @@
 	UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:items];
 	collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
 	collisionBehavior.collisionDelegate = self;
+    
+//
+//   NB: uncomment this code to add a collision boundary
+//
+//    CGPoint firstPoint = CGPointMake(0.0f, CGRectGetMidY(self.view.bounds));
+//    CGPoint secondPoint = CGPointMake(firstPoint .x + CGRectGetMidX(self.view.bounds) - 30.0f, firstPoint.y);
+//    
+//    [collisionBehavior addBoundaryWithIdentifier:@"123456"
+//                                       fromPoint:firstPoint
+//                                         toPoint:secondPoint];
+//    
+//    
+//    UIView *collisionBoundaryView = [[UIView alloc] initWithFrame:CGRectMake(firstPoint.x, firstPoint.y, secondPoint.x, 10.0f)];
+//    collisionBoundaryView.backgroundColor = [UIColor redColor];
+//    [self.view addSubview:collisionBoundaryView];
+    
 	[self.dynamicAnimator addBehavior:gravityBehavior];
 	[self.dynamicAnimator addBehavior:collisionBehavior];
     
