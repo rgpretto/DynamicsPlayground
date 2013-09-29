@@ -55,15 +55,15 @@
 	attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.greenView
                                                    attachedToAnchor:anchorPoint];
 	// These parameters set the attachment in spring mode, instead of a rigid connection.
-	[attachmentBehavior setFrequency:1.0];
-	[attachmentBehavior setDamping:0.1];
+	attachmentBehavior.frequency = 1.0;
+	attachmentBehavior.damping = 0.1;
 #else
 	collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.redView, self.greenView]];
 	collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
 	attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.greenView
 	                                                 attachedToItem:self.redView];
-	attachmentBehavior.damping = 0.1;
-	attachmentBehavior.frequency = 3.0;
+     attachmentBehavior.frequency = 3.0;
+     attachmentBehavior.damping = 0.1;
 #endif
     
     
@@ -90,7 +90,7 @@
 #ifdef ATTACHMENT_POINT
 	[self.attachmentBehavior setAnchorPoint:anchorPoint];
 #else
-	[self.animator updateItemUsingCurrentState:self.redView];
+	[self.dynamicAnimator updateItemUsingCurrentState:self.redView];
 #endif
 }
 
