@@ -149,6 +149,15 @@
 			name = "Dynamic Item";
 			sourceTree = "<group>";
 		};
+		2215D2BA17F9A2480095DE54 /* Custom behavior */ = {
+			isa = PBXGroup;
+			children = (
+				225C58C417E1EB93008B9756 /* DPGravityCollisionBehavior.h */,
+				225C58C517E1EB93008B9756 /* DPGravityCollisionBehavior.m */,
+			);
+			name = "Custom behavior";
+			sourceTree = "<group>";
+		};
 		22248C8A17DF29D300C7E97E = {
 			isa = PBXGroup;
 			children = (
@@ -320,8 +329,7 @@
 		FDB2306517E96420007A77D6 /* Collision */ = {
 			isa = PBXGroup;
 			children = (
-				225C58C417E1EB93008B9756 /* DPGravityCollisionBehavior.h */,
-				225C58C517E1EB93008B9756 /* DPGravityCollisionBehavior.m */,
+				2215D2BA17F9A2480095DE54 /* Custom behavior */,
 				22E6007C17E0DCE8009D493F /* DPGravityCollisionViewController.h */,
 				22E6007D17E0DCE8009D493F /* DPGravityCollisionViewController.m */,
 				2259568A17F34250003346AC /* DPCollisionsViewController.h */,
