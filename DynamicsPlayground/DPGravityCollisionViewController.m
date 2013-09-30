@@ -9,7 +9,7 @@
 #import "DPGravityCollisionViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-// #define CUSTOM_BEHAVIOR
+#define CUSTOM_BEHAVIOR
 
 #ifdef CUSTOM_BEHAVIOR
 #import "DPGravityCollisionBehavior.h"
@@ -50,7 +50,8 @@
 	//
 #ifdef CUSTOM_BEHAVIOR
     
-	DPGravityCollisionBehavior *gravityAndCollision = [[DPGravityCollisionBehavior alloc] initWithItems:items];
+	DPGravityCollisionBehavior *gravityAndCollision = nil;
+    gravityAndCollision = [[DPGravityCollisionBehavior alloc] initWithItems:items];
 	[self.dynamicAnimator addBehavior:gravityAndCollision];
     
 #else
