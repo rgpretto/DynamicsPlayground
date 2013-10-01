@@ -78,9 +78,7 @@
 	// shit layout attribute position by delta
 	CGFloat scrollDelta = newBounds.origin.y - scrollView.bounds.origin.y;
     
-    
-    
-	for (UIAttachmentBehavior *springBehavior in[self.dynamicAnimator behaviors]) {
+	for (UIAttachmentBehavior *springBehavior in [self.dynamicAnimator behaviors]) {
 		UICollectionViewLayoutAttributes *attribute = nil;
         
 		attribute = [springBehavior.items firstObject];
