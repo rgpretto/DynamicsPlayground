@@ -140,13 +140,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		220E9F4C17F0AE9300A9C396 /* Dynamic Item */ = {
+		220E9F4C17F0AE9300A9C396 /* UIDynamicItemBehavior */ = {
 			isa = PBXGroup;
 			children = (
 				220E9F4D17F0AEB900A9C396 /* DPDynamicItemViewController.h */,
 				220E9F4E17F0AEB900A9C396 /* DPDynamicItemViewController.m */,
 			);
-			name = "Dynamic Item";
+			name = UIDynamicItemBehavior;
 			sourceTree = "<group>";
 		};
 		22248C8A17DF29D300C7E97E = {
@@ -233,7 +233,7 @@
 				FDB2306417E96400007A77D6 /* Attachment */,
 				FDB2306717E9644B007A77D6 /* Snap */,
 				FD42794B17E9774F000127D0 /* Push Behavior */,
-				220E9F4C17F0AE9300A9C396 /* Dynamic Item */,
+				220E9F4C17F0AE9300A9C396 /* UIDynamicItemBehavior */,
 				229F7D2B17F0420700CC07BD /* UIDynamicItem protocol */,
 				FDA8084E17ED7CD800C906BD /* Collection view */,
 			);
