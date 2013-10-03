@@ -25,7 +25,7 @@
         
         self.textLabel = [[UILabel alloc] initWithFrame:self.bounds];
         self.textLabel.textAlignment = NSTextAlignmentCenter;
-        [self addSubview:self.textLabel];
+        [self.contentView addSubview:self.textLabel];
 	}
 	return self;
 }
