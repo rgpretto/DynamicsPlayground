@@ -51,7 +51,8 @@
 			springBehavior.damping = 0.5;
 			springBehavior.frequency = 0.8;
             
-			//FIXME: add the spring only to item visible on the screens using "addBehavior" and "removebehavior" methods of dynamic animator
+			// FIXME: add the spring only to item visible on the screens using
+            // "addBehavior" and "removebehavior" methods of dynamic animator
 			[self.dynamicAnimator addBehavior:springBehavior];
 		}
 	}
