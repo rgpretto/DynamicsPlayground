@@ -30,6 +30,8 @@
 	return self;
 }
 
-
+- (void)setBackgroundColor:(UIColor *)inBackgroundColor {
+    self.contentView.backgroundColor = inBackgroundColor;
+}
 
 @end
