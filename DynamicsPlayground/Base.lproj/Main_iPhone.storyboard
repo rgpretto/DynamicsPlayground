@@ -547,7 +547,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3xK-tM-OLX">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3xK-tM-OLX">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zRN-24-rsu">
@@ -565,6 +565,12 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3xK-tM-OLX" firstAttribute="leading" secondItem="arn-Vf-PwN" secondAttribute="leading" id="4qC-RC-888"/>
+                            <constraint firstItem="3xK-tM-OLX" firstAttribute="top" secondItem="arn-Vf-PwN" secondAttribute="top" id="69q-8S-HUj"/>
+                            <constraint firstItem="foT-D2-iuG" firstAttribute="top" secondItem="3xK-tM-OLX" secondAttribute="bottom" id="A8D-4t-cNk"/>
+                            <constraint firstAttribute="trailing" secondItem="3xK-tM-OLX" secondAttribute="trailing" id="puA-dg-Mb6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Circular layout" id="KnI-dd-L4z"/>
                     <connections>
