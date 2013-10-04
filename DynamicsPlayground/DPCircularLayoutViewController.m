@@ -81,8 +81,9 @@ static const CGFloat kItemDiameter = 35.0f;
         else {
             self.cellCount += 1;
             [self.collectionView performBatchUpdates:^{
-                [self.collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:0
-                                                                                   inSection:0]]];
+                NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0
+                                                             inSection:0];
+                [self.collectionView insertItemsAtIndexPaths:@[indexPath]];
             } completion:nil];
         }
     }
