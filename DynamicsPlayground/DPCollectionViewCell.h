@@ -14,4 +14,6 @@
 
 + (NSString *)cellIdentifier;
 
+- (void)setBackgroundColor:(UIColor *)backgroundColor;
+
 @end

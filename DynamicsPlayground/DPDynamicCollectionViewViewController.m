@@ -40,9 +40,9 @@ const NSInteger kCellCount = 20;
     self.colors = [NSMutableArray array];
     for (NSInteger i = 0; i < kCellCount; ++i) {
         UIColor *color = [UIColor colorWithRed:drand48()
-                                           green:drand48()
-                                            blue:drand48()
-                                           alpha:1.0f];
+                                         green:drand48()
+                                          blue:drand48()
+                                         alpha:1.0f];
         [self.colors addObject:color];
     
     }
@@ -87,7 +87,7 @@ const NSInteger kCellCount = 20;
         UIColor *currColor = self.colors[indexPath.row];
         cell.backgroundColor = currColor;
         
-        cell.textLabel.text = [[NSNumber numberWithInteger:indexPath.row] stringValue];
+        cell.textLabel.text = [@(indexPath.row) stringValue];
     }
 }
 
