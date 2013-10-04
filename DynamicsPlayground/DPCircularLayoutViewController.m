@@ -80,11 +80,10 @@ static const CGFloat kItemDiameter = 35.0f;
         }
         else {
             self.cellCount += 1;
-            
             [self.collectionView performBatchUpdates:^{
                 [self.collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:0
                                                                                    inSection:0]]];
-                 } completion:nil];
+            } completion:nil];
         }
     }
 }
@@ -103,10 +102,11 @@ static const CGFloat kItemDiameter = 35.0f;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[DPCollectionCircularViewCell cellIdentifier]
-                                                                           forIndexPath:indexPath];
+    DPCollectionCircularViewCell *cell = nil;
+    cell = (DPCollectionCircularViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:[DPCollectionCircularViewCell cellIdentifier]
+                                                                                     forIndexPath:indexPath];
     
-//    [self configureCell:cell forItemAtIndexPath:indexPath];
+    cell.textLabel.text = [@([indexPath row]) stringValue];
     
     return cell;
 }
