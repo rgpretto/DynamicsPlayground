@@ -32,6 +32,7 @@
 		229F7D3117F043ED00CC07BD /* DPDynamicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 229F7D3017F043ED00CC07BD /* DPDynamicObject.m */; };
 		22A0896917FEE75200E63E4C /* DPCircularLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0896817FEE75200E63E4C /* DPCircularLayoutViewController.m */; };
 		22A0896C17FEEF6400E63E4C /* DPCircularLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0896B17FEEF6400E63E4C /* DPCircularLayout.m */; };
+		22A8CB4F17FEFDB50079E9CC /* DPCollectionCircularViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A8CB4E17FEFDB50079E9CC /* DPCollectionCircularViewCell.m */; };
 		22B77EC217E22D20001262D6 /* DPAttachmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B77EC017E21FF6001262D6 /* DPAttachmentViewController.m */; };
 		22E6007E17E0DCE8009D493F /* DPGravityCollisionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E6007D17E0DCE8009D493F /* DPGravityCollisionViewController.m */; };
 		FD04D99617E6D72D00563710 /* DPAttachmentOffsetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD04D99517E6D72D00563710 /* DPAttachmentOffsetViewController.m */; };
@@ -96,6 +97,8 @@
 		22A0896817FEE75200E63E4C /* DPCircularLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPCircularLayoutViewController.m; sourceTree = "<group>"; };
 		22A0896A17FEEF6400E63E4C /* DPCircularLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPCircularLayout.h; sourceTree = "<group>"; };
 		22A0896B17FEEF6400E63E4C /* DPCircularLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPCircularLayout.m; sourceTree = "<group>"; };
+		22A8CB4D17FEFDB50079E9CC /* DPCollectionCircularViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPCollectionCircularViewCell.h; sourceTree = "<group>"; };
+		22A8CB4E17FEFDB50079E9CC /* DPCollectionCircularViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPCollectionCircularViewCell.m; sourceTree = "<group>"; };
 		22B77EBF17E21FF6001262D6 /* DPAttachmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPAttachmentViewController.h; sourceTree = "<group>"; };
 		22B77EC017E21FF6001262D6 /* DPAttachmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPAttachmentViewController.m; sourceTree = "<group>"; };
 		22E6007C17E0DCE8009D493F /* DPGravityCollisionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPGravityCollisionViewController.h; sourceTree = "<group>"; };
@@ -288,6 +291,8 @@
 		22A0896617FEE6BD00E63E4C /* Circular layout */ = {
 			isa = PBXGroup;
 			children = (
+				22A8CB4D17FEFDB50079E9CC /* DPCollectionCircularViewCell.h */,
+				22A8CB4E17FEFDB50079E9CC /* DPCollectionCircularViewCell.m */,
 				22A0896717FEE75200E63E4C /* DPCircularLayoutViewController.h */,
 				22A0896817FEE75200E63E4C /* DPCircularLayoutViewController.m */,
 				22A0896A17FEEF6400E63E4C /* DPCircularLayout.h */,
@@ -527,6 +532,7 @@
 				220E9F4F17F0AEB900A9C396 /* DPDynamicItemViewController.m in Sources */,
 				22248CB017DF29D300C7E97E /* DPMasterViewController.m in Sources */,
 				22248CA717DF29D300C7E97E /* DPAppDelegate.m in Sources */,
+				22A8CB4F17FEFDB50079E9CC /* DPCollectionCircularViewCell.m in Sources */,
 				229F7D2E17F0421B00CC07BD /* DPDynamicItemProtocolViewController.m in Sources */,
 				2259568C17F34250003346AC /* DPCollisionsViewController.m in Sources */,
 				22E6007E17E0DCE8009D493F /* DPGravityCollisionViewController.m in Sources */,
