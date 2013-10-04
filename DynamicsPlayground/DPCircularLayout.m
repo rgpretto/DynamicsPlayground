@@ -8,11 +8,26 @@
 
 #import "DPCircularLayout.h"
 
-static const CGFloat kItemSize = 70;
 
+@interface DPCircularLayout ()
 
+@property (assign, nonatomic) CGFloat itemDiameter;
+
+@end
 
 @implementation DPCircularLayout
+
+- (instancetype)init {
+    return nil;
+}
+
+- (instancetype)initWithItemDiameter:(CGFloat)diameter {
+    self = [super init];
+    if (self) {
+        self.itemDiameter = diameter;
+    }
+    return self;
+}
 
 - (void)prepareLayout {
     [super prepareLayout];
@@ -31,28 +46,52 @@ static const CGFloat kItemSize = 70;
 }
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewLayoutAttributes *result = nil;
+    UICollectionViewLayoutAttributes *attributes = nil;
     
-    result = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
+    attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
     
-    result.size = CGSizeMake(kItemSize, kItemSize);
-    result.center = CGPointMake(self.center.x + self.radius * cosf(2 * indexPath.item * M_PI / self.cellCount),
-                                self.center.y + self.radius * sinf(2 * indexPath.item * M_PI / self.cellCount));
+    attributes.size = CGSizeMake([self itemDiameter], [self itemDiameter]);
+    attributes.center = CGPointMake(self.center.x + self.radius * cosf(2 * indexPath.item * M_PI / self.cellCount),
+                                    self.center.y + self.radius * sinf(2 * indexPath.item * M_PI / self.cellCount));
 
-    return result;
+    return attributes;
 }
 
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect {
-    NSMutableArray *result = nil;
+    NSMutableArray *attributes = nil;
     
-    result = [NSMutableArray array];
+    attributes = [NSMutableArray array];
     for (NSInteger i = 0; i < [self cellCount]; ++i) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
         UICollectionViewLayoutAttributes *currAttribute = [self layoutAttributesForItemAtIndexPath:indexPath];
-        [result addObject:currAttribute];
+        [attributes addObject:currAttribute];
     }
     
-    return result;
+    return attributes;
 }
+
+
+//- (UICollectionViewLayoutAttributes *)initialLayoutAttributesForAppearingItemAtIndexPath:(NSIndexPath *)itemIndexPath {
+//    UICollectionViewLayoutAttributes *attribute = nil;
+//    
+//    attribute = [self layoutAttributesForItemAtIndexPath:itemIndexPath];
+//    attribute.alpha = 0.0f;
+//    attribute.center = CGPointMake(self.center.x, self.center.y);
+//    
+//    return attribute;
+//}
+//
+//
+//- (UICollectionViewLayoutAttributes *)finalLayoutAttributesForDisappearingItemAtIndexPath:(NSIndexPath *)itemIndexPath {
+//    UICollectionViewLayoutAttributes *attribute = nil;
+//    
+//    attribute = [self layoutAttributesForItemAtIndexPath:itemIndexPath];
+//    attribute.alpha = 0.0f;
+//    attribute.center = CGPointMake(self.center.x, self.center.y);
+//    attribute.transform3D = CATransform3DMakeScale(0.1f, 0.1f, 0.1f);
+//    
+//    return attribute;
+//}
+
 
 @end

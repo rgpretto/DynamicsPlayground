@@ -14,4 +14,7 @@
 @property (nonatomic, assign) CGFloat radius;
 @property (nonatomic, assign) NSInteger cellCount;
 
+- (instancetype)init;
+- (instancetype)initWithItemDiameter:(CGFloat)diameter;
+
 @end

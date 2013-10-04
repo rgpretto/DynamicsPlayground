@@ -10,8 +10,12 @@
 
 
 #import "UIColor+iOS7Colors.h"
-#import "DPCollectionViewCell.h"
+#import "DPCollectionCircularViewCell.h"
 #import "DPCircularLayout.h"
+
+
+static const CGFloat kItemDiameter = 35.0f;
+
 
 @interface DPCircularLayoutViewController () <UICollectionViewDelegate>
 
@@ -40,14 +44,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.cellCount = 20;
+    self.cellCount = 10;
     
-    DPCircularLayout *circularLayout = [[DPCircularLayout alloc] init];
+    DPCircularLayout *circularLayout = [[DPCircularLayout alloc] initWithItemDiameter:kItemDiameter];
     
     self.collectionView.collectionViewLayout = circularLayout;
     
-    [self.collectionView registerClass:[DPCollectionViewCell class]
-            forCellWithReuseIdentifier:[DPCollectionViewCell cellIdentifier]];
+    [self.collectionView registerClass:[DPCollectionCircularViewCell class]
+            forCellWithReuseIdentifier:[DPCollectionCircularViewCell cellIdentifier]];
     
     [self.collectionView reloadData];
     self.collectionView.backgroundColor = [UIColor iOS7lightGrayColor];
@@ -99,7 +103,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[DPCollectionViewCell cellIdentifier]
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[DPCollectionCircularViewCell cellIdentifier]
                                                                            forIndexPath:indexPath];
     
 //    [self configureCell:cell forItemAtIndexPath:indexPath];
