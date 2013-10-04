@@ -8,12 +8,19 @@
 
 #import "DPCircularLayoutViewController.h"
 
-@interface DPCircularLayoutViewController ()
+
+#import "UIColor+iOS7Colors.h"
+#import "DPCollectionViewCell.h"
+#import "DPCircularLayout.h"
+
+@interface DPCircularLayoutViewController () <UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapRecognizer;
 
 - (IBAction)handleTapGesture:(UITapGestureRecognizer *)sender;
+
+@property (assign,nonatomic) NSInteger cellCount;
 
 @end
 
@@ -32,6 +39,18 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    self.cellCount = 20;
+    
+    DPCircularLayout *circularLayout = [[DPCircularLayout alloc] init];
+    
+    self.collectionView.collectionViewLayout = circularLayout;
+    
+    [self.collectionView registerClass:[DPCollectionViewCell class]
+            forCellWithReuseIdentifier:[DPCollectionViewCell cellIdentifier]];
+    
+    [self.collectionView reloadData];
+    self.collectionView.backgroundColor = [UIColor iOS7lightGrayColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,9 +59,61 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -
+
 - (IBAction)handleTapGesture:(UITapGestureRecognizer *)sender {
-    
+    if (UIGestureRecognizerStateEnded == [sender state]) {
+        
+        CGPoint initialPoint = [sender locationInView:[self collectionView]];
+        
+        NSIndexPath *tappedCellPath = [self.collectionView indexPathForItemAtPoint:initialPoint];
+        
+        if (nil != tappedCellPath) {
+            self.cellCount -= 1;
+            [self.collectionView performBatchUpdates:^{
+                [self.collectionView deleteItemsAtIndexPaths:@[tappedCellPath]];
+            } completion:nil];
+        }
+        else {
+            self.cellCount += 1;
+            
+            [self.collectionView performBatchUpdates:^{
+                [self.collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:0
+                                                                                   inSection:0]]];
+                 } completion:nil];
+        }
+    }
 }
+
+
+#pragma mark - UICollectionViewDataSource
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView
+     numberOfItemsInSection:(NSInteger)section {
+    NSInteger result = 0;
+    result = [self cellCount];
+    return result;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[DPCollectionViewCell cellIdentifier]
+                                                                           forIndexPath:indexPath];
+    
+//    [self configureCell:cell forItemAtIndexPath:indexPath];
+    
+    return cell;
+}
+
+//- (void)configureCell:(UICollectionViewCell *)cell
+//   forItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    
+//}
+
+
 
 
 @end
