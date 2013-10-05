@@ -19,16 +19,16 @@
 	return CGPointMake(50.0, 50.0);
 }
 
+- (void)setCenter:(CGPoint)center {
+	NSLog(@"Center = %@", NSStringFromCGPoint(center));
+}
+
 - (CGAffineTransform)transform {
 	return CGAffineTransformIdentity;
 }
 
-- (void)setCenter:(CGPoint)inCenter {
-	NSLog(@"Center = %@", NSStringFromCGPoint(inCenter));
-}
-
-- (void)transform:(CGAffineTransform)inAffineTranform {
-	NSLog(@"Transform = %@", NSStringFromCGAffineTransform(inAffineTranform));
+- (void)setTransform:(CGAffineTransform)tranform {
+	NSLog(@"Transform = %@", NSStringFromCGAffineTransform(tranform));
 }
 
 @end
