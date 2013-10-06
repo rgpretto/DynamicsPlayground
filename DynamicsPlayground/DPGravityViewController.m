@@ -7,7 +7,7 @@
 //
 
 #import "DPGravityViewController.h"
-#import <QuartzCore/QuartzCore.h>
+@import QuartzCore;
 #import "UIColor+iOS7Colors.h"
 
 @interface DPGravityViewController () <UIDynamicAnimatorDelegate>
