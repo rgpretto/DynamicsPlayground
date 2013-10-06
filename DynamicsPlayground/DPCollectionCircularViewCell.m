@@ -9,7 +9,7 @@
 #import "DPCollectionCircularViewCell.h"
 
 #import "UIColor+iOS7Colors.h"
-#import <QuartzCore/QuartzCore.h>
+@import QuartzCore;
 
 @implementation DPCollectionCircularViewCell
 

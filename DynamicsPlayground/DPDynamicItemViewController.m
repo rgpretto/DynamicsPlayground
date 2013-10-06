@@ -8,7 +8,7 @@
 
 #import "DPDynamicItemViewController.h"
 
-#import <QuartzCore/QuartzCore.h>
+@import QuartzCore;
 
 
 @interface DPDynamicItemViewController () <UIDynamicAnimatorDelegate, UICollisionBehaviorDelegate>
