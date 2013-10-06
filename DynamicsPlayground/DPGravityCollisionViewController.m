@@ -8,6 +8,7 @@
 
 #import "DPGravityCollisionViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIColor+iOS7Colors.h"
 
 #define CUSTOM_BEHAVIOR
 
@@ -36,7 +37,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
     
-	self.view.layer.borderColor = [UIColor redColor].CGColor;
+	self.view.layer.borderColor = [UIColor iOS7redColor].CGColor;
 	self.view.layer.borderWidth = 2.0f;
     
 	// keep in mind the "Autolayout" Constraints for greenView
