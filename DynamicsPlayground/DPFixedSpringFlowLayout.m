@@ -34,14 +34,14 @@
 	[super prepareLayout];
     
 	if (nil == [self dynamicAnimator]) {
+        
 		// create UIDynamicAnimator and UIAttachmentBahavior
 		self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithCollectionViewLayout:self];
 		CGSize contentSize = [self collectionViewContentSize];
 		CGRect contentRect = { CGPointZero, contentSize };
 		NSArray *layoutAttributes = [super layoutAttributesForElementsInRect:contentRect];
         
-		// create spring behavior foe each item
-        
+		// create spring behavior for each item
 		for (UICollectionViewLayoutAttributes *attribute in layoutAttributes) {
 			UIAttachmentBehavior *springBehavior = nil;
 			springBehavior = [[UIAttachmentBehavior alloc] initWithItem:attribute
@@ -51,7 +51,7 @@
 			springBehavior.damping = 0.5;
 			springBehavior.frequency = 0.8;
             
-			// FIXME: add the spring only to item visible on the screens using
+			// TODO: add the spring only to item visible on the screens using
             // "addBehavior" and "removebehavior" methods of dynamic animator
 			[self.dynamicAnimator addBehavior:springBehavior];
 		}
