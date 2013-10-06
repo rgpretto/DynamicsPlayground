@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Renzo Pretto. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 /*
  This layout makes same spring stretch for every layout element
