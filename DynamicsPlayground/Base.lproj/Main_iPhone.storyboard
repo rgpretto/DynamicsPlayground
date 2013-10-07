@@ -306,33 +306,12 @@
                                             <segue destination="B8s-RR-rrs" kind="push" id="UOO-G1-qbo"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="61e-0d-57e" style="IBUITableViewCellStyleDefault" id="fDd-jW-SVG">
-                                        <rect key="frame" x="0.0" y="935" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fDd-jW-SVG" id="Hfp-pP-IDe">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Circular Collection View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="61e-0d-57e" userLabel="Label">
-                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <segue destination="A4b-Bk-z95" kind="push" id="Pd0-0N-TVA"/>
-                                        </connections>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Dynamic Item protocol" id="nat-A5-Srk">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="WiK-aN-ija" style="IBUITableViewCellStyleDefault" id="KAw-Qa-kW9">
-                                        <rect key="frame" x="0.0" y="1027" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="983" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KAw-Qa-kW9" id="JwS-DR-g5x">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -546,58 +525,6 @@ Push</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jm0-Hk-Kcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1033" y="2104"/>
-        </scene>
-        <!--Circular Layout View Controller - Circular layout-->
-        <scene sceneID="VIJ-YS-ebX">
-            <objects>
-                <viewController id="A4b-Bk-z95" customClass="DPCircularLayoutViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="RfG-zQ-8bO"/>
-                        <viewControllerLayoutGuide type="bottom" id="foT-D2-iuG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="arn-Vf-PwN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3xK-tM-OLX">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zRN-24-rsu">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="A4b-Bk-z95" id="KJX-Te-kEI"/>
-                                    <outlet property="delegate" destination="A4b-Bk-z95" id="QFF-Mr-0VP"/>
-                                    <outletCollection property="gestureRecognizers" destination="tvS-Yb-ARz" appends="YES" id="IRj-ct-eyq"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="3xK-tM-OLX" firstAttribute="leading" secondItem="arn-Vf-PwN" secondAttribute="leading" id="4qC-RC-888"/>
-                            <constraint firstItem="3xK-tM-OLX" firstAttribute="top" secondItem="arn-Vf-PwN" secondAttribute="top" id="69q-8S-HUj"/>
-                            <constraint firstItem="foT-D2-iuG" firstAttribute="top" secondItem="3xK-tM-OLX" secondAttribute="bottom" id="A8D-4t-cNk"/>
-                            <constraint firstAttribute="trailing" secondItem="3xK-tM-OLX" secondAttribute="trailing" id="puA-dg-Mb6"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Circular layout" id="KnI-dd-L4z"/>
-                    <connections>
-                        <outlet property="collectionView" destination="3xK-tM-OLX" id="ZDm-5G-isD"/>
-                        <outlet property="tapRecognizer" destination="tvS-Yb-ARz" id="zI8-t7-VAU"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XFk-77-IfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="tvS-Yb-ARz">
-                    <connections>
-                        <action selector="handleTapGesture:" destination="A4b-Bk-z95" id="wTq-v8-xDO"/>
-                    </connections>
-                </tapGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="1500" y="2102"/>
         </scene>
         <!--Dynamic Item Protocol View Controller - Dynamic Item protocol-->
         <scene sceneID="Sq1-vj-YbF">
