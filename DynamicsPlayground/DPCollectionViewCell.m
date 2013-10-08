@@ -23,15 +23,15 @@
 		// Initialization code
 		self.backgroundColor = [UIColor iOS7orangeColor];
         
-        self.textLabel = [[UILabel alloc] initWithFrame:self.bounds];
-        self.textLabel.textAlignment = NSTextAlignmentCenter;
-        [self.contentView addSubview:self.textLabel];
+		self.textLabel = [[UILabel alloc] initWithFrame:self.bounds];
+		self.textLabel.textAlignment = NSTextAlignmentCenter;
+		[self.contentView addSubview:self.textLabel];
 	}
 	return self;
 }
 
 - (void)setBackgroundColor:(UIColor *)inBackgroundColor {
-    self.contentView.backgroundColor = inBackgroundColor;
+	self.contentView.backgroundColor = inBackgroundColor;
 }
 
 @end

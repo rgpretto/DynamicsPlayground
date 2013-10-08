@@ -53,7 +53,7 @@
     
 	CGPoint anchorPoint = self.redView.center;
 	attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.greenView
-                                                   attachedToAnchor:anchorPoint];
+	                                               attachedToAnchor:anchorPoint];
 	// These parameters set the attachment in spring mode, instead of a rigid connection.
 	attachmentBehavior.frequency = 1.0;
 	attachmentBehavior.damping = 0.1;
@@ -62,8 +62,8 @@
 	collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
 	attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.greenView
 	                                                 attachedToItem:self.redView];
-     attachmentBehavior.frequency = 3.0;
-     attachmentBehavior.damping = 0.1;
+	attachmentBehavior.frequency = 3.0;
+	attachmentBehavior.damping = 0.1;
 #endif
     
     

@@ -31,7 +31,7 @@
 	//  -1- get current touch location
 	CGPoint touchLocation = [scrollView.panGestureRecognizer locationInView:scrollView];
     
-	for (UIAttachmentBehavior *springBehavior in [self.dynamicAnimator behaviors]) {
+	for (UIAttachmentBehavior *springBehavior in[self.dynamicAnimator behaviors]) {
 		UICollectionViewLayoutAttributes *attribute = nil;
         
 		// -2- scale the amount we restist the scroll

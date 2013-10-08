@@ -43,13 +43,13 @@
     
 	UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.greenView
 	                                                                       attachedToItem:self.redView];
-    //    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[[self greenView]]];
+	//    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[[self greenView]]];
     
     
 	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 	self.dynamicAnimator.delegate = self;
 	[self.dynamicAnimator addBehavior:collisionBehavior];
-    //    [self.animator addBehavior:gravity];
+	//    [self.animator addBehavior:gravity];
 	[self.dynamicAnimator addBehavior:attachmentBehavior];
 }
 
