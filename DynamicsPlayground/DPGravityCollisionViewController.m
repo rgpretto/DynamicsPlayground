@@ -52,7 +52,7 @@
 #ifdef CUSTOM_BEHAVIOR
     
 	DPGravityCollisionBehavior *gravityAndCollision = nil;
-    gravityAndCollision = [[DPGravityCollisionBehavior alloc] initWithItems:items];
+	gravityAndCollision = [[DPGravityCollisionBehavior alloc] initWithItems:items];
 	[self.dynamicAnimator addBehavior:gravityAndCollision];
     
 #else
@@ -62,22 +62,22 @@
 	collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
 	collisionBehavior.collisionDelegate = self;
     
-//
-//   NB: uncomment this code to add a collision boundary
-//
-// ----------------------------------------------------------------------------
-//    CGPoint firstPoint = CGPointMake(0.0f, CGRectGetMidY(self.view.bounds));
-//    CGPoint secondPoint = CGPointMake(firstPoint .x + CGRectGetMidX(self.view.bounds) - 30.0f, firstPoint.y);
-//    
-//    [collisionBehavior addBoundaryWithIdentifier:@"first boundary"
-//                                       fromPoint:firstPoint
-//                                         toPoint:secondPoint];
-//    
-//    
-//    UIView *collisionBoundaryView = [[UIView alloc] initWithFrame:CGRectMake(firstPoint.x, firstPoint.y, secondPoint.x, 10.0f)];
-//    collisionBoundaryView.backgroundColor = [UIColor redColor];
-//    [self.view addSubview:collisionBoundaryView];
-// ----------------------------------------------------------------------------
+    //
+    //   NB: uncomment this code to add a collision boundary
+    //
+    // ----------------------------------------------------------------------------
+    //    CGPoint firstPoint = CGPointMake(0.0f, CGRectGetMidY(self.view.bounds));
+    //    CGPoint secondPoint = CGPointMake(firstPoint .x + CGRectGetMidX(self.view.bounds) - 30.0f, firstPoint.y);
+    //
+    //    [collisionBehavior addBoundaryWithIdentifier:@"first boundary"
+    //                                       fromPoint:firstPoint
+    //                                         toPoint:secondPoint];
+    //
+    //
+    //    UIView *collisionBoundaryView = [[UIView alloc] initWithFrame:CGRectMake(firstPoint.x, firstPoint.y, secondPoint.x, 10.0f)];
+    //    collisionBoundaryView.backgroundColor = [UIColor redColor];
+    //    [self.view addSubview:collisionBoundaryView];
+    // ----------------------------------------------------------------------------
     
 	[self.dynamicAnimator addBehavior:gravityBehavior];
 	[self.dynamicAnimator addBehavior:collisionBehavior];
@@ -121,13 +121,13 @@
        beganContactForItem:(id <UIDynamicItem> )item
     withBoundaryIdentifier:(id <NSCopying> )identifier
                    atPoint:(CGPoint)p {
-    NSLog(@"Began contact with boundary \"%@\"", identifier);
+	NSLog(@"Began contact with boundary \"%@\"", identifier);
 }
 
 - (void) collisionBehavior:(UICollisionBehavior *)behavior
        endedContactForItem:(id <UIDynamicItem> )item
     withBoundaryIdentifier:(id <NSCopying> )identifier {
-    NSLog(@"End contact with boundary \"%@\"", identifier);
+	NSLog(@"End contact with boundary \"%@\"", identifier);
 }
 
 @end

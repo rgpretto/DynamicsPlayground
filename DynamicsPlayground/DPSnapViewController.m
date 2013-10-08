@@ -59,8 +59,8 @@
 	// default value for damping is 0.5
 	self.snapBehavior = [[UISnapBehavior alloc] initWithItem:self.greenView
 	                                             snapToPoint:snapPoint];
-    //    self.snapBehavior.damping = 0.9f;
-    //    NSLog(@"Default damping = %.1f", [self.snapBehavior damping]);
+	//    self.snapBehavior.damping = 0.9f;
+	//    NSLog(@"Default damping = %.1f", [self.snapBehavior damping]);
     
 	[self.dynamicAnimator addBehavior:self.snapBehavior];
 }

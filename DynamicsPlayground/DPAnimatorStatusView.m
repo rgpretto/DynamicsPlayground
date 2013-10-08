@@ -11,12 +11,9 @@
 @implementation DPAnimatorStatusView
 
 - (void)awakeFromNib {
+	[super awakeFromNib];
     
-    [super awakeFromNib];
-    
-    self.backgroundColor = [UIColor redColor];
-    
+	self.backgroundColor = [UIColor redColor];
 }
-
 
 @end

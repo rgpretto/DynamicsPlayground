@@ -27,7 +27,6 @@ const NSInteger kCellCount = 20;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	if (self) {
-
 	}
 	return self;
 }
@@ -35,22 +34,21 @@ const NSInteger kCellCount = 20;
 - (void)viewDidLoad {
 	[super viewDidLoad];
     
-    srand48(time(0));
+	srand48(time(0));
     
-    self.colors = [NSMutableArray array];
-    for (NSInteger i = 0; i < kCellCount; ++i) {
-        UIColor *color = [UIColor colorWithRed:drand48()
-                                         green:drand48()
-                                          blue:drand48()
-                                         alpha:1.0f];
-        [self.colors addObject:color];
-    
-    }
+	self.colors = [NSMutableArray array];
+	for (NSInteger i = 0; i < kCellCount; ++i) {
+		UIColor *color = [UIColor colorWithRed:drand48()
+		                                 green:drand48()
+		                                  blue:drand48()
+		                                 alpha:1.0f];
+		[self.colors addObject:color];
+	}
     
 	[self.collectionView registerClass:[DPCollectionViewCell class]
 	        forCellWithReuseIdentifier:[DPCollectionViewCell cellIdentifier]];
     
-    //    self.flowLayout = [[DPFixedSpringFlowLayout alloc] init];
+	//    self.flowLayout = [[DPFixedSpringFlowLayout alloc] init];
 	self.flowLayout = [[DPProportionalSpringFlowLayout alloc] init];
     
 	[self.collectionView setCollectionViewLayout:[self flowLayout]];
@@ -74,7 +72,7 @@ const NSInteger kCellCount = 20;
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 	DPCollectionViewCell *cell = nil;
 	cell = (DPCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:[DPCollectionViewCell cellIdentifier]
-                                                                             forIndexPath:indexPath];
+	                                                                         forIndexPath:indexPath];
 	[self configureCell:cell forItemAtIndexPath:indexPath];
     
 	return cell;
@@ -82,13 +80,12 @@ const NSInteger kCellCount = 20;
 
 - (void) configureCell:(DPCollectionViewCell *)cell
     forItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if ([self.colors count] > 0) {
-        UIColor *currColor = self.colors[indexPath.row];
-        cell.backgroundColor = currColor;
+	if ([self.colors count] > 0) {
+		UIColor *currColor = self.colors[indexPath.row];
+		cell.backgroundColor = currColor;
         
-        cell.textLabel.text = [@(indexPath.row) stringValue];
-    }
+		cell.textLabel.text = [@(indexPath.row)stringValue];
+	}
 }
 
 @end
