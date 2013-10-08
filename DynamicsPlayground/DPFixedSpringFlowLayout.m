@@ -34,7 +34,6 @@
 	[super prepareLayout];
     
 	if (nil == [self dynamicAnimator]) {
-        
 		// create UIDynamicAnimator and UIAttachmentBahavior
 		self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithCollectionViewLayout:self];
 		CGSize contentSize = [self collectionViewContentSize];
@@ -52,7 +51,7 @@
 			springBehavior.frequency = 0.8;
             
 			// TODO: add the spring only to item visible on the screens using
-            // "addBehavior" and "removebehavior" methods of dynamic animator
+			// "addBehavior" and "removebehavior" methods of dynamic animator
 			[self.dynamicAnimator addBehavior:springBehavior];
 		}
 	}
@@ -79,7 +78,7 @@
 	// shit layout attribute position by delta
 	CGFloat scrollDelta = newBounds.origin.y - scrollView.bounds.origin.y;
     
-	for (UIAttachmentBehavior *springBehavior in [self.dynamicAnimator behaviors]) {
+	for (UIAttachmentBehavior *springBehavior in[self.dynamicAnimator behaviors]) {
 		UICollectionViewLayoutAttributes *attribute = nil;
         
 		attribute = [springBehavior.items firstObject];

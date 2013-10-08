@@ -47,10 +47,10 @@
 	self.collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
 	self.collisionBehavior.collisionDelegate = self;
     
-    //     make circle view
-    //    self.redView.layer.cornerRadius = CGRectGetHeight([self.redView frame]) / 2.0f;
-    //    self.redView.layer.masksToBounds = YES;
-    //    self.redView.clipsToBounds = YES;
+	//     make circle view
+	//    self.redView.layer.cornerRadius = CGRectGetHeight([self.redView frame]) / 2.0f;
+	//    self.redView.layer.masksToBounds = YES;
+	//    self.redView.clipsToBounds = YES;
     
 	/*
      A dynamic item behavior gives access to low-level properties of an item in
@@ -70,7 +70,6 @@
 }
 
 - (void)didReceiveMemoryWarning {
-
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
 }

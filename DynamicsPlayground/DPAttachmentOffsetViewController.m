@@ -46,13 +46,13 @@
 	greenViewAttachmentPoint = UIOffsetMake(CGRectGetWidth([self.greenView bounds]) / 2.0,
 	                                        CGRectGetHeight([self.greenView bounds]) / 2.0);
     
-    //    greenViewAttachmentPoint = UIOffsetMake( CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds) );
+	//    greenViewAttachmentPoint = UIOffsetMake( CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds) );
 	self.attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.greenView
 	                                                    offsetFromCenter:greenViewAttachmentPoint
 	                                                      attachedToItem:self.redView
 	                                                    offsetFromCenter:UIOffsetZero];
     
-    //    [self.animator addBehavior:collision];
+	//    [self.animator addBehavior:collision];
 	[self.dynamicAnimator addBehavior:self.attachmentBehavior];
 }
 
