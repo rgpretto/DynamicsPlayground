@@ -195,7 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				226B1EC017DF71A100CF717D /* Utility view */,
-				2262DD3B17DF2B8B0022D5CA /* Beahviors controllers */,
+				2262DD3B17DF2B8B0022D5CA /* Playground */,
 				22248CA517DF29D300C7E97E /* DPAppDelegate.h */,
 				22248CA617DF29D300C7E97E /* DPAppDelegate.m */,
 				22248CAE17DF29D300C7E97E /* DPMasterViewController.h */,
@@ -234,7 +234,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2262DD3B17DF2B8B0022D5CA /* Beahviors controllers */ = {
+		2262DD3B17DF2B8B0022D5CA /* Playground */ = {
 			isa = PBXGroup;
 			children = (
 				FDB2306617E9643A007A77D6 /* Gravity */,
@@ -246,7 +246,7 @@
 				229F7D2B17F0420700CC07BD /* UIDynamicItem protocol */,
 				FDA8084E17ED7CD800C906BD /* Collection view */,
 			);
-			name = "Beahviors controllers";
+			name = Playground;
 			sourceTree = "<group>";
 		};
 		2262DD3F17DF325C0022D5CA /* Resources */ = {
