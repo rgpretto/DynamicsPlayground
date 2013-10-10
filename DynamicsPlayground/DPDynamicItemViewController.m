@@ -14,7 +14,6 @@
 @interface DPDynamicItemViewController () <UIDynamicAnimatorDelegate, UICollisionBehaviorDelegate>
 
 @property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
-@property (strong, nonatomic) UICollisionBehavior *collisionBehavior;
 
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 @property (weak, nonatomic) IBOutlet UIView *redView;
@@ -46,9 +45,10 @@
      We will only change the restitution parameter for one of these views.
 	 */
 	UIGravityBehavior *gravityBeahvior = [[UIGravityBehavior alloc] initWithItems:@[self.greenView, self.redView]];
-	self.collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView, self.redView]];
-	self.collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
-	self.collisionBehavior.collisionDelegate = self;
+	
+    UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView, self.redView]];
+	collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+	collisionBehavior.collisionDelegate = self;
     
 	//     make circle view
 	//    self.redView.layer.cornerRadius = CGRectGetHeight([self.redView frame]) / 2.0f;
@@ -69,7 +69,7 @@
     
 	[self.dynamicAnimator addBehavior:propertiesBehavior];
 	[self.dynamicAnimator addBehavior:gravityBeahvior];
-	[self.dynamicAnimator addBehavior:self.collisionBehavior];
+	[self.dynamicAnimator addBehavior:collisionBehavior];
 }
 
 - (void)didReceiveMemoryWarning {
