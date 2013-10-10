@@ -8,6 +8,8 @@
 
 #import "DPSnapViewController.h"
 
+#import "UIColor+iOS7Colors.h"
+@import QuartzCore;
 
 
 @interface DPSnapViewController () <UIDynamicAnimatorDelegate>
@@ -18,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 
 - (IBAction)handleTapGesture:(UITapGestureRecognizer *)sender;
-
 
 @end
 
@@ -36,7 +37,9 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+	self.view.layer.borderColor = [UIColor iOS7darkBlueColor].CGColor;
+	self.view.layer.borderWidth = 2.0f;
     
 	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 	self.dynamicAnimator.delegate = self;

@@ -7,7 +7,9 @@
 //
 
 #import "DPCollisionsViewController.h"
+
 #import "UIColor+iOS7Colors.h"
+
 
 @interface DPCollisionsViewController () <UIDynamicAnimatorDelegate>
 
@@ -36,7 +38,7 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	// Do any additional setup after loading the view.
+
 	self.view.layer.borderColor = [UIColor iOS7redColor].CGColor;
 	self.view.layer.borderWidth = 2.0f;
     

@@ -8,7 +8,7 @@
 
 #import "DPDynamicItemViewController.h"
 
-@import QuartzCore;
+#import "UIColor+iOS7Colors.h"
 
 
 @interface DPDynamicItemViewController () <UIDynamicAnimatorDelegate, UICollisionBehaviorDelegate>
@@ -33,8 +33,11 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	// Do any additional setup after loading the view.
-	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+
+    self.view.layer.borderColor = [UIColor iOS7redColor].CGColor;
+	self.view.layer.borderWidth = 2.0f;
+    
+    self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 	self.dynamicAnimator.delegate = self;
     
 	/*

@@ -8,6 +8,10 @@
 
 #import "DPPushViewController.h"
 
+#import "UIColor+iOS7Colors.h"
+@import QuartzCore;
+
+
 @interface DPPushViewController () <UIDynamicAnimatorDelegate>
 
 @property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
@@ -32,6 +36,9 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    
+    self.view.layer.borderColor = [UIColor iOS7redColor].CGColor;
+	self.view.layer.borderWidth = 2.0f;
     
 	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 	self.dynamicAnimator.delegate = self;

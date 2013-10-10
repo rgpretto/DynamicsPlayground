@@ -8,6 +8,8 @@
 
 #import "DPSpringAttachmentViewController.h"
 
+#import "UIColor+iOS7Colors.h"
+
 
 #define ATTACHMENT_POINT
 
@@ -41,6 +43,9 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    
+    self.view.layer.borderColor = [UIColor iOS7redColor].CGColor;
+	self.view.layer.borderWidth = 2.0f;
     
 	UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[self.greenView]];
     

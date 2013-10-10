@@ -8,6 +8,10 @@
 
 #import "DPPushComparisonViewController.h"
 
+#import "UIColor+iOS7Colors.h"
+@import QuartzCore;
+
+
 @interface DPPushComparisonViewController () <UIDynamicAnimatorDelegate>
 
 @property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
@@ -22,6 +26,7 @@
 
 @end
 
+
 @implementation DPPushComparisonViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -34,7 +39,10 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    // evidence reference view bounds
+	self.view.layer.borderColor = [UIColor iOS7redColor].CGColor;
+	self.view.layer.borderWidth = 2.0f;
     
 	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 	self.dynamicAnimator.delegate = self;
@@ -47,7 +55,6 @@
 	if (NO == [self.dynamicAnimator isRunning]) {
 		UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView, self.redView, self.blackView]];
 		collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
-        
         
 		UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[self.blackView]];
         

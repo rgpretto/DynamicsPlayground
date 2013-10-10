@@ -8,6 +8,9 @@
 
 #import "DPAttachmentOffsetViewController.h"
 
+#import "UIColor+iOS7Colors.h"
+
+
 @interface DPAttachmentOffsetViewController () <UIDynamicAnimatorDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *redView;
@@ -33,7 +36,9 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    self.view.layer.borderColor = [UIColor iOS7redColor].CGColor;
+	self.view.layer.borderWidth = 2.0f;
     
 	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 	self.dynamicAnimator.delegate = self;

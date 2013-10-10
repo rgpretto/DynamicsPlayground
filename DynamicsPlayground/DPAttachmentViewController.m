@@ -8,6 +8,9 @@
 
 #import "DPAttachmentViewController.h"
 
+#import "UIColor+iOS7Colors.h"
+
+
 @interface DPAttachmentViewController () <UIDynamicAnimatorDelegate>
 
 
@@ -34,10 +37,12 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
     
+    self.view.layer.borderColor = [UIColor iOS7redColor].CGColor;
+	self.view.layer.borderWidth = 2.0f;
+    
 	/*
      use gravity behavior to start animation and collision behavior to stop animation
 	 */
-    
 	UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.redView, self.greenView]];
 	collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
     
