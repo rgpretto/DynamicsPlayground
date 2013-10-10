@@ -10,7 +10,6 @@
 
 @implementation DPDynamicObject
 
-
 - (CGRect)bounds {
 	return CGRectMake(0.0, 0.0, 100.0, 100.0);
 }

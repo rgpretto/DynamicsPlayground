@@ -19,7 +19,6 @@
 		UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:items];
 		collision.translatesReferenceBoundsIntoBoundary = YES;
         
-        
 		[self addChildBehavior:gravity];
 		[self addChildBehavior:collision];
 	}

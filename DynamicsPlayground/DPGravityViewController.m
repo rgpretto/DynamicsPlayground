@@ -7,7 +7,7 @@
 //
 
 #import "DPGravityViewController.h"
-@import QuartzCore;
+
 #import "UIColor+iOS7Colors.h"
 
 @interface DPGravityViewController () <UIDynamicAnimatorDelegate>
@@ -30,7 +30,6 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
     
-	// evidence reference view bounds
 	self.view.layer.borderColor = [UIColor iOS7darkBlueColor].CGColor;
 	self.view.layer.borderWidth = 2.0f;
     

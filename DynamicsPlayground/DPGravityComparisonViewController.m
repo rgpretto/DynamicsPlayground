@@ -7,7 +7,7 @@
 //
 
 #import "DPGravityComparisonViewController.h"
-@import QuartzCore;
+
 #import "UIColor+iOS7Colors.h"
 
 
@@ -48,6 +48,7 @@
 	UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:items];
 	collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
 	collisionBehavior.collisionDelegate = self;
+    
 	[self.dynamicAnimator addBehavior:gravityBehavior];
 	[self.dynamicAnimator addBehavior:collisionBehavior];
 }
