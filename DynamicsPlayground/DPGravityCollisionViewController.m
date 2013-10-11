@@ -41,6 +41,9 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
     
+    self.animatorStatusView = [DPAnimatorStatusView animatorStatusViewinContainerFrame:[self.view frame]];
+    [self.view addSubview:self.animatorStatusView];
+    
 	self.view.layer.borderColor = [UIColor iOS7redColor].CGColor;
 	self.view.layer.borderWidth = 2.0f;
     
