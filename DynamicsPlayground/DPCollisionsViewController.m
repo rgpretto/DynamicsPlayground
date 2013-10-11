@@ -8,6 +8,7 @@
 
 #import "DPCollisionsViewController.h"
 
+#import "DPAnimatorStatusView.h"
 #import "UIColor+iOS7Colors.h"
 
 
@@ -21,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIView *redView3;
 
 @property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
+@property (strong, nonatomic) DPAnimatorStatusView *animatorStatusView;
 
 - (IBAction)handleStartButton:(id)sender;
 
@@ -39,6 +41,9 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 
+    self.animatorStatusView = [DPAnimatorStatusView animatorStatusViewinContainerFrame:[self.view frame]];
+    [self.view addSubview:self.animatorStatusView];
+    
 	self.view.layer.borderColor = [UIColor iOS7redColor].CGColor;
 	self.view.layer.borderWidth = 2.0f;
     
@@ -77,10 +82,12 @@
 
 - (void)dynamicAnimatorWillResume:(UIDynamicAnimator *)animator {
 	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
+    [self.animatorStatusView setAnimatorStatus:[animator isRunning]];
 }
 
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
 	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
+    [self.animatorStatusView setAnimatorStatus:[animator isRunning]];
 }
 
 @end

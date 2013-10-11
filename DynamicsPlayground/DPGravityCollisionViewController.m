@@ -7,7 +7,9 @@
 //
 
 #import "DPGravityCollisionViewController.h"
-@import QuartzCore;
+
+
+#import "DPAnimatorStatusView.h"
 #import "UIColor+iOS7Colors.h"
 
 #define CUSTOM_BEHAVIOR
@@ -21,6 +23,8 @@
 
 @property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
+
+@property (strong, nonatomic) DPAnimatorStatusView *animatorStatusView;
 
 @end
 
@@ -94,10 +98,12 @@
 
 - (void)dynamicAnimatorWillResume:(UIDynamicAnimator *)animator {
 	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
+    [self.animatorStatusView setAnimatorStatus:[animator isRunning]];
 }
 
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
 	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
+    [self.animatorStatusView setAnimatorStatus:[animator isRunning]];
 }
 
 #pragma mark - UICollisionBehaviorDelegate
