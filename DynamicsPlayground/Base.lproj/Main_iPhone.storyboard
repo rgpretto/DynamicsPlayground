@@ -929,7 +929,7 @@ Push</string>
             </objects>
             <point key="canvasLocation" x="1450" y="-1359"/>
         </scene>
-        <!--Gravity Comparison View Controller - Gravity-->
+        <!--Gravity Comparison View Controller - Gravity Comparison-->
         <scene sceneID="x2h-v9-cLb">
             <objects>
                 <viewController id="X7J-gw-Aeq" customClass="DPGravityComparisonViewController" sceneMemberID="viewController">
@@ -963,7 +963,7 @@ Push</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Gravity" id="lgV-Tk-pfV"/>
+                    <navigationItem key="navigationItem" title="Gravity Comparison" id="lgV-Tk-pfV"/>
                     <connections>
                         <outlet property="greenView" destination="efs-ML-nW2" id="tEm-Hv-Uon"/>
                         <outlet property="redView" destination="sNy-eG-5Yr" id="m9s-jI-FPs"/>
