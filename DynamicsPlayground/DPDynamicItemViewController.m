@@ -68,10 +68,6 @@
 	 */
 	UIDynamicItemBehavior *propertiesBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.redView]];
 	propertiesBehavior.elasticity = 0.5;
-	[propertiesBehavior addAngularVelocity:22.0 forItem:self.redView];
-	propertiesBehavior.action = ^{
-		// do something
-	};
     
 	[self.dynamicAnimator addBehavior:propertiesBehavior];
 	[self.dynamicAnimator addBehavior:gravityBeahvior];
