@@ -23,8 +23,10 @@
 + (instancetype)animatorStatusViewinContainerFrame:(CGRect)containerFrame {
     id newInstance = nil;
     
+    const CGFloat yOffset = 40.0f;
+    
     CGRect defaultFrame = CGRectMake(0.0, 0.0, 100.0, 30.0f);
-    CGRect finalFrame = CGRectOffset(defaultFrame , CGRectGetMaxX(containerFrame) - CGRectGetWidth(defaultFrame), CGRectGetMinY(containerFrame) + 40);
+    CGRect finalFrame = CGRectOffset(defaultFrame , CGRectGetMaxX(containerFrame) - CGRectGetWidth(defaultFrame), CGRectGetMinY(containerFrame) + yOffset);
     
     newInstance = [[self alloc] initWithFrame:finalFrame];
     [newInstance setAnimatorStatus:NO];
