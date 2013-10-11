@@ -8,12 +8,15 @@
 
 #import "DPGravityViewController.h"
 
+#import "DPAnimatorStatusView.h"
 #import "UIColor+iOS7Colors.h"
 
 @interface DPGravityViewController () <UIDynamicAnimatorDelegate>
 
 @property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
 @property (weak, nonatomic) IBOutlet UIView *greenView;
+
+@property (strong, nonatomic) DPAnimatorStatusView *animatorStatusView;
 
 @end
 
@@ -29,6 +32,9 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    
+    self.animatorStatusView = [DPAnimatorStatusView animatorStatusViewinContainerFrame:[self.view frame]];
+    [self.view addSubview:self.animatorStatusView];
     
 	self.view.layer.borderColor = [UIColor iOS7darkBlueColor].CGColor;
 	self.view.layer.borderWidth = 2.0f;
@@ -50,10 +56,12 @@
 
 - (void)dynamicAnimatorWillResume:(UIDynamicAnimator *)animator {
 	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
+    [self.animatorStatusView setAnimatorStatus:[animator isRunning]];
 }
 
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
 	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
+    [self.animatorStatusView setAnimatorStatus:[animator isRunning]];
 }
 
 @end

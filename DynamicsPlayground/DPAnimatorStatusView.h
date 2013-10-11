@@ -12,4 +12,9 @@
 
 @property (nonatomic, strong) UIDynamicAnimator *dynamicAnimator;
 
++ (instancetype)animatorStatusViewinContainerFrame:(CGRect)containerFrame;
+
+- (void)setAnimatorStatus:(BOOL)isActive;
+
+
 @end

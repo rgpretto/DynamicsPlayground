@@ -8,8 +8,8 @@
 
 #import "DPPushComparisonViewController.h"
 
+#import "DPAnimatorStatusView.h"
 #import "UIColor+iOS7Colors.h"
-@import QuartzCore;
 
 
 @interface DPPushComparisonViewController () <UIDynamicAnimatorDelegate>
@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIView *redView;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *startButton;
+
+@property (strong, nonatomic) DPAnimatorStatusView *animatorStatusView;
 
 - (IBAction)handlePushButton:(id)sender;
 
@@ -39,6 +41,9 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    
+    self.animatorStatusView = [DPAnimatorStatusView animatorStatusViewinContainerFrame:[self.view frame]];
+    [self.view addSubview:self.animatorStatusView];
 
     // evidence reference view bounds
 	self.view.layer.borderColor = [UIColor iOS7redColor].CGColor;
@@ -78,10 +83,12 @@
 
 - (void)dynamicAnimatorWillResume:(UIDynamicAnimator *)animator {
 	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
+    [self.animatorStatusView setAnimatorStatus:[animator isRunning]];
 }
 
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
 	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
+    [self.animatorStatusView setAnimatorStatus:[animator isRunning]];
 }
 
 @end
