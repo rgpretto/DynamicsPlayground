@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Renzo Pretto. All rights reserved.
 //
 
-#import "DPIstantaneousPushViewController.h"
+#import "DPInstantaneousPushViewController.h"
 
 #import "DPAnimatorStatusView.h"
 #import "UIColor+iOS7Colors.h"
 
 
-@interface DPIstantaneousPushViewController () <UIDynamicAnimatorDelegate>
+@interface DPInstantaneousPushViewController () <UIDynamicAnimatorDelegate>
 
 @property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
 
@@ -26,7 +26,7 @@
 
 @end
 
-@implementation DPIstantaneousPushViewController
+@implementation DPInstantaneousPushViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -58,12 +58,12 @@
 		collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
         
 		CGVector pushVector = CGVectorMake(0.0, 1.0);
-		UIPushBehavior *continousPush = [[UIPushBehavior alloc] initWithItems:@[self.greenView, self.redView]
-		                                                                 mode:UIPushBehaviorModeInstantaneous];
-		continousPush.pushDirection = pushVector;
+		UIPushBehavior *instantaneousPush = [[UIPushBehavior alloc] initWithItems:@[self.greenView, self.redView]
+                                                                             mode:UIPushBehaviorModeInstantaneous];
+		instantaneousPush.pushDirection = pushVector;
         
 		[self.dynamicAnimator addBehavior:collisionBehavior];
-		[self.dynamicAnimator addBehavior:continousPush];
+		[self.dynamicAnimator addBehavior:instantaneousPush];
 	}
 }
 

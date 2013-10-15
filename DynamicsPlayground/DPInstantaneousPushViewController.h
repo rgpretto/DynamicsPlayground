@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface DPIstantaneousPushViewController : UIViewController
+@interface DPInstantaneousPushViewController : UIViewController
 
 @end
