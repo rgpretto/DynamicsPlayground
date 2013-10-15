@@ -235,8 +235,29 @@
                                             <segue destination="tAi-0V-5kY" kind="push" id="v8g-4g-x2S"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="jUw-PA-F9Q" style="IBUITableViewCellStyleDefault" id="dEx-Qp-GAc">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="WHd-7W-oln" style="IBUITableViewCellStyleDefault" id="Wfu-wl-K42">
                                         <rect key="frame" x="0.0" y="707" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wfu-wl-K42" id="0h0-Hz-7JY">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Istantaneous Push" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WHd-7W-oln">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="hkd-Lx-5nQ" kind="push" id="90y-uO-Ykh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="jUw-PA-F9Q" style="IBUITableViewCellStyleDefault" id="dEx-Qp-GAc">
+                                        <rect key="frame" x="0.0" y="751" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dEx-Qp-GAc" id="xdk-GU-mST">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -261,7 +282,7 @@
                             <tableViewSection headerTitle="Dynamic Item Behavior" id="qu1-jn-zG6">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="PeJ-7l-sdi" style="IBUITableViewCellStyleDefault" id="kCR-pk-huU">
-                                        <rect key="frame" x="0.0" y="799" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="843" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kCR-pk-huU" id="NZe-Xm-ZQW">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -286,7 +307,7 @@
                             <tableViewSection headerTitle="Collection View" id="1ro-IR-Coe" userLabel="Table View Section - Collection View">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="mKE-XN-x0y" style="IBUITableViewCellStyleDefault" id="Ulr-X6-m6l">
-                                        <rect key="frame" x="0.0" y="891" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="935" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ulr-X6-m6l" id="kHV-Pi-dkN">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -311,7 +332,7 @@
                             <tableViewSection headerTitle="Dynamic Item protocol" id="nat-A5-Srk">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="WiK-aN-ija" style="IBUITableViewCellStyleDefault" id="KAw-Qa-kW9">
-                                        <rect key="frame" x="0.0" y="983" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="1027" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KAw-Qa-kW9" id="JwS-DR-g5x">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -387,10 +408,10 @@
             </objects>
             <point key="canvasLocation" x="1026" y="6"/>
         </scene>
-        <!--Push View Controller - Continous Push-->
+        <!--Continous Push View Controller - Continous Push-->
         <scene sceneID="COz-aV-9Xs">
             <objects>
-                <viewController id="tAi-0V-5kY" customClass="DPPushViewController" sceneMemberID="viewController">
+                <viewController id="tAi-0V-5kY" customClass="DPContinousPushViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="azE-cq-ig9"/>
                         <viewControllerLayoutGuide type="bottom" id="61R-eU-mcP"/>
@@ -670,7 +691,7 @@ Push</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVw-Lq-auW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1363" y="713"/>
+            <point key="canvasLocation" x="1806" y="713"/>
         </scene>
         <!--Attachment View Controller - Attachment-->
         <scene sceneID="KJE-cH-t2w">
@@ -1084,6 +1105,90 @@ Push</string>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1030" y="1410"/>
+        </scene>
+        <!--Istantaneous Push View Controller - Continous Push-->
+        <scene sceneID="ACk-pC-uT1">
+            <objects>
+                <viewController id="hkd-Lx-5nQ" customClass="DPIstantaneousPushViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3LH-sq-xeW"/>
+                        <viewControllerLayoutGuide type="bottom" id="A53-bm-BJ8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bPa-KX-1BU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XaT-U6-7yo" userLabel="Green View">
+                                <rect key="frame" x="44" y="68" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="qt0-J3-vwB">
+                                        <rect key="frame" x="0.0" y="28" width="100" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="4qf-KL-5WG"/>
+                                            <constraint firstAttribute="width" constant="100" id="nBe-Fi-8xY"/>
+                                        </constraints>
+                                        <string key="text">Istantaneous
+Push</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="BrF-Dv-t4w"/>
+                                    <constraint firstAttribute="centerY" secondItem="qt0-J3-vwB" secondAttribute="centerY" id="D9S-Ly-XsI"/>
+                                    <constraint firstAttribute="centerX" secondItem="qt0-J3-vwB" secondAttribute="centerX" id="akF-iH-LS8"/>
+                                    <constraint firstAttribute="width" constant="100" id="suM-yp-X7m"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tZX-hG-UZN" userLabel="Red View">
+                                <rect key="frame" x="177" y="108" width="100" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="dju-YN-AI1">
+                                        <rect key="frame" x="0.0" y="8" width="100" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Alr-iK-4Qx"/>
+                                            <constraint firstAttribute="height" constant="44" id="blP-qT-7CW"/>
+                                        </constraints>
+                                        <string key="text">Istantaneous
+push</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="66G-dv-thK"/>
+                                    <constraint firstAttribute="height" constant="60" id="A64-eK-cjp"/>
+                                    <constraint firstAttribute="centerX" secondItem="dju-YN-AI1" secondAttribute="centerX" id="NPk-IP-I8r"/>
+                                    <constraint firstAttribute="centerY" secondItem="dju-YN-AI1" secondAttribute="centerY" id="sbk-Z4-EpM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Continous Push" id="B8j-d9-07A">
+                        <barButtonItem key="rightBarButtonItem" title="Start" id="tcr-zo-bO3">
+                            <connections>
+                                <action selector="handleStartButton:" destination="hkd-Lx-5nQ" id="HuJ-zX-o9P"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="greenView" destination="XaT-U6-7yo" id="y9c-JR-nId"/>
+                        <outlet property="redView" destination="tZX-hG-UZN" id="i9D-iO-p14"/>
+                        <outlet property="startButton" destination="tcr-zo-bO3" id="X8N-AI-4vh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kms-w5-G0C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1422" y="713"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
