@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Renzo Pretto. All rights reserved.
 //
 
-#import "DPPushViewController.h"
+#import "DPContinousPushViewController.h"
 
 #import "DPAnimatorStatusView.h"
 #import "UIColor+iOS7Colors.h"
 
 
-@interface DPPushViewController () <UIDynamicAnimatorDelegate>
+@interface DPContinousPushViewController () <UIDynamicAnimatorDelegate>
 
 @property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
 
@@ -26,7 +26,7 @@
 
 @end
 
-@implementation DPPushViewController
+@implementation DPContinousPushViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

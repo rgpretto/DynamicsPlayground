@@ -39,7 +39,7 @@
 		FDA8085717ED817D00C906BD /* DPFixedSpringFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA8085617ED817D00C906BD /* DPFixedSpringFlowLayout.m */; };
 		FDA8085A17EDA2C700C906BD /* DPProportionalSpringFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA8085917EDA2C700C906BD /* DPProportionalSpringFlowLayout.m */; };
 		FDB2306A17E96473007A77D6 /* DPSnapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB2306917E96473007A77D6 /* DPSnapViewController.m */; };
-		FDC0116F17EB94DE002B8B41 /* DPPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC0116E17EB94DE002B8B41 /* DPPushViewController.m */; };
+		FDC0116F17EB94DE002B8B41 /* DPContinousPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC0116E17EB94DE002B8B41 /* DPContinousPushViewController.m */; };
 		FDC0117217EB981F002B8B41 /* DPGravityComparisonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC0117117EB981F002B8B41 /* DPGravityComparisonViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -109,8 +109,8 @@
 		FDA8085917EDA2C700C906BD /* DPProportionalSpringFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPProportionalSpringFlowLayout.m; sourceTree = "<group>"; };
 		FDB2306817E96473007A77D6 /* DPSnapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPSnapViewController.h; sourceTree = "<group>"; };
 		FDB2306917E96473007A77D6 /* DPSnapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPSnapViewController.m; sourceTree = "<group>"; };
-		FDC0116D17EB94DE002B8B41 /* DPPushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPPushViewController.h; sourceTree = "<group>"; };
-		FDC0116E17EB94DE002B8B41 /* DPPushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPPushViewController.m; sourceTree = "<group>"; };
+		FDC0116D17EB94DE002B8B41 /* DPContinousPushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPContinousPushViewController.h; sourceTree = "<group>"; };
+		FDC0116E17EB94DE002B8B41 /* DPContinousPushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPContinousPushViewController.m; sourceTree = "<group>"; };
 		FDC0117017EB981F002B8B41 /* DPGravityComparisonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPGravityComparisonViewController.h; sourceTree = "<group>"; };
 		FDC0117117EB981F002B8B41 /* DPGravityComparisonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPGravityComparisonViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -282,8 +282,8 @@
 		FD42794B17E9774F000127D0 /* Push Behavior */ = {
 			isa = PBXGroup;
 			children = (
-				FDC0116D17EB94DE002B8B41 /* DPPushViewController.h */,
-				FDC0116E17EB94DE002B8B41 /* DPPushViewController.m */,
+				FDC0116D17EB94DE002B8B41 /* DPContinousPushViewController.h */,
+				FDC0116E17EB94DE002B8B41 /* DPContinousPushViewController.m */,
 				FD42794C17E97770000127D0 /* DPPushComparisonViewController.h */,
 				FD42794D17E97770000127D0 /* DPPushComparisonViewController.m */,
 			);
@@ -510,7 +510,7 @@
 				229F7D2E17F0421B00CC07BD /* DPDynamicItemProtocolViewController.m in Sources */,
 				2259568C17F34250003346AC /* DPCollisionsViewController.m in Sources */,
 				22E6007E17E0DCE8009D493F /* DPGravityCollisionViewController.m in Sources */,
-				FDC0116F17EB94DE002B8B41 /* DPPushViewController.m in Sources */,
+				FDC0116F17EB94DE002B8B41 /* DPContinousPushViewController.m in Sources */,
 				22248CA317DF29D300C7E97E /* main.m in Sources */,
 				FD04D99617E6D72D00563710 /* DPAttachmentOffsetViewController.m in Sources */,
 			);
