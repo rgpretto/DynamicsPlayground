@@ -68,14 +68,14 @@
 		                                                                 mode:UIPushBehaviorModeContinuous];
 		continousPush.pushDirection = pushVector;
         
-		UIPushBehavior *istantaneousPush = [[UIPushBehavior alloc] initWithItems:@[self.redView]
+		UIPushBehavior *instantaneousPush = [[UIPushBehavior alloc] initWithItems:@[self.redView]
 		                                                                    mode:UIPushBehaviorModeInstantaneous];
-		istantaneousPush.pushDirection = pushVector;
+		instantaneousPush.pushDirection = pushVector;
         
 		[self.dynamicAnimator addBehavior:gravity];
 		[self.dynamicAnimator addBehavior:collisionBehavior];
 		[self.dynamicAnimator addBehavior:continousPush];
-		[self.dynamicAnimator addBehavior:istantaneousPush];
+		[self.dynamicAnimator addBehavior:instantaneousPush];
 	}
 }
 
