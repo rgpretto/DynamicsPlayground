@@ -9,14 +9,14 @@
 #import "DPDynamicItemProtocolViewController.h"
 
 #import "DPAnimatorStatusView.h"
-#import "DPDynamicObject.h"
+#import "DPDynamicItemObject.h"
 #import "UIColor+iOS7Colors.h"
 
 
 @interface DPDynamicItemProtocolViewController () <UIDynamicAnimatorDelegate>
 
 @property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
-@property (strong, nonatomic) DPDynamicObject *dynamicObject;
+@property (strong, nonatomic) DPDynamicItemObject *dynamicObject;
 
 @property (strong, nonatomic) DPAnimatorStatusView *animatorStatusView;
 
@@ -47,7 +47,7 @@
 	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 	self.dynamicAnimator.delegate = self;
     
-	self.dynamicObject = [[DPDynamicObject alloc] init];
+	self.dynamicObject = [[DPDynamicItemObject alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {

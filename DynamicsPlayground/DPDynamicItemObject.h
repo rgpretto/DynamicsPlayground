@@ -11,10 +11,10 @@
 /*!
  *
  * This object conforom to UIDynamicItem protocol and log
- * property changes when UIDynamicAnimator acnt on it.
+ * property changes when UIDynamicAnimator act on it.
  *
  */
-@interface DPDynamicObject : NSObject <UIDynamicItem>
+@interface DPDynamicItemObject : NSObject <UIDynamicItem>
 
 @property (nonatomic, readwrite) CGPoint center;
 @property (nonatomic, readonly) CGRect bounds;

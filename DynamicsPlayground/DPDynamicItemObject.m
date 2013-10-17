@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Renzo Pretto. All rights reserved.
 //
 
-#import "DPDynamicObject.h"
+#import "DPDynamicItemObject.h"
 
-@implementation DPDynamicObject
+@implementation DPDynamicItemObject
 
 - (CGRect)bounds {
 	return CGRectMake(0.0, 0.0, 100.0, 100.0);
