@@ -9,14 +9,14 @@
 #import "DPDynamicItemProtocolViewController.h"
 
 #import "DPAnimatorStatusView.h"
-#import "DPDynamicObject.h"
+#import "DPDynamicItemObject.h"
 #import "UIColor+iOS7Colors.h"
 
 
 @interface DPDynamicItemProtocolViewController () <UIDynamicAnimatorDelegate>
 
 @property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
-@property (strong, nonatomic) DPDynamicObject *dynamicObject;
+@property (strong, nonatomic) DPDynamicItemObject *dynamicObject;
 
 @property (strong, nonatomic) DPAnimatorStatusView *animatorStatusView;
 
@@ -47,7 +47,7 @@
 	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 	self.dynamicAnimator.delegate = self;
     
-	self.dynamicObject = [[DPDynamicObject alloc] init];
+	self.dynamicObject = [[DPDynamicItemObject alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,7 +63,6 @@
         
 		UIDynamicItemBehavior *itemBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.dynamicObject]];
 		itemBehavior.elasticity = 0.5f;
-		[itemBehavior addAngularVelocity:2.0f forItem:self.dynamicObject];
         
 		UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[self.dynamicObject]];
 		collision.translatesReferenceBoundsIntoBoundary = YES;
