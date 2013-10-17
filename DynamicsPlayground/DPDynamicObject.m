@@ -26,8 +26,8 @@
 	return CGAffineTransformIdentity;
 }
 
-- (void)setTransform:(CGAffineTransform)tranform {
-	NSLog(@"Transform = %@", NSStringFromCGAffineTransform(tranform));
+- (void)setTransform:(CGAffineTransform)transform {
+	NSLog(@"Transform = %@", NSStringFromCGAffineTransform(transform));
 }
 
 @end
