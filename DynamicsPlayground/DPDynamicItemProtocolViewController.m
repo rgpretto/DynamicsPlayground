@@ -63,7 +63,6 @@
         
 		UIDynamicItemBehavior *itemBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.dynamicObject]];
 		itemBehavior.elasticity = 0.5f;
-		[itemBehavior addAngularVelocity:2.0f forItem:self.dynamicObject];
         
 		UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[self.dynamicObject]];
 		collision.translatesReferenceBoundsIntoBoundary = YES;
