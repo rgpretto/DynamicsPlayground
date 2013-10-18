@@ -18,7 +18,7 @@ const NSInteger kCellCount = 20;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) UICollectionViewFlowLayout *flowLayout;
 
-@property (strong, nonatomic) NSMutableArray *colors;
+@property (strong, nonatomic) NSArray *colors;
 
 @end
 
@@ -34,17 +34,8 @@ const NSInteger kCellCount = 20;
 - (void)viewDidLoad {
 	[super viewDidLoad];
     
-	srand48(time(0));
-    
-	self.colors = [NSMutableArray array];
-	for (NSInteger i = 0; i < kCellCount; ++i) {
-		UIColor *color = [UIColor colorWithRed:drand48()
-		                                 green:drand48()
-		                                  blue:drand48()
-		                                 alpha:1.0f];
-		[self.colors addObject:color];
-	}
-    
+    self.colors = [self cellColors];
+
 	[self.collectionView registerClass:[DPCollectionViewCell class]
 	        forCellWithReuseIdentifier:[DPCollectionViewCell cellIdentifier]];
     
@@ -87,5 +78,21 @@ const NSInteger kCellCount = 20;
 		cell.textLabel.text = [@(indexPath.row)stringValue];
 	}
 }
+
+- (NSArray *)cellColors {
+    srand48(time(0));
+    NSMutableArray *result = [NSMutableArray array];
+    
+    for (NSInteger i = 0; i < kCellCount; ++i) {
+        UIColor *color = [UIColor colorWithRed:drand48()
+                                         green:drand48()
+                                          blue:drand48()
+                                         alpha:1.0f];
+        [result addObject:color];
+    }
+    return result;
+}
+
+
 
 @end
