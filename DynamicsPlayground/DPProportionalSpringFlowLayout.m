@@ -25,7 +25,6 @@
 	// UIScrollView contentsOffset == bounds.origin
 	UIScrollView *scrollView = [self collectionView];
     
-	// shit layout attribute position by delta
 	CGFloat scrollDelta = newBounds.origin.y - scrollView.bounds.origin.y;
     
 	//  -1- get current touch location

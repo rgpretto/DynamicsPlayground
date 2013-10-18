@@ -45,7 +45,7 @@
 			UIAttachmentBehavior *springBehavior = nil;
 			springBehavior = [[UIAttachmentBehavior alloc] initWithItem:attribute
 			                                           attachedToAnchor:[attribute center]];
-			// spring length has to be zero, so the sprint come to rest in the anchor point
+			// spring length has to be zero, so the spring come to rest in the anchor point
 			springBehavior.length = 0.0f;
 			springBehavior.damping = 0.5;
 			springBehavior.frequency = 0.8;
@@ -75,7 +75,7 @@
 	// UIScrollView contentsOffset == bounds.origin
 	UIScrollView *scrollView = [self collectionView];
     
-	// shit layout attribute position by delta
+	// shift layout attribute position by delta
 	CGFloat scrollDelta = newBounds.origin.y - scrollView.bounds.origin.y;
     
 	for (UIAttachmentBehavior *springBehavior in[self.dynamicAnimator behaviors]) {
