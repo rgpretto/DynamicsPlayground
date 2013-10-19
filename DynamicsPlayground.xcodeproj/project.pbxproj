@@ -35,6 +35,7 @@
 		FD04D99617E6D72D00563710 /* DPAttachmentOffsetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD04D99517E6D72D00563710 /* DPAttachmentOffsetViewController.m */; };
 		FD42794E17E97770000127D0 /* DPPushComparisonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD42794D17E97770000127D0 /* DPPushComparisonViewController.m */; };
 		FD5EEAB418126A6E007357CE /* DPSpringsAttachmentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5EEAB318126A6E007357CE /* DPSpringsAttachmentsViewController.m */; };
+		FD5EEAB718126D74007357CE /* DPSpringSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5EEAB618126D74007357CE /* DPSpringSettingsView.m */; };
 		FDA8085117ED7D9900C906BD /* DPDynamicCollectionViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA8085017ED7D9900C906BD /* DPDynamicCollectionViewViewController.m */; };
 		FDA8085417ED7EF200C906BD /* DPCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA8085317ED7EF200C906BD /* DPCollectionViewCell.m */; };
 		FDA8085717ED817D00C906BD /* DPFixedSpringFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA8085617ED817D00C906BD /* DPFixedSpringFlowLayout.m */; };
@@ -103,6 +104,8 @@
 		FD42794D17E97770000127D0 /* DPPushComparisonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPPushComparisonViewController.m; sourceTree = "<group>"; };
 		FD5EEAB218126A6E007357CE /* DPSpringsAttachmentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPSpringsAttachmentsViewController.h; sourceTree = "<group>"; };
 		FD5EEAB318126A6E007357CE /* DPSpringsAttachmentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPSpringsAttachmentsViewController.m; sourceTree = "<group>"; };
+		FD5EEAB518126D74007357CE /* DPSpringSettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPSpringSettingsView.h; sourceTree = "<group>"; };
+		FD5EEAB618126D74007357CE /* DPSpringSettingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPSpringSettingsView.m; sourceTree = "<group>"; };
 		FDA8084F17ED7D9900C906BD /* DPDynamicCollectionViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDynamicCollectionViewViewController.h; sourceTree = "<group>"; };
 		FDA8085017ED7D9900C906BD /* DPDynamicCollectionViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDynamicCollectionViewViewController.m; sourceTree = "<group>"; };
 		FDA8085217ED7EF200C906BD /* DPCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPCollectionViewCell.h; sourceTree = "<group>"; };
@@ -332,6 +335,8 @@
 				220E9F4A17F0A16900A9C396 /* DPSpringAttachmentViewController.m */,
 				FD5EEAB218126A6E007357CE /* DPSpringsAttachmentsViewController.h */,
 				FD5EEAB318126A6E007357CE /* DPSpringsAttachmentsViewController.m */,
+				FD5EEAB518126D74007357CE /* DPSpringSettingsView.h */,
+				FD5EEAB618126D74007357CE /* DPSpringSettingsView.m */,
 			);
 			name = Attachment;
 			sourceTree = "<group>";
@@ -525,6 +530,7 @@
 				22248CA317DF29D300C7E97E /* main.m in Sources */,
 				FD04D99617E6D72D00563710 /* DPAttachmentOffsetViewController.m in Sources */,
 				FDCC5AEA180D093B008796B7 /* DPInstantaneousPushViewController.m in Sources */,
+				FD5EEAB718126D74007357CE /* DPSpringSettingsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
