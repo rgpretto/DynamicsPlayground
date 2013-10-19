@@ -51,9 +51,6 @@
 	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 	self.dynamicAnimator.delegate = self;
     
-	UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[self.greenView, self.blackView]];
-	collision.translatesReferenceBoundsIntoBoundary = YES;
-    
     UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[self.greenView, self.blackView]];
     
 	UIOffset redToGreenOffset = UIOffsetZero;
@@ -78,7 +75,6 @@
                                                    attachedToItem:self.blackView
                                                  offsetFromCenter:blackTogreenOffset];
     
-	//    [self.animator addBehavior:collision];
     [self.dynamicAnimator addBehavior:gravity];
 	[self.dynamicAnimator addBehavior:self.firstAttachment];
 	[self.dynamicAnimator addBehavior:secondAttachment];
