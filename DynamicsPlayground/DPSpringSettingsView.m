@@ -36,20 +36,22 @@
     [super layoutSubviews];
     
     CGFloat height = CGRectGetHeight([self frame]) / 2.0;
-    self.dampingLabel.frame = CGRectMake(0.0, 0.0, CGRectGetWidth([self frame]), height);
-    self.frequencyLabel.frame =  CGRectMake(0.0, CGRectGetMaxY([self.dampingLabel frame]), CGRectGetWidth([self.dampingLabel frame]), height);
+    self.frequencyLabel.frame = CGRectMake(0.0, 0.0, CGRectGetWidth([self frame]), height);
+    self.dampingLabel.frame =  CGRectMake(0.0, CGRectGetMaxY([self.frequencyLabel frame]), CGRectGetWidth([self.frequencyLabel frame]), height);
 }
 
 - (void)commonInit {
+    
+    UIFont *font = [UIFont fontWithName:@"Courier New" size:15.0f];
+    
     _dampingLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     _frequencyLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     
+    self.dampingLabel.font = font;
+    self.frequencyLabel.font = font;
+    
     [self addSubview:self.dampingLabel];
     [self addSubview:self.frequencyLabel];
-    
-    self.dampingLabel.text = @"1234";
-    self.frequencyLabel.text = @"5678";
-    
 }
 
 @end
