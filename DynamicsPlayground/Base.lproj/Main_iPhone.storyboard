@@ -1077,7 +1077,7 @@ Push</string>
             </objects>
             <point key="canvasLocation" x="1464" y="-2087"/>
         </scene>
-        <!--Spring Attachment View Controller - Attachment offset-->
+        <!--Spring Attachment View Controller - Spring Attachment-->
         <scene sceneID="Ejc-Qc-fqj">
             <objects>
                 <viewController id="zYx-V2-vOz" customClass="DPSpringAttachmentViewController" sceneMemberID="viewController">
@@ -1124,7 +1124,7 @@ Push</string>
                             <outletCollection property="gestureRecognizers" destination="9Un-Ps-Wck" appends="YES" id="GOr-OO-XTb"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Attachment offset" id="sDY-sx-p6r"/>
+                    <navigationItem key="navigationItem" title="Spring Attachment" id="sDY-sx-p6r"/>
                     <connections>
                         <outlet property="greenView" destination="tse-ry-oAX" id="9SV-PH-oyp"/>
                         <outlet property="redView" destination="gQc-zS-Hky" id="AQc-PT-wv7"/>
