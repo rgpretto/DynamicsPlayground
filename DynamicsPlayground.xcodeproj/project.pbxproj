@@ -45,6 +45,7 @@
 		FDC0117217EB981F002B8B41 /* DPGravityComparisonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC0117117EB981F002B8B41 /* DPGravityComparisonViewController.m */; };
 		FDC68675181314F800A581F3 /* DPMultipleAttachmentOffsetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC68674181314F800A581F3 /* DPMultipleAttachmentOffsetViewController.m */; };
 		FDCC5AEA180D093B008796B7 /* DPInstantaneousPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCC5AE9180D093B008796B7 /* DPInstantaneousPushViewController.m */; };
+		FDDA241D181328F500427751 /* DPInstantaneousPushOffsetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDA241C181328F500427751 /* DPInstantaneousPushOffsetViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,8 @@
 		FDC68674181314F800A581F3 /* DPMultipleAttachmentOffsetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMultipleAttachmentOffsetViewController.m; sourceTree = "<group>"; };
 		FDCC5AE8180D093B008796B7 /* DPInstantaneousPushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPInstantaneousPushViewController.h; sourceTree = "<group>"; };
 		FDCC5AE9180D093B008796B7 /* DPInstantaneousPushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPInstantaneousPushViewController.m; sourceTree = "<group>"; };
+		FDDA241B181328F500427751 /* DPInstantaneousPushOffsetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPInstantaneousPushOffsetViewController.h; sourceTree = "<group>"; };
+		FDDA241C181328F500427751 /* DPInstantaneousPushOffsetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPInstantaneousPushOffsetViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +297,8 @@
 		FD42794B17E9774F000127D0 /* Push Behavior */ = {
 			isa = PBXGroup;
 			children = (
+				FDDA241B181328F500427751 /* DPInstantaneousPushOffsetViewController.h */,
+				FDDA241C181328F500427751 /* DPInstantaneousPushOffsetViewController.m */,
 				FDC0116D17EB94DE002B8B41 /* DPContinousPushViewController.h */,
 				FDC0116E17EB94DE002B8B41 /* DPContinousPushViewController.m */,
 				FDCC5AE8180D093B008796B7 /* DPInstantaneousPushViewController.h */,
@@ -526,6 +531,7 @@
 				FD42794E17E97770000127D0 /* DPPushComparisonViewController.m in Sources */,
 				FD5EEAB418126A6E007357CE /* DPSpringsAttachmentsViewController.m in Sources */,
 				FDA8085417ED7EF200C906BD /* DPCollectionViewCell.m in Sources */,
+				FDDA241D181328F500427751 /* DPInstantaneousPushOffsetViewController.m in Sources */,
 				220E9F4F17F0AEB900A9C396 /* DPDynamicItemViewController.m in Sources */,
 				22248CB017DF29D300C7E97E /* DPMasterViewController.m in Sources */,
 				22248CA717DF29D300C7E97E /* DPAppDelegate.m in Sources */,

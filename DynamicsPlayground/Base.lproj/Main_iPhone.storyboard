@@ -298,8 +298,29 @@
                                             <segue destination="hkd-Lx-5nQ" kind="push" id="90y-uO-Ykh"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="jUw-PA-F9Q" style="IBUITableViewCellStyleDefault" id="dEx-Qp-GAc">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="TZD-hH-w71" style="IBUITableViewCellStyleDefault" id="Vg6-yv-hHU">
                                         <rect key="frame" x="0.0" y="839" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vg6-yv-hHU" id="hJP-x9-krj">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Instantaneous Push Offset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TZD-hH-w71">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="ONt-XZ-bBJ" kind="push" id="xVw-f5-gSM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="jUw-PA-F9Q" style="IBUITableViewCellStyleDefault" id="dEx-Qp-GAc">
+                                        <rect key="frame" x="0.0" y="883" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dEx-Qp-GAc" id="xdk-GU-mST">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -324,7 +345,7 @@
                             <tableViewSection headerTitle="Dynamic Item Behavior" id="qu1-jn-zG6">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="PeJ-7l-sdi" style="IBUITableViewCellStyleDefault" id="kCR-pk-huU">
-                                        <rect key="frame" x="0.0" y="931" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="975" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kCR-pk-huU" id="NZe-Xm-ZQW">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -349,7 +370,7 @@
                             <tableViewSection headerTitle="Dynamic Item protocol" id="nat-A5-Srk">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="WiK-aN-ija" style="IBUITableViewCellStyleDefault" id="KAw-Qa-kW9">
-                                        <rect key="frame" x="0.0" y="1023" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="1067" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KAw-Qa-kW9" id="JwS-DR-g5x">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -374,7 +395,7 @@
                             <tableViewSection headerTitle="Collection View" id="1ro-IR-Coe" userLabel="Table View Section - Collection View">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="mKE-XN-x0y" style="IBUITableViewCellStyleDefault" id="Ulr-X6-m6l">
-                                        <rect key="frame" x="0.0" y="1115" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="1159" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ulr-X6-m6l" id="kHV-Pi-dkN">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -1625,6 +1646,90 @@ Push</string>
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2732" y="-667"/>
+        </scene>
+        <!--Instantaneous Push Offset View Controller - Instantaneous Push-->
+        <scene sceneID="1WF-cp-rMU">
+            <objects>
+                <viewController id="ONt-XZ-bBJ" customClass="DPInstantaneousPushOffsetViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6rp-rW-4zc"/>
+                        <viewControllerLayoutGuide type="bottom" id="kzf-hB-Yhf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XC5-Ls-dXe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ww-bL-Bvg" userLabel="Green View">
+                                <rect key="frame" x="44" y="68" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="YXI-s2-rbf">
+                                        <rect key="frame" x="0.0" y="28" width="100" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="DbC-D3-bPB"/>
+                                            <constraint firstAttribute="height" constant="44" id="aJo-do-OS9"/>
+                                        </constraints>
+                                        <string key="text">Instantaneous
+Push</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="YXI-s2-rbf" secondAttribute="centerX" id="bJl-gN-eOA"/>
+                                    <constraint firstAttribute="width" constant="100" id="j6C-KP-tRx"/>
+                                    <constraint firstAttribute="height" constant="100" id="lga-7Y-loA"/>
+                                    <constraint firstAttribute="centerY" secondItem="YXI-s2-rbf" secondAttribute="centerY" id="oHZ-Nb-UU8"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hL-7B-NCv" userLabel="Red View">
+                                <rect key="frame" x="177" y="108" width="100" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="gKv-pl-E3c">
+                                        <rect key="frame" x="0.0" y="8" width="100" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Xof-E9-qCa"/>
+                                            <constraint firstAttribute="width" constant="100" id="kLd-5Q-Vfj"/>
+                                        </constraints>
+                                        <string key="text">Instantaneous
+Push</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="gKv-pl-E3c" secondAttribute="centerY" id="94c-ls-wkH"/>
+                                    <constraint firstAttribute="centerX" secondItem="gKv-pl-E3c" secondAttribute="centerX" id="jKd-8Y-DDd"/>
+                                    <constraint firstAttribute="height" constant="60" id="mxH-PW-Lf0"/>
+                                    <constraint firstAttribute="width" constant="100" id="xk1-je-Rbj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Instantaneous Push" id="iTA-oG-fEM">
+                        <barButtonItem key="rightBarButtonItem" title="Start" id="rQe-pq-8fH">
+                            <connections>
+                                <action selector="handleStartButton:" destination="ONt-XZ-bBJ" id="A7p-eX-F3v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="greenView" destination="8ww-bL-Bvg" id="V5b-vd-yQ9"/>
+                        <outlet property="redView" destination="0hL-7B-NCv" id="qm5-Rd-VsY"/>
+                        <outlet property="startButton" destination="rQe-pq-8fH" id="S5H-Gw-0Ag"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D9i-dw-r5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2200" y="713"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
