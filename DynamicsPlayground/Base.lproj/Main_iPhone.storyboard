@@ -1342,7 +1342,7 @@ Push</string>
             </objects>
             <point key="canvasLocation" x="1422" y="713"/>
         </scene>
-        <!--Springs Attachments View Controller - Spring Attachment-->
+        <!--Springs Attachments View Controller - Multiple Springs Attachment-->
         <scene sceneID="JdH-Li-Qtb">
             <objects>
                 <viewController id="oMd-ur-sN3" customClass="DPSpringsAttachmentsViewController" sceneMemberID="viewController">
@@ -1486,7 +1486,7 @@ Push</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Spring Attachment" id="8Qj-Gb-VVE"/>
+                    <navigationItem key="navigationItem" title="Multiple Springs Attachment" id="8Qj-Gb-VVE"/>
                     <connections>
                         <outlet property="greenView1" destination="xAN-th-msG" id="oOe-yq-XuL"/>
                         <outlet property="greenView2" destination="Ghb-B8-aZs" id="ucu-eL-bOM"/>
@@ -1502,7 +1502,7 @@ Push</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRz-5r-OK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2303" y="-667"/>
+            <point key="canvasLocation" x="2277" y="-667"/>
         </scene>
         <!--Multiple Attachment Offset View Controller - Multiple Attachment offset-->
         <scene sceneID="rtD-tc-Tz8">
