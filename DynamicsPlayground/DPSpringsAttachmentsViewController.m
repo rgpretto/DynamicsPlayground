@@ -50,14 +50,10 @@
     self.view.layer.borderColor = [UIColor iOS7redColor].CGColor;
 	self.view.layer.borderWidth = 2.0f;
     
-    UICollisionBehavior *collisionBehavior = nil;
 	UIAttachmentBehavior *attachmentBehavior1 = nil;
 	UIAttachmentBehavior *attachmentBehavior2 = nil;
 	UIAttachmentBehavior *attachmentBehavior3 = nil;
-    
-	collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView1]];
-	collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
-    
+        
 	attachmentBehavior1 = [[UIAttachmentBehavior alloc] initWithItem:self.greenView1
 	                                               attachedToAnchor:[self.redView1 center]];
 	attachmentBehavior1.frequency = 2.0;
@@ -85,8 +81,6 @@
     
 	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 	self.dynamicAnimator.delegate = self;
-//	[self.dynamicAnimator addBehavior:collisionBehavior];
-//	[self.dynamicAnimator addBehavior:gravity];
 	[self.dynamicAnimator addBehavior:attachmentBehavior1];
 	[self.dynamicAnimator addBehavior:attachmentBehavior2];
 	[self.dynamicAnimator addBehavior:attachmentBehavior3];
@@ -97,7 +91,6 @@
 
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
-	// Dispose of any resources that can be recreated.
 }
 
 
