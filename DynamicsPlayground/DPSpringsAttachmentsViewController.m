@@ -12,11 +12,11 @@
 #import "UIColor+iOS7Colors.h"
 #import "DPSpringSettingsView.h"
 
-#define ATTACHMENT_POINT
-
 
 @interface DPSpringsAttachmentsViewController () <UIDynamicAnimatorDelegate>
 
+@property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
+@property (strong, nonatomic) DPAnimatorStatusView *animatorStatusView;
 
 @property (weak, nonatomic) IBOutlet UIView *greenView1;
 @property (weak, nonatomic) IBOutlet UIView *greenView2;
@@ -25,20 +25,9 @@
 @property (weak, nonatomic) IBOutlet UIView *redView2;
 @property (weak, nonatomic) IBOutlet UIView *redView3;
 
-@property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
-
-@property (strong, nonatomic) DPAnimatorStatusView *animatorStatusView;
-
-#ifdef ATTACHMENT_POINT
-@property (strong, nonatomic) UIAttachmentBehavior *attachmentBehavior;
-#endif
 @property (weak, nonatomic) IBOutlet DPSpringSettingsView *spring1settingsView;
 @property (weak, nonatomic) IBOutlet DPSpringSettingsView *spring2settingsView;
 @property (weak, nonatomic) IBOutlet DPSpringSettingsView *spring3settingsView;
-
-
-- (IBAction)handlePanGesture:(UIPanGestureRecognizer *)sender;
-
 
 @end
 
@@ -61,39 +50,49 @@
     self.view.layer.borderColor = [UIColor iOS7redColor].CGColor;
 	self.view.layer.borderWidth = 2.0f;
     
-	UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[self.greenView1]];
-    
-	UIAttachmentBehavior *attachmentBehavior = nil;
-	UICollisionBehavior *collisionBehavior = nil;
+    UICollisionBehavior *collisionBehavior = nil;
+	UIAttachmentBehavior *attachmentBehavior1 = nil;
+	UIAttachmentBehavior *attachmentBehavior2 = nil;
+	UIAttachmentBehavior *attachmentBehavior3 = nil;
     
 	collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView1]];
 	collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
     
-	CGPoint anchorPoint = [self.redView center];
-	attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.greenView1
-	                                               attachedToAnchor:anchorPoint];
-	// These parameters set the attachment in spring mode, instead of a rigid connection.
-	attachmentBehavior.frequency = 4.0; // 2.0, 2.0, 4.0
-	attachmentBehavior.damping = 0.1;   // 0.1, 0.5, 0.1
-
+	attachmentBehavior1 = [[UIAttachmentBehavior alloc] initWithItem:self.greenView1
+	                                               attachedToAnchor:[self.redView1 center]];
+	attachmentBehavior1.frequency = 2.0;
+	attachmentBehavior1.damping = 0.1;
     
-    UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[self.greenView1]
+	attachmentBehavior2 = [[UIAttachmentBehavior alloc] initWithItem:self.greenView2
+                                                    attachedToAnchor:[self.redView2 center]];
+	attachmentBehavior2.frequency = 2.0;
+	attachmentBehavior2.damping = 0.3;
+
+    attachmentBehavior3 = [[UIAttachmentBehavior alloc] initWithItem:self.greenView3
+                                                    attachedToAnchor:[self.redView3 center]];
+	attachmentBehavior3.frequency = 4.0;
+	attachmentBehavior3.damping = 0.1;
+    
+    UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[self.greenView1, self.greenView2, self.greenView3]
                                                             mode:UIPushBehaviorModeInstantaneous];
-    push.magnitude = 5.0f;
+    push.magnitude = 7.0f;
     push.angle = M_PI_2;
+    
+    
+    [self.spring1settingsView updateWithSpringAttachment:attachmentBehavior1];
+    [self.spring2settingsView updateWithSpringAttachment:attachmentBehavior2];
+    [self.spring3settingsView updateWithSpringAttachment:attachmentBehavior3];
     
 	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 	self.dynamicAnimator.delegate = self;
 //	[self.dynamicAnimator addBehavior:collisionBehavior];
 //	[self.dynamicAnimator addBehavior:gravity];
-	[self.dynamicAnimator addBehavior:attachmentBehavior];
-
-        
+	[self.dynamicAnimator addBehavior:attachmentBehavior1];
+	[self.dynamicAnimator addBehavior:attachmentBehavior2];
+	[self.dynamicAnimator addBehavior:attachmentBehavior3];
+    
     [self.dynamicAnimator addBehavior:push];
-        
-#ifdef ATTACHMENT_POINT
-	self.attachmentBehavior = attachmentBehavior;
-#endif
+
 }
 
 - (void)didReceiveMemoryWarning {
