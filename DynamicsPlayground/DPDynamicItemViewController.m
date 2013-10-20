@@ -18,6 +18,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 @property (weak, nonatomic) IBOutlet UIView *redView;
+@property (weak, nonatomic) IBOutlet UILabel *greenViewLabel;
+@property (weak, nonatomic) IBOutlet UILabel *redViewLabel;
 
 @property (strong, nonatomic) DPAnimatorStatusView *animatorStatusView;
 
@@ -56,11 +58,6 @@
 	collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
 	collisionBehavior.collisionDelegate = self;
     
-	//     make circle view
-	//    self.redView.layer.cornerRadius = CGRectGetHeight([self.redView frame]) / 2.0f;
-	//    self.redView.layer.masksToBounds = YES;
-	//    self.redView.clipsToBounds = YES;
-    
 	/*
      A dynamic item behavior gives access to low-level properties of an item in
      Dynamics, here we change restitution on collisions only for redView,
@@ -69,9 +66,22 @@
 	UIDynamicItemBehavior *propertiesBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.redView]];
 	propertiesBehavior.elasticity = 0.5;
     
+<<<<<<< Updated upstream
 	[self.dynamicAnimator addBehavior:propertiesBehavior];
 	[self.dynamicAnimator addBehavior:gravityBeahvior];
 	[self.dynamicAnimator addBehavior:collisionBehavior];
+=======
+    self.greenViewLabel.text = @"Default\nelasticity";
+    self.redViewLabel.text = [NSString stringWithFormat:@"Elasticity %.1f", [propertiesBehavior elasticity]];
+    
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self.dynamicAnimator addBehavior:propertiesBehavior];
+        [self.dynamicAnimator addBehavior:gravityBeahvior];
+        [self.dynamicAnimator addBehavior:collisionBehavior];
+    });
+>>>>>>> Stashed changes
 }
 
 - (void)didReceiveMemoryWarning {
