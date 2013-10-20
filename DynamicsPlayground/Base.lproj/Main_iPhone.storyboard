@@ -539,7 +539,7 @@ Push</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Continous Push" id="blx-9E-hKq">
-                        <barButtonItem key="rightBarButtonItem" title="Start" id="izN-ae-HNj">
+                        <barButtonItem key="rightBarButtonItem" title="Push" id="izN-ae-HNj">
                             <connections>
                                 <action selector="handleStartButton:" destination="tAi-0V-5kY" id="TmL-i3-koL"/>
                             </connections>
@@ -739,7 +739,7 @@ Push</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Force comparison" id="9i2-KR-OlB">
-                        <barButtonItem key="rightBarButtonItem" title="Start" id="uCx-XJ-OfI">
+                        <barButtonItem key="rightBarButtonItem" title="Push" id="uCx-XJ-OfI">
                             <connections>
                                 <action selector="handlePushButton:" destination="OrQ-oN-kk6" id="d52-3Q-R9c"/>
                             </connections>
@@ -1347,7 +1347,7 @@ Push</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Instantaneous Push" id="B8j-d9-07A">
-                        <barButtonItem key="rightBarButtonItem" title="Start" id="tcr-zo-bO3">
+                        <barButtonItem key="rightBarButtonItem" title="Push" id="tcr-zo-bO3">
                             <connections>
                                 <action selector="handleStartButton:" destination="hkd-Lx-5nQ" id="HuJ-zX-o9P"/>
                             </connections>
@@ -1677,7 +1677,7 @@ Push</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="●" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNM-Fp-OrU">
-                                        <rect key="frame" x="77" y="0.0" width="22" height="22"/>
+                                        <rect key="frame" x="79" y="79" width="22" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

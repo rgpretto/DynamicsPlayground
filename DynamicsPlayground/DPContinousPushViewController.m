@@ -15,6 +15,7 @@
 @interface DPContinousPushViewController () <UIDynamicAnimatorDelegate>
 
 @property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
+@property (strong, nonatomic) UIPushBehavior *continousPush;
 
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 @property (weak, nonatomic) IBOutlet UIView *redView;
@@ -53,29 +54,35 @@
 
 
 - (IBAction)handleStartButton:(id)sender {
-	if (NO == [self.dynamicAnimator isRunning]) {
+	if (nil == self.continousPush) {
 		UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView, self.redView]];
 		collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
         
 		CGVector pushVector = CGVectorMake(0.0, 1.0);
-		UIPushBehavior *continousPush = [[UIPushBehavior alloc] initWithItems:@[self.greenView, self.redView]
-		                                                                 mode:UIPushBehaviorModeContinuous];
-		continousPush.pushDirection = pushVector;
+		self.continousPush = [[UIPushBehavior alloc] initWithItems:@[self.greenView, self.redView]
+                                                              mode:UIPushBehaviorModeContinuous];
+		self.continousPush.pushDirection = pushVector;
         
 		[self.dynamicAnimator addBehavior:collisionBehavior];
-		[self.dynamicAnimator addBehavior:continousPush];
-	}
+		[self.dynamicAnimator addBehavior:self.continousPush];
+	} else {
+        if (NO == [self.continousPush active]) { // we never jump in
+            [self.continousPush setActive:YES];
+        }
+    }
 }
 
 #pragma mark - UIDynamicAnimatorDelegate
 
 - (void)dynamicAnimatorWillResume:(UIDynamicAnimator *)animator {
 	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
+    NSLog(@"Is continuous push behavior active? %@",  [self.continousPush active] ? @"YES" : @"NO");
     [self.animatorStatusView setAnimatorStatus:[animator isRunning]];
 }
 
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
 	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Is continuous push behavior active? %@",  [self.continousPush active] ? @"YES" : @"NO");
     [self.animatorStatusView setAnimatorStatus:[animator isRunning]];
 }
 

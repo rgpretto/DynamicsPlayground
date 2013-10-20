@@ -15,6 +15,7 @@
 @interface DPInstantaneousPushViewController () <UIDynamicAnimatorDelegate>
 
 @property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
+@property (strong, nonatomic) UIPushBehavior *instantaneousPush;
 
 @property (weak, nonatomic) IBOutlet UIView *greenView;
 @property (weak, nonatomic) IBOutlet UIView *redView;
@@ -53,29 +54,36 @@
 
 
 - (IBAction)handleStartButton:(id)sender {
-	if (NO == [self.dynamicAnimator isRunning]) {
+	if (nil == self.instantaneousPush) {
 		UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView, self.redView]];
 		collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
         
 		CGVector pushVector = CGVectorMake(0.0, 1.0);
-		UIPushBehavior *instantaneousPush = [[UIPushBehavior alloc] initWithItems:@[self.greenView, self.redView]
-                                                                             mode:UIPushBehaviorModeInstantaneous];
-		instantaneousPush.pushDirection = pushVector;
+		self.instantaneousPush = [[UIPushBehavior alloc] initWithItems:@[self.greenView, self.redView]
+                                                                  mode:UIPushBehaviorModeInstantaneous];
+		self.instantaneousPush.pushDirection = pushVector;
         
 		[self.dynamicAnimator addBehavior:collisionBehavior];
-		[self.dynamicAnimator addBehavior:instantaneousPush];
-	}
+		[self.dynamicAnimator addBehavior:self.instantaneousPush];
+
+	} else {
+        if (NO == [self.instantaneousPush active]) {
+            [self.instantaneousPush setActive:YES];
+        }
+    }
 }
 
 #pragma mark - UIDynamicAnimatorDelegate
 
 - (void)dynamicAnimatorWillResume:(UIDynamicAnimator *)animator {
 	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
+    NSLog(@"Is instantaneous push behavior active? %@",  [self.instantaneousPush active] ? @"YES" : @"NO");
     [self.animatorStatusView setAnimatorStatus:[animator isRunning]];
 }
 
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
 	NSLog(@"Animator is %@", [self.dynamicAnimator isRunning] ? @"running" : @"stopped");
+	NSLog(@"Is instantaneous push behavior active? %@",  [self.instantaneousPush active] ? @"YES" : @"NO");
     [self.animatorStatusView setAnimatorStatus:[animator isRunning]];
 }
 
