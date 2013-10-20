@@ -1660,7 +1660,7 @@ Push</string>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ww-bL-Bvg" userLabel="Green View">
-                                <rect key="frame" x="44" y="68" width="100" height="100"/>
+                                <rect key="frame" x="110" y="108" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="YXI-s2-rbf">
@@ -1676,6 +1676,13 @@ Push</string>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="●" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNM-Fp-OrU">
+                                        <rect key="frame" x="77" y="0.0" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1685,37 +1692,11 @@ Push</string>
                                     <constraint firstAttribute="centerY" secondItem="YXI-s2-rbf" secondAttribute="centerY" id="oHZ-Nb-UU8"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hL-7B-NCv" userLabel="Red View">
-                                <rect key="frame" x="177" y="108" width="100" height="60"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="gKv-pl-E3c">
-                                        <rect key="frame" x="0.0" y="8" width="100" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="Xof-E9-qCa"/>
-                                            <constraint firstAttribute="width" constant="100" id="kLd-5Q-Vfj"/>
-                                        </constraints>
-                                        <string key="text">Instantaneous
-Push</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="centerY" secondItem="gKv-pl-E3c" secondAttribute="centerY" id="94c-ls-wkH"/>
-                                    <constraint firstAttribute="centerX" secondItem="gKv-pl-E3c" secondAttribute="centerX" id="jKd-8Y-DDd"/>
-                                    <constraint firstAttribute="height" constant="60" id="mxH-PW-Lf0"/>
-                                    <constraint firstAttribute="width" constant="100" id="xk1-je-Rbj"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Instantaneous Push" id="iTA-oG-fEM">
-                        <barButtonItem key="rightBarButtonItem" title="Start" id="rQe-pq-8fH">
+                        <barButtonItem key="rightBarButtonItem" title="Push" id="rQe-pq-8fH">
                             <connections>
                                 <action selector="handleStartButton:" destination="ONt-XZ-bBJ" id="A7p-eX-F3v"/>
                             </connections>
@@ -1723,7 +1704,6 @@ Push</string>
                     </navigationItem>
                     <connections>
                         <outlet property="greenView" destination="8ww-bL-Bvg" id="V5b-vd-yQ9"/>
-                        <outlet property="redView" destination="0hL-7B-NCv" id="qm5-Rd-VsY"/>
                         <outlet property="startButton" destination="rQe-pq-8fH" id="S5H-Gw-0Ag"/>
                     </connections>
                 </viewController>

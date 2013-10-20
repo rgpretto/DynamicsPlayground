@@ -15,9 +15,9 @@
 @interface DPInstantaneousPushOffsetViewController () <UIDynamicAnimatorDelegate>
 
 @property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
+@property (strong, nonatomic) UIPushBehavior *instantaneousPush;
 
 @property (weak, nonatomic) IBOutlet UIView *greenView;
-@property (weak, nonatomic) IBOutlet UIView *redView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *startButton;
 
 @property (strong, nonatomic) DPAnimatorStatusView *animatorStatusView;
@@ -53,18 +53,26 @@
 
 
 - (IBAction)handleStartButton:(id)sender {
-	if (NO == [self.dynamicAnimator isRunning]) {
-		UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView, self.redView]];
+	if (nil == self.instantaneousPush) {
+		UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView]];
 		collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
         
-		CGVector pushVector = CGVectorMake(0.0, 1.0);
-		UIPushBehavior *instantaneousPush = [[UIPushBehavior alloc] initWithItems:@[self.greenView, self.redView]
-                                                                             mode:UIPushBehaviorModeInstantaneous];
-		instantaneousPush.pushDirection = pushVector;
+		CGVector pushVector = CGVectorMake(0.0, 0.5);
+		self.instantaneousPush = [[UIPushBehavior alloc] initWithItems:@[self.greenView]
+                                                                  mode:UIPushBehaviorModeInstantaneous];
+        UIOffset forceOffset = UIOffsetZero;
+        forceOffset = UIOffsetMake( CGRectGetWidth([self.greenView bounds]) / 2.0,
+                                   -CGRectGetHeight([self.greenView bounds]) / 2.0);
+        [self.instantaneousPush setTargetOffsetFromCenter:forceOffset
+                                                  forItem:self.greenView];
+
+		self.instantaneousPush.pushDirection = pushVector;
         
 		[self.dynamicAnimator addBehavior:collisionBehavior];
-		[self.dynamicAnimator addBehavior:instantaneousPush];
-	}
+		[self.dynamicAnimator addBehavior:self.instantaneousPush];
+	} else {
+        [self.instantaneousPush setActive:YES];
+    }
 }
 
 #pragma mark - UIDynamicAnimatorDelegate
