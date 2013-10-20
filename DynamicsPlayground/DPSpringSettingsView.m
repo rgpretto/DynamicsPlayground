@@ -42,13 +42,16 @@
 
 - (void)commonInit {
     
-    UIFont *font = [UIFont fontWithName:@"Courier New" size:15.0f];
+    UIFont *font = [UIFont systemFontOfSize:20.0f];
     
     _dampingLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     _frequencyLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     
     self.dampingLabel.font = font;
     self.frequencyLabel.font = font;
+    
+    self.dampingLabel.textAlignment = NSTextAlignmentCenter;
+    self.frequencyLabel.textAlignment = NSTextAlignmentCenter;
     
     [self addSubview:self.dampingLabel];
     [self addSubview:self.frequencyLabel];

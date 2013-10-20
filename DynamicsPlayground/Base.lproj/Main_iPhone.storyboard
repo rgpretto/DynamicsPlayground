@@ -1490,17 +1490,17 @@ Push</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T8q-GR-j3A" customClass="DPSpringSettingsView">
-                                <rect key="frame" x="19" y="100" width="64" height="40"/>
+                                <rect key="frame" x="9" y="100" width="84" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zh3-vu-mzi" customClass="DPSpringSettingsView">
-                                <rect key="frame" x="128" y="100" width="64" height="40"/>
+                                <rect key="frame" x="118" y="100" width="84" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s6l-C6-WpL" customClass="DPSpringSettingsView">
-                                <rect key="frame" x="237" y="100" width="64" height="40"/>
+                                <rect key="frame" x="227" y="100" width="84" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -1523,7 +1523,7 @@ Push</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRz-5r-OK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2277" y="-667"/>
+            <point key="canvasLocation" x="2339" y="-667"/>
         </scene>
         <!--Multiple Attachment Offset View Controller - Multiple Attachment offset-->
         <scene sceneID="rtD-tc-Tz8">
