@@ -47,8 +47,8 @@
     self.animatorStatusView = [DPAnimatorStatusView animatorStatusViewinContainerFrame:[self.view frame]];
     [self.view addSubview:self.animatorStatusView];
     
-    self.view.layer.borderColor = [UIColor iOS7redColor].CGColor;
-	self.view.layer.borderWidth = 2.0f;
+    self.view.layer.borderColor = [UIColor iOS7greenColor].CGColor;
+	self.view.layer.borderWidth = 4.0f;
     
 	UIAttachmentBehavior *attachmentBehavior1 = nil;
 	UIAttachmentBehavior *attachmentBehavior2 = nil;
