@@ -44,7 +44,7 @@
     [self.view addSubview:self.animatorStatusView];
     
 	self.view.layer.borderColor = [UIColor iOS7darkBlueColor].CGColor;
-	self.view.layer.borderWidth = 2.0f;
+	self.view.layer.borderWidth = 4.0f;
     
 	self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 	self.dynamicAnimator.delegate = self;

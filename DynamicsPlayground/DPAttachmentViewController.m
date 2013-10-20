@@ -45,7 +45,7 @@
     [self.view addSubview:self.animatorStatusView];
     
     self.view.layer.borderColor = [UIColor iOS7redColor].CGColor;
-	self.view.layer.borderWidth = 2.0f;
+	self.view.layer.borderWidth = 4.0f;
     
 	/*
      use gravity behavior to start animation and collision behavior to stop animation
