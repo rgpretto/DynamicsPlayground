@@ -42,12 +42,12 @@
 		CGPoint center = [attribute center];
         
 		// -3- set the spring stretch
-		CGFloat scroll = scrollDelta * scrollResistance;
-		if (scroll > 0) {
-			center.y += MIN(scrollDelta, scrollDelta * scrollResistance);
+		CGFloat springStretch = scrollDelta * scrollResistance;
+		if (springStretch > 0) {
+			center.y += MIN(scrollDelta, springStretch);
 		}
 		else {
-			center.y += MAX(scrollDelta, scrollDelta * scrollResistance);
+			center.y += MAX(scrollDelta, springStretch);
 		}
 		attribute.center = center;
         
