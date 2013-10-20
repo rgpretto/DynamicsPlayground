@@ -57,12 +57,12 @@
 		UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.greenView]];
 		collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
         
-		CGVector pushVector = CGVectorMake(0.0, 0.5);
+		CGVector pushVector = CGVectorMake(0.0, 0.3);
 		self.instantaneousPush = [[UIPushBehavior alloc] initWithItems:@[self.greenView]
                                                                   mode:UIPushBehaviorModeInstantaneous];
         UIOffset forceOffset = UIOffsetZero;
         forceOffset = UIOffsetMake( CGRectGetWidth([self.greenView bounds]) / 2.0,
-                                   -CGRectGetHeight([self.greenView bounds]) / 2.0);
+                                    CGRectGetHeight([self.greenView bounds]) / 2.0);
         [self.instantaneousPush setTargetOffsetFromCenter:forceOffset
                                                   forItem:self.greenView];
 
