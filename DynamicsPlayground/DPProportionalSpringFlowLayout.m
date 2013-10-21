@@ -43,7 +43,7 @@
         
 		// -3- set the spring stretch
 		CGFloat springStretch = scrollDelta * scrollResistance;
-		if (springStretch > 0) {
+		if (scrollDelta > 0) {
 			center.y += MIN(scrollDelta, springStretch);
 		}
 		else {
