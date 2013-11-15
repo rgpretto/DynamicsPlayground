@@ -69,15 +69,35 @@
 	collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
 	collisionBehavior.collisionDelegate = self;
     
+<<<<<<< Updated upstream
+    //
+    //   NB: uncomment this code to add a collision boundary
+    //
+    // ----------------------------------------------------------------------------
+    //    CGPoint firstPoint = CGPointMake(0.0f, CGRectGetMidY(self.view.bounds));
+    //    CGPoint secondPoint = CGPointMake(firstPoint .x + CGRectGetMidX(self.view.bounds) - 30.0f, firstPoint.y);
+    //
+    //    [collisionBehavior addBoundaryWithIdentifier:@"first boundary"
+    //                                       fromPoint:firstPoint
+    //                                         toPoint:secondPoint];
+    //
+    //
+    //    UIView *collisionBoundaryView = [[UIView alloc] initWithFrame:CGRectMake(firstPoint.x, firstPoint.y, secondPoint.x, 10.0f)];
+    //    collisionBoundaryView.backgroundColor = [UIColor redColor];
+    //    [self.view addSubview:collisionBoundaryView];
+    // ----------------------------------------------------------------------------
+    
+	[self.dynamicAnimator addBehavior:gravityBehavior];
+	[self.dynamicAnimator addBehavior:collisionBehavior];
+=======
     double delayInSeconds = 2.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self.dynamicAnimator addBehavior:gravityBehavior];
         [self.dynamicAnimator addBehavior:collisionBehavior];
     });
-    
-	[self.dynamicAnimator addBehavior:gravityBehavior];
-	[self.dynamicAnimator addBehavior:collisionBehavior];
+
+>>>>>>> Stashed changes
     
 #endif
 }
